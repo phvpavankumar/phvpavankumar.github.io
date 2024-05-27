@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false # This is important to avoid using the default GITHUB_TOKEN
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
