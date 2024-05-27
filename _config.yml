@@ -1,0 +1,13 @@
+title: "Pavan Kumar's Portfolio"
+description: "AI/GenAI Engineer specializing in AI model development, testing, and deployment."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://phvpavankumar.github.io" # the base hostname & protocol for your site
+github_username: phvpavankumar
+email: phvpavankumar@gmail.com
+linkedin: https://www.linkedin.com/in/pavan-kumar-phv/
+youtube: https://www.youtube.com/@pavankumarphv4901
+
+theme: minima
+
+plugins:
+  - jekyll-feed
