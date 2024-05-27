@@ -41,27 +41,6 @@ Location Preference: Hyderabad and Bangalore
 - **Model Deployments**: GCP, Vertex AI, AWS, Azure, Docker, Kubernetes, Flask.
 - **Familiar with**: TensorFlow, PyTorch, ONNX, MLFlow, PyTest, OpenCV, Open3D, NLTK, Scikit-learn, Numpy, Pandas, Matplotlib, Seaborn
 
-## Certifications
-
-- Fundamentals of Digital Image and Video Processing | Northwestern University | 2024
-- Generative AI Mentorship Program | Growth School | 2024
-- ChatGPT 101-B26 Course | Growth School | 2023
-- Getting Started with CSS | Codekaro | 2023
-- Tableau for Data Science | Scaler | 2022
-- Machine Learning | Stanford University | 2021
-- Building Transformer-Based Natural Language Processing Applications | Nvidia | 2021
-- Fundamentals of Deep Learning by Nvidia | 2021
-- Introduction to Programming using JavaScript – Certified | Microsoft | 2020
-- Programming with Python | Internshala | 2020
-
-## Soft Skills
-
-- Analytical
-- Collaborator
-- Innovator
-- Leadership
-- Communicator
-
 ## Work Experience
 
 ### Ignitarium, Bangalore, India
@@ -128,3 +107,24 @@ Highlights:
 - Date of Birth: 08th March 1998
 - Languages Known: English, Hindi, Tamil, Malayalam, Kannada
 - Address: Hyderabad, 500090, Telangana
+
+## Soft Skills
+
+- Analytical
+- Collaborator
+- Innovator
+- Leadership
+- Communicator
+
+## Certifications
+
+- Fundamentals of Digital Image and Video Processing | Northwestern University | 2024
+- Generative AI Mentorship Program | Growth School | 2024
+- ChatGPT 101-B26 Course | Growth School | 2023
+- Getting Started with CSS | Codekaro | 2023
+- Tableau for Data Science | Scaler | 2022
+- Machine Learning | Stanford University | 2021
+- Building Transformer-Based Natural Language Processing Applications | Nvidia | 2021
+- Fundamentals of Deep Learning by Nvidia | 2021
+- Introduction to Programming using JavaScript – Certified | Microsoft | 2020
+- Programming with Python | Internshala | 2020
