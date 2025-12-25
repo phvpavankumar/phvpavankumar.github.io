@@ -4,24 +4,144 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pavan Kumar | AI/GenAI Engineer</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="AI/GenAI Engineer (CV + LLM). Edge AI, TensorRT, RAG/Agents, production ML systems." />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Pavan Kumar</h1>
-    <p>
-    AI/GenAI Engineer building production-grade Computer Vision and GenAI systems.
-    I own problems end-to-end, from design and modeling to deployment,
-    latency optimization, and monitoring.
-    </p>
+  <header class="container header">
+    <a class="logo" href="./">PK</a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#wins">Wins</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="assets/PavanKumar_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+    </nav>
+  </header>
 
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="badge">Bengaluru • Hyderabad • Remote</p>
+        <h1>Pavan Kumar</h1>
+        <p class="subtitle">
+          AI/GenAI Engineer — CV + LLM systems in production. Edge AI, TensorRT acceleration, RAG/Agents, CI/CD.
+        </p>
 
-    <h2>Links</h2>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/pavan-kumar-phv/">LinkedIn</a></li>
-      <li><a href="https://github.com/phvpavankumar">GitHub</a></li>
-      <li><a href="mailto:phvpavankumar@gmail.com">phvpavankumar@gmail.com</a></li>
-    </ul>
-  </div>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Hire me</a>
+          <a class="btn ghost" href="./projects/">View projects</a>
+        </div>
+
+        <div class="chips">
+          <span>TensorRT</span><span>YOLOv7/YOLOv9</span><span>LightGlue</span>
+          <span>LangChain</span><span>RAG</span><span>Agents</span>
+          <span>Docker</span><span>K8s</span><span>GCP/AWS/Azure</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img class="avatar" src="./assets/img/avatar.jpg" alt="Pavan Kumar" />
+        <div class="links">
+          <a href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/phvpavankumar" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:phvpavankumar@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <h2>Work</h2>
+
+      <div class="card">
+        <div class="row">
+          <h3>Solum — AI/CV & ML Systems Engineer</h3>
+          <p class="muted">Aug 2024 – Present • Bengaluru</p>
+        </div>
+        <ul>
+          <li>Owned multi-camera shelf-vision pipeline (YOLO + TensorRT + calibration) with real-time inference.</li>
+          <li>Built LLM/agentic log-intelligence tool converting logs → structured RCA insights.</li>
+          <li>Designed RFID ML-serving APIs with observability + containerized deployment.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <h3>Ignitarium — AI Engineer</h3>
+          <p class="muted">Aug 2022 – Jul 2024 • Bengaluru</p>
+        </div>
+        <ul>
+          <li>Optimized ultra-light detection models for microcontrollers / embedded deployment.</li>
+          <li>Worked across training, deployment readiness, performance tuning and latency reduction.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <h3>Sony — AI Consultant</h3>
+          <p class="muted">Feb 2023 – Dec 2023 • Bengaluru</p>
+        </div>
+        <ul>
+          <li>Custom detection/segmentation for embedded devices; improved speed and on-device performance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Featured projects</h2>
+      <div class="grid">
+        <a class="card hover" href="./projects/">
+          <h3>Agentic Log Intelligence (LLM + Tools)</h3>
+          <p class="muted">Logs → structured insights, faster RCA, deployable to cloud UI.</p>
+          <span class="tag">Agents</span> <span class="tag">LangChain</span>
+        </a>
+
+        <a class="card hover" href="./projects/">
+          <h3>Shelf-Vision Real-Time System</h3>
+          <p class="muted">Multi-camera CV pipeline optimized for low latency + stable FPS.</p>
+          <span class="tag">TensorRT</span> <span class="tag">YOLO</span>
+        </a>
+
+        <a class="card hover" href="./projects/">
+          <h3>RFID ML Pipeline (Lesson Learned)</h3>
+          <p class="muted">End-to-end ML done; hardware signal quality became bottleneck.</p>
+          <span class="tag">MLOps</span> <span class="tag">Systems</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="wins" class="section">
+      <h2>Wins (metrics)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Real-time performance</h3>
+          <p class="muted">Achieved ~15–20 FPS with sensor-driven flow + optimized inference.</p>
+        </div>
+        <div class="card">
+          <h3>Latency focus</h3>
+          <p class="muted">Built for low-latency pipelines across CV + production ML serving.</p>
+        </div>
+        <div class="card">
+          <h3>Reliability mindset</h3>
+          <p class="muted">Observability + containerized deployment patterns for ML services.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><b>Email:</b> <a href="mailto:phvpavankumar@gmail.com">phvpavankumar@gmail.com</a></p>
+        <p><b>Phone:</b> <a href="tel:+919912552285">+91 9912552285</a></p>
+        <p><b>LinkedIn:</b> <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/pavan-kumar-phv/">pavan-kumar-phv</a></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">© <span id="year"></span> Pavan Kumar • Built with GitHub Pages</p>
+    </footer>
+  </main>
+
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
