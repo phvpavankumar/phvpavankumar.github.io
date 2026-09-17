@@ -1,41 +1,13 @@
-# Pavan Kumar — Portfolio (phvpavankumar.github.io)
+# pavankumarphv.com — GitHub Pages site
 
-Building production-scale GenAI & AI systems  
-**LLM Systems • Agentic AI • Computer Vision • Edge AI**
+Jekyll site, hosted free on GitHub Pages.
 
-🌐 Live site: https://phvpavankumar.github.io
+## Publish a new weekly post
+1. Open the repo on github.com → `_posts` folder → **Add file → Create new file**
+2. Name it `YYYY-MM-DD-short-title.md` (the date controls ordering)
+3. Paste the contents of `post-template.md`, fill in the brackets, update `week:` number
+4. **Commit changes** — live in ~1 minute
 
----
-
-## 🚀 What this is
-This repository hosts my personal portfolio website on **GitHub Pages**.  
-It highlights my work in:
-- Production-ready **LLM / GenAI systems**
-- **Agentic workflows** (tool use, orchestration, evals)
-- **Computer Vision** pipelines (real-time + high-accuracy)
-- **Edge AI deployments** (low latency, optimized inference)
-
----
-
-## ✨ Sections on the website
-- **About** — quick intro + what I build
-- **Skills** — GenAI, CV, edge inference, systems
-- **Projects** — case studies with impact + stack
-- **Experience** — roles & outcomes
-- **Contact** — LinkedIn / GitHub / email
-
----
-
-## 🧰 Tech Stack (edit based on what you’re using)
-- HTML/CSS/JS (or React / Next.js)
-- GitHub Pages for hosting
-- (Optional) TailwindCSS / Framer Motion / Three.js
-
----
-
-## 🛠️ Run locally
-If it’s a static site:
-```bash
-# from repo root
-python -m http.server 8000
-# open http://localhost:8000
+## One-time setup still needed
+- Replace `YOUR_BUTTONDOWN_USERNAME` in `_includes/subscribe.html`
+  with your free buttondown.com username (email subscriptions)

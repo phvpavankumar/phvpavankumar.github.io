@@ -1,0 +1,95 @@
+---
+layout: post
+title: "The number that meant two things"
+date: 2026-08-31
+category: FP&A
+week: "001"
+---
+<div class="phv-tldr" data-phv-tldr>
+  <div class="phv-tldr-bar"><i></i><i></i><i></i><span>tl;dr</span>
+    <button type="button" data-audio>SOUND: ON</button>
+  </div>
+  <div class="phv-tldr-body"><span data-out></span><span class="phv-cursor"></span></div>
+  <script type="application/json">{"text":"> two teams, one KPI name, two numbers.\n> nobody ever chose the official one.\n> the AI served both — confidently.\n> fix: one sentence, one owner, checked before launch."}</script>
+</div>
+
+<p><em>What follows is a composite — a pattern I have seen play out more than once across enterprise programmes, not an account of any single company or project. If you work in finance, you will recognise it anyway.</em></p>
+
+<p>It is Monday morning. A finance director opens the executive dashboard and looks at a cost number. Down the hall, a colleague pulls the same number from the source system. Same name on both screens. Different values. Not slightly different — different enough that one of them must be wrong.</p>
+
+<p>Except neither is wrong.</p>
+
+<div class="phv-dlg" data-phv-dialogue>
+  <p class="phv-dlg-title">The Monday morning, replayed</p>
+  <div class="phv-dlg-stage" data-stage></div>
+  <div class="phv-dlg-controls">
+    <button type="button" data-advance>Tap to continue</button>
+  </div>
+  <script type="application/json">
+  {"lines":[
+    {"who":"fd","tag":"FD","name":"Finance Director","text":"The dashboard says minus 2.4M."},
+    {"who":"ol","tag":"OPS","name":"Operations Lead","text":"My report says minus 3.1M. Same KPI."},
+    {"who":"ai","tag":"AI","name":"AI Assistant","text":"Both figures are correct."},
+    {"who":"fd","tag":"FD","name":"Finance Director","text":"They cannot both be correct."},
+    {"who":"ai","tag":"AI","name":"AI Assistant","text":"One is the posted variance from the finance source. One is an estimate from volumes and last year's prices. Nobody told me which is official."},
+    {"who":"ol","tag":"OPS","name":"Operations Lead","text":"So who decided which one we report?"},
+    {"who":"fd","tag":"FD","name":"Finance Director","text":"…Nobody decided."}
+  ]}
+  </script>
+</div>
+
+<p class="phv-id">[01] // DIAGNOSIS</p>
+
+<h2>Two honest answers, one name</h2>
+
+<p>When someone finally traces it, the story is always some version of this: one screen shows the figure as it was actually posted in the books. The other shows an estimate, calculated a different way, from a different system, for what was once a perfectly good reason. Two honest answers to two different questions — wearing the same label.</p>
+
+<p>And when you ask who decided which one is the official number, the answer is usually silence. Nobody decided. One version was built one day, the other already existed, and the two have quietly disagreed for months without anyone noticing.</p>
+
+<div class="phv-stat" data-phv-stat>
+  <span class="sa"><b data-n="-2.4">0.0M</b><i>POSTED VARIANCE · FINANCE SOURCE</i></span>
+  <span class="vs">SAME KPI</span>
+  <span class="sb"><b data-n="-3.1">0.0M</b><i>DERIVED ESTIMATE · DIFFERENT MODEL</i></span>
+</div>
+
+<p class="phv-id">[02] // AMPLIFICATION</p>
+
+<h2>Then you add AI</h2>
+
+<p>Here is the part that should worry anyone putting AI on top of company numbers. The AI does not notice the conflict either. Ask your question one way, and it serves the first definition. Ask another way, and it serves the second. Both answers arrive instantly, fluently, and with total confidence. Nothing in either answer tells you a rival number exists.</p>
+
+<p>The machine has not lied. It has done something quieter and worse: it has taken a disagreement nobody had settled and delivered it at scale, in a confident voice, to everyone who asks.</p>
+
+<div class="phv-demo" data-phv-kpi-demo>
+  <p class="phv-demo-title">Try it yourself</p>
+  <p class="phv-demo-sub">Same company, same quarter, one KPI. Ask the AI two ways. (Illustrative numbers.)</p>
+  <div class="phv-demo-asks">
+    <button type="button" data-ask-a>Ask: "What was the cost variance last quarter?"</button>
+    <button type="button" data-ask-b>Ask: "How did costs track against plan?"</button>
+  </div>
+  <div class="phv-demo-out" data-out></div>
+  <label class="phv-demo-declare">
+    <input type="checkbox" data-declare>
+    Declare one official definition
+  </label>
+</div>
+
+<blockquote class="wp-block-quote"><p>AI does not resolve an undecided definition. It industrialises it.</p>
+</blockquote>
+
+<p class="phv-id">[03] // CORRECTION</p>
+
+<h2>The fix is embarrassingly small</h2>
+
+<p>Once the disagreement is found, fixing it usually takes a day or two: someone with authority picks the official version, and the screens are aligned. A day of fixing, after months of quiet confusion. That ratio repeats everywhere.</p>
+
+<p>Which means the prevention is cheap, and none of it needs a model or a budget:</p>
+
+<ul class="wp-block-list"><li>For every number an AI system can serve, write one sentence: how it is calculated, and from where. No sentence, no automation.</li>
+
+<li>Where two calculations exist, a named person chooses one. An estimate is fine — as a decision, not as an accident.</li>
+
+<li>Before launch, check every AI-served number against its source system. Before launch — not after a director does it for you on a Monday morning.</li>
+</ul>
+
+<p><strong>Pick one number on your own dashboard. Could you say, in a single sentence, exactly how it is calculated and from where — and would the team next door give the same sentence?</strong></p>

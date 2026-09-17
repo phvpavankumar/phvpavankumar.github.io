@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+<header class="phv-head">
+  <div class="phv-wrap" style="display:flex;align-items:center;gap:24px;min-height:64px">
+    <a class="phv-mark" href="{{ '/' | relative_url }}" style="text-decoration:none">Pavan Kumar PHV</a>
+    <nav class="phv-nav" style="margin-right:auto">
+      <a href="{{ '/weekly/' | relative_url }}">Weekly</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/experience/' | relative_url }}">Experience</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+    <a class="btn" href="#subscribe">Subscribe</a>
+  </div>
+</header>
+<main>
+{{ content }}
+</main>
+<footer class="phv-foot">
+  <div class="phv-wrap" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center">
+    <nav style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px">
+      <a href="{{ '/about/' | relative_url }}" style="text-decoration:none">About</a>
+      <a href="{{ '/experience/' | relative_url }}" style="text-decoration:none">Experience</a>
+      <a href="{{ '/projects/' | relative_url }}" style="text-decoration:none">Projects</a>
+      <a href="{{ '/weekly/' | relative_url }}" style="text-decoration:none">Weekly</a>
+    </nav>
+    <div class="phv-social">
+      <p><a href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p><a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">GitHub</a></p>
+      <p><a href="https://buymeacoffee.com/phvpavankum" target="_blank" rel="noopener">Buy me a coffee</a></p>
+    </div>
+    <p style="font-size:12.5px;margin:0">© 2026 Pavan Kumar PHV</p>
+  </div>
+</footer>
+<script src="{{ '/assets/js/fx.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/dialogue.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/kpi-demo.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/stepper.js' | relative_url }}" defer></script>
+</body>
+</html>

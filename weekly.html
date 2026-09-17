@@ -1,0 +1,22 @@
+---
+layout: default
+title: Finance × AI Weekly
+permalink: /weekly/
+---
+<div class="phv-sec" style="border-top:0">
+  <div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
+    <div class="phv-head-block">
+      <p class="phv-kicker">Finance × AI Weekly</p>
+      <h1 class="phv-h2">All entries</h1>
+    </div>
+    <div class="phv-series">
+      {% for post in site.posts %}
+      <a class="entry" href="{{ post.url | relative_url }}">
+        <span class="d">{{ post.week }}</span>
+        <span class="t">{{ post.title }}</span>
+        <span class="tag2">{{ post.category }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

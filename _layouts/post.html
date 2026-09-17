@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
+  <article class="phv-article">
+    <p class="wp-block-post-date" style="font-family:var(--mono);font-size:12.5px;color:var(--gold);margin:0 0 14px">{{ page.date | date: "%-d %B %Y" }} · WK {{ page.week }}</p>
+    <h1 style="font-size:clamp(30px,4vw,46px);margin:0 0 12px">{{ page.title }}</h1>
+    <p class="phv-kicker" style="margin:0 0 34px">{{ page.category }}</p>
+    {{ content }}
+    <div class="phv-support">
+      <p>The series is free and stays free. If this entry saved you an hour, you're welcome to buy me a coffee.</p>
+      <p class="phv-coffee" style="margin:0"><a href="https://buymeacoffee.com/phvpavankum" target="_blank" rel="noopener">Buy me a coffee</a></p>
+    </div>
+    {% include subscribe.html %}
+  </article>
+</div>
