@@ -1,6 +1,6 @@
 title: Pavan Kumar PHV
 description: "Finance × AI, without the hype. One practical idea, every week."
-url: "https://pavankumarphv.com"
+url: "https://phvpavankumar.github.io"
 permalink: /weekly/:title/
 plugins:
   - jekyll-feed
