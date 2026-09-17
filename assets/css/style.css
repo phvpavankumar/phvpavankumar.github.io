@@ -44,9 +44,14 @@ a{text-decoration:none}
   mask-image:radial-gradient(120% 90% at 18% 0%,#000 10%,transparent 66%)}
 .phv-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:60px;align-items:center}
-.phv-pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;
+/* The pill string is 73 chars in a 532px hero column. At 11.5px it needed
+   ~546px and wrapped, orphaning "AI" on its own line. 11px (already used
+   elsewhere in this sheet) fits on one line with ~8px spare; text-wrap:balance
+   is the safety net — if the font falls back to wider metrics or the column
+   narrows, it splits into even lines instead of orphaning the last word. */
+.phv-pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
   color:var(--gold);border:1px solid rgba(215,172,92,.3);background:rgba(215,172,92,.07);
-  padding:6px 13px;border-radius:999px}
+  padding:6px 13px;border-radius:999px;text-wrap:balance}
 .phv-pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .phv-h1{font-size:clamp(38px,4.9vw,60px);letter-spacing:-.035em;margin:24px 0 0}
 .phv-h1 em{font-style:normal;color:var(--fg3)}
@@ -256,19 +261,6 @@ a{text-decoration:none}
 .phv-pb{position:fixed;top:0;left:0;height:2px;width:0;background:var(--teal);z-index:80;
   box-shadow:0 0 12px rgba(62,207,168,.7)}
 
-/* ---- fx: boot overlay ---- */
-.phv-boot{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;
-  align-items:center;justify-content:center;transition:opacity .6s ease}
-.phv-boot.done{opacity:0;pointer-events:none}
-.phv-boot-in{text-align:center;padding:20px}
-.phv-boot-log{font-family:var(--mono);font-size:12.5px;color:var(--teal);line-height:2;
-  margin:0;text-align:left;min-height:110px;white-space:pre-line}
-.phv-boot-btn{font-family:var(--mono);font-size:13px;letter-spacing:.15em;color:var(--teal);
-  background:transparent;border:1px solid rgba(62,207,168,.5);border-radius:8px;
-  padding:13px 30px;cursor:pointer;margin-top:26px;animation:phv-pulse 1.6s ease-in-out infinite}
-.phv-boot-btn:hover{background:rgba(62,207,168,.1)}
-@keyframes phv-pulse{50%{box-shadow:0 0 22px rgba(62,207,168,.35)}}
-
 /* ---- fx: tl;dr terminal ---- */
 .phv-tldr{background:var(--s1);border:1px solid rgba(62,207,168,.25);border-radius:14px;
   margin:0 0 34px;overflow:hidden}
@@ -330,7 +322,6 @@ a{text-decoration:none}
   .phv-rv{opacity:1;transform:none}
   .phv-article h2::after{width:100%}
   .phv-stat::after{animation:none}
-  .phv-boot{display:none}
 }
 
 /* ---- mobile header fix ---- */

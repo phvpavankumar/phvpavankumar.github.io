@@ -2,10 +2,10 @@
 	var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	/* ---------- audio (synthesised, gesture-gated) ---------- */
-	var AC = null, audioOn = false, bootSound = false;
+	var AC = null, audioOn = false;
 	function ac() { try { if (!AC) { AC = new (window.AudioContext || window.webkitAudioContext)(); } } catch (e) {} return AC; }
 	function key() {
-		if ((!audioOn && !bootSound) || !AC || AC.state !== 'running') { return; }
+		if (!audioOn || !AC || AC.state !== 'running') { return; }
 		var t = AC.currentTime, o = AC.createOscillator(), g = AC.createGain(), f = AC.createBiquadFilter();
 		o.type = 'square'; o.frequency.value = 1400 + Math.random() * 900;
 		f.type = 'highpass'; f.frequency.value = 900;
@@ -13,7 +13,7 @@
 		o.connect(f); f.connect(g); g.connect(AC.destination); o.start(t); o.stop(t + 0.035);
 	}
 	function chime(fq, dur) {
-		if ((!audioOn && !bootSound) || !AC || AC.state !== 'running') { return; }
+		if (!audioOn || !AC || AC.state !== 'running') { return; }
 		var t = AC.currentTime, o = AC.createOscillator(), g = AC.createGain();
 		o.type = 'sine'; o.frequency.setValueAtTime(fq, t);
 		o.frequency.exponentialRampToValueAtTime(fq * 1.5, t + dur);
@@ -42,55 +42,17 @@
 		pb.style.width = (m > 0 ? (h.scrollTop / m) * 100 : 0) + '%';
 	}, { passive: true });
 
-	/* ---------- boot (once per session) ---------- */
+	/* ---------- boot ----------
+	   The INITIALISE overlay was removed at the owner's request (2026-09-17).
+	   fireBooted() still runs immediately so that anything gated on the
+	   'phv:booted' event (the tl;dr typewriter) starts as soon as fx.js loads. */
 	var booted = false;
 	function fireBooted() {
 		if (booted) { return; }
 		booted = true;
-		try { sessionStorage.setItem('phvBooted', '1'); } catch (e) {}
 		document.dispatchEvent(new Event('phv:booted'));
 	}
-	var skipBoot = reduced;
-	try { if (sessionStorage.getItem('phvBooted')) { skipBoot = true; } } catch (e) {}
-
-	if (skipBoot) {
-		fireBooted();
-	} else {
-		var ov = document.createElement('div');
-		ov.className = 'phv-boot';
-		ov.innerHTML = '<div class="phv-boot-in"><pre class="phv-boot-log"> </pre>' +
-			'<button type="button" class="phv-boot-btn">&#9656; INITIALISE</button></div>';
-		document.body.appendChild(ov);
-		var log = ov.querySelector('.phv-boot-log');
-		var btn = ov.querySelector('.phv-boot-btn');
-		var lines = ['> PAVANKUMARPHV.COM', '> FINANCE \u00D7 AI WEEKLY', '> SOURCES: FINANCE \u2713  OPERATIONS \u2713', '> RENDERING BRIEFING \u2026'];
-		btn.addEventListener('click', function () {
-			ac(); bootSound = true; btn.style.display = 'none';
-			var li = 0, ci = 0;
-			(function step() {
-				if (li >= lines.length) {
-					chime(520, 0.35); setTimeout(function(){ bootSound = false; }, 600);
-					setTimeout(function () { ov.classList.add('done'); fireBooted();
-						setTimeout(function () { ov.remove(); }, 700); }, 450);
-					return;
-				}
-				var line = lines[li];
-				if (ci < line.length) {
-					log.textContent += line[ci];
-					if (line[ci] !== ' ') { key(); }
-					ci++; setTimeout(step, 30);
-				} else { log.textContent += '\n'; li++; ci = 0; setTimeout(step, 360); }
-			})();
-		});
-		/* escape hatch: skip on second click anywhere else after 6s */
-		setTimeout(function () {
-			ov.addEventListener('click', function (e) {
-				if (e.target === btn) { return; }
-				ov.classList.add('done'); fireBooted();
-				setTimeout(function () { ov.remove(); }, 700);
-			});
-		}, 6000);
-	}
+	fireBooted();
 
 	/* ---------- tl;dr typewriter ---------- */
 	function startTldr() {
