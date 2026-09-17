@@ -1,19 +1,124 @@
 ---
 layout: default
 ---
+<!-- ============ 1. HERO: person first ============ -->
 <div class="phv-hero">
   <div class="phv-wrap phv-hero-grid" style="max-width:1180px;margin:0 auto;padding:0 28px">
     <div>
-      <p class="phv-pill">One practical idea, every week</p>
-      <h1 class="phv-h1">Finance × AI,<br><em>without the hype.</em></h1>
-      <p class="phv-sub">Most AI projects in finance fail for a boring reason: <strong>nobody agreed
-        what decision they were meant to improve.</strong> I write one short, practical idea every
-        week about fixing that.</p>
-      <div style="margin-top:32px"><a class="btn" href="{{ '/weekly/' | relative_url }}">Read the series</a></div>
-      <p class="phv-note">Five minutes a week. No jargon.</p>
+      <p class="phv-pill">Senior Applied AI Engineer · Forward-Deployed · Enterprise Analytics &amp; AI</p>
+      <h1 class="phv-h1">I ship enterprise AI<br><em>that survives production.</em></h1>
+      <p class="phv-sub">Forward-deployed with enterprise teams for five years — from neural
+        networks on microcontrollers to agentic analytics platforms a CFO acts on.
+        Demos are easy. Lineage, definitions, and the line where a human signs off
+        are the job.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+        <a class="btn" href="{{ '/projects/' | relative_url }}">View my work</a>
+        <a class="btn" style="background:transparent;color:var(--fg);border:1px solid var(--line2)"
+           href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="phv-note" style="margin-top:20px">
+        <a href="https://www.credly.com/badges/d7854e7b-bcef-44ca-be4d-5b05e3d603bb/public_url"
+           target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">GCP Professional Cloud Architect ↗</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.credly.com/badges/3153e2ee-f4e1-410b-97c1-f1bfad33b7c9/public_url"
+           target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">Anthropic Claude Certified Architect – Professional ↗</a>
+      </p>
+    </div>
+
+    <!-- proof panel: verified numbers only -->
+    <div class="phv-step">
+      <div class="phv-step-top"><span>profile.verified</span><span>2026</span></div>
+      <div style="padding:10px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05)">
+          <div style="padding:18px 22px;border-right:1px solid rgba(255,255,255,.05)">
+            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--gold)">5 yrs</div>
+            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">PRODUCTION AI</div>
+          </div>
+          <div style="padding:18px 22px">
+            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--teal)">2</div>
+            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">ARCHITECT CERTS · GOOGLE + ANTHROPIC</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:18px 22px;border-right:1px solid rgba(255,255,255,.05)">
+            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--fg)">27<span style="font-size:16px;color:var(--fg3)"> tools</span></div>
+            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">AGENTIC ANALYTICS PLATFORM · 129 APIS</div>
+          </div>
+          <div style="padding:18px 22px">
+            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--fg)">&lt;200<span style="font-size:16px;color:var(--fg3)"> ms</span></div>
+            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">REAL-TIME VISION · 15–20 FPS ON EDGE</div>
+          </div>
+        </div>
+      </div>
+      <div class="phv-step-top" style="border-top:1px solid var(--line);border-bottom:0">
+        <span>STACK</span><span style="color:var(--fg2)">Python · LangGraph · FastAPI · SAP · TensorRT · Azure/GCP</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 2. SELECTED WORK ============ -->
+<div class="phv-sec">
+  <div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
+    <div class="phv-head-block">
+      <p class="phv-kicker">Selected work</p>
+      <h2 class="phv-h2">Systems that run in production</h2>
+    </div>
+    <div class="phv-three" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="phv-card">
+        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">ENTERPRISE · AGENTIC AI</p>
+        <h3>Agentic finance &amp; supply-chain analytics</h3>
+        <p>Executives ask questions in plain language; the platform answers with governed KPIs,
+          charts and narratives — 27 analytical tools, 129 API endpoints, LangGraph orchestration
+          over SAP data, with source-to-dashboard KPI lineage and reconciliation.</p>
+      </div>
+      <div class="phv-card">
+        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">KNOWLEDGE · RETRIEVAL</p>
+        <h3>Process intelligence from video</h3>
+        <p>Business-process recordings become documentation, BPMN diagrams, test cases and a
+          searchable knowledge base — semantic embedding with pgvector, hybrid vector + governed
+          SQL retrieval, async job orchestration.</p>
+      </div>
+      <div class="phv-card">
+        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">COMPUTER VISION · REAL TIME</p>
+        <h3>Retail shelf vision at &lt;200 ms</h3>
+        <p>Multi-camera product recognition on YOLOv7/v9 with TensorRT — sub-200 ms responses at
+          15–20 FPS, hot-reload model serving, end-to-end CI/CD.</p>
+      </div>
+      <div class="phv-card">
+        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">EDGE AI · OPTIMISATION</p>
+        <h3>Neural networks on microcontrollers</h3>
+        <p>FastestDet architecture refined for a 35% accuracy gain; real-time detection deployed
+          on Renesas MCUs and Sony IMX500 smart cameras — AI where there is no cloud to fall back on.</p>
+      </div>
+    </div>
+    <p class="phv-more" style="margin-top:26px"><a href="{{ '/projects/' | relative_url }}" style="text-decoration:none">All projects →</a></p>
+  </div>
+</div>
+
+<!-- ============ 3. FINANCE × AI WEEKLY (the series, as a section) ============ -->
+<div class="phv-sec" style="background:var(--s1)">
+  <div class="phv-wrap phv-hero-grid" style="max-width:1180px;margin:0 auto;padding:0 28px;align-items:start">
+    <div>
+      <p class="phv-kicker">Finance × AI Weekly</p>
+      <h2 class="phv-h2">One practical idea, every week</h2>
+      <p class="phv-intro" style="margin-top:16px">Most AI projects in finance fail before a model
+        is chosen — in the period where decisions, definitions and controls should have been agreed
+        and weren't. Each week: one pattern from the field, anonymised, in plain language, with
+        something you can do on Monday.</p>
+      <div class="phv-series" style="margin-top:28px;background:var(--bg)">
+        {% for post in site.posts limit:3 %}
+        <a class="entry" href="{{ post.url | relative_url }}">
+          <span class="d">{{ post.week }}</span>
+          <span class="t">{{ post.title }}</span>
+          <span class="tag2">{{ post.category }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      <p class="phv-more" style="margin-top:22px"><a href="{{ '/weekly/' | relative_url }}" style="text-decoration:none">All entries →</a></p>
     </div>
     <div class="phv-step" data-phv-stepper>
-      <div class="phv-step-top"><span>Ask these 7 questions first</span><span data-counter>1 / 7</span></div>
+      <div class="phv-step-top"><span>The framework · ask these 7 first</span><span data-counter>1 / 7</span></div>
       <div class="phv-step-body">
         <p class="phv-qn" data-qn>Question 1</p>
         <p class="phv-qq" data-qq>What decision are we trying to improve?</p>
@@ -28,65 +133,17 @@ layout: default
   </div>
 </div>
 
-<div class="phv-sec">
-  <div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
-    <div class="phv-head-block">
-      <p class="phv-kicker">The problem</p>
-      <h2 class="phv-h2">AI doesn't clear up confusion. It speeds it up.</h2>
-      <p class="phv-intro">If two teams already disagree about what "revenue" means, a model will not
-        settle the argument. It will produce that disagreement faster, in more places, with more confidence.</p>
-    </div>
-    <div class="phv-compare">
-      <div class="phv-box phv-box-bad">
-        <p class="phv-tagline">Skip the groundwork</p>
-        <h3>What usually happens</h3>
-        <ul>
-          <li>The tool gets chosen before the problem is written down</li>
-          <li>Two teams use one word to mean two things</li>
-          <li>Nobody knows which numbers the system may decide alone</li>
-          <li>Six months later, no one can say what it was worth</li>
-        </ul>
-      </div>
-      <div class="phv-box phv-box-good">
-        <p class="phv-tagline">Do the groundwork</p>
-        <h3>What works instead</h3>
-        <ul>
-          <li>One named decision, written in a sentence</li>
-          <li>One agreed definition, shared across teams</li>
-          <li>A clear line where a human signs off</li>
-          <li>A baseline agreed up front, so value is provable</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="phv-sec">
-  <div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
-    <div class="phv-head-block">
-      <p class="phv-kicker">Finance × AI Weekly</p>
-      <h2 class="phv-h2">One practical idea, every week</h2>
-    </div>
-    <div class="phv-series">
-      {% for post in site.posts limit:6 %}
-      <a class="entry" href="{{ post.url | relative_url }}">
-        <span class="d">{{ post.week | default: post.date | date: "%d/%m" }}</span>
-        <span class="t">{{ post.title }}</span>
-        <span class="tag2">{{ post.category }}</span>
-      </a>
-      {% endfor %}
-      {% if site.posts.size == 0 %}<p style="padding:22px 24px">First entries publish shortly.</p>{% endif %}
-    </div>
-    <p class="phv-more" style="margin-top:26px"><a href="{{ '/weekly/' | relative_url }}" style="text-decoration:none">All entries →</a></p>
-  </div>
-</div>
-
+<!-- ============ 4. ABOUT + SUBSCRIBE ============ -->
 <div class="phv-sec">
   <div class="phv-wrap phv-about" style="max-width:1180px;margin:0 auto;padding:0 28px">
-    <div><p class="phv-kicker">About</p><h2 class="phv-h2">Who's writing this</h2></div>
+    <div><p class="phv-kicker">About</p><h2 class="phv-h2">Who I am</h2></div>
     <div>
-      <p class="phv-body" style="font-size:16px;line-height:1.75;color:var(--fg2)">Senior AI consultant, designing AI-powered finance and supply-chain analytics for large enterprises — from source data to the dashboard a CFO actually trusts. GCP Professional Cloud Architect and Anthropic Claude Certified Architect – Professional. I write this series because most finance AI fails before a model is chosen, and almost nobody talks about that part.</p>
-      <p class="phv-more" style="margin-top:18px"><a href="{{ '/about/' | relative_url }}" style="text-decoration:none">More about my background →</a></p>
+      <p style="font-size:16px;line-height:1.75;color:var(--fg2)">Senior AI consultant designing
+        AI-powered finance and supply-chain analytics for large enterprises — from source data to
+        the dashboard a CFO actually trusts. Master's in Data Science; four years shipping
+        production AI systems before consulting. Based in Bangalore, working globally.</p>
+      <p class="phv-more" style="margin-top:18px"><a href="{{ '/about/' | relative_url }}" style="text-decoration:none">Full background →</a>
+        &nbsp;&nbsp;<a href="{{ '/experience/' | relative_url }}" style="text-decoration:none;color:var(--teal)">Experience →</a></p>
     </div>
   </div>
 </div>
