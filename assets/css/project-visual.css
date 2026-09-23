@@ -9,3 +9,4 @@
 .project-visual button{min-height:40px;font:inherit;font-size:13px}
 .project-visual .frame-foot{flex-wrap:wrap}
 .project-visual .chart text{fill:var(--fg2)}
+.project-visual .chart{max-height:none}

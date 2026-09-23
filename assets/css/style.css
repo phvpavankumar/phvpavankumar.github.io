@@ -8,13 +8,14 @@
   --display:'Instrument Sans',system-ui,sans-serif;
   --body:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
+  --page-gutter:max(20px,4vw);
 }
 
 body{background:var(--bg);color:var(--fg);font-family:var(--body);-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.028em;line-height:1.1}
 a{text-decoration:none}
 :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-.phv-wrap{max-width:1180px;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}
+.phv-wrap{width:calc(100% - 2 * var(--page-gutter));margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
 
 /* ---- header ---- */
 .phv-head{position:sticky;top:0;z-index:50;background:rgba(8,13,26,.85);
@@ -35,7 +36,7 @@ a{text-decoration:none}
 .phv-btn-ghost .wp-block-button__link:hover{background:var(--s2)}
 
 /* ---- hero ---- */
-.phv-hero{position:relative;padding:88px 0 84px;overflow:hidden}
+.phv-hero{position:relative;padding:clamp(44px,5vw,72px) 0;overflow:hidden}
 .phv-hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),
                    linear-gradient(90deg,var(--line) 1px,transparent 1px);
@@ -43,7 +44,7 @@ a{text-decoration:none}
   -webkit-mask-image:radial-gradient(120% 90% at 18% 0%,#000 10%,transparent 66%);
   mask-image:radial-gradient(120% 90% at 18% 0%,#000 10%,transparent 66%)}
 .phv-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:60px;align-items:center}
+  gap:clamp(32px,4vw,72px);align-items:center}
 /* The pill string is 73 chars in a 532px hero column. At 11.5px it needed
    ~546px and wrapped, orphaning "AI" on its own line. 11px (already used
    elsewhere in this sheet) fits on one line with ~8px spare; text-wrap:balance
@@ -55,8 +56,9 @@ a{text-decoration:none}
 .phv-pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .phv-h1{font-size:clamp(38px,4.9vw,60px);letter-spacing:-.035em;margin:24px 0 0}
 .phv-h1 em{font-style:normal;color:var(--fg3)}
-.phv-sub{margin-top:22px;font-size:18px;line-height:1.6;color:var(--fg2);max-width:26em}
+.phv-sub{margin-top:22px;font-size:18px;line-height:1.6;color:var(--fg2);max-width:36em}
 .phv-sub strong{color:var(--fg);font-weight:500}
+.phv-hero-grid .phv-sub,.phv-hero-grid .phv-intro{max-width:none}
 .phv-note{margin-top:18px;font-size:13.5px;color:var(--fg3)}
 
 /* ---- stepper ---- */
@@ -81,7 +83,7 @@ a{text-decoration:none}
 .phv-dots button[aria-current="true"]{background:var(--teal);width:20px;border-radius:99px}
 
 /* ---- sections ---- */
-.phv-sec{padding:88px 0;border-top:1px solid var(--line)}
+.phv-sec{padding:clamp(48px,5vw,72px) 0;border-top:1px solid var(--line)}
 .phv-kicker{font-family:var(--mono);font-size:11.5px;color:var(--teal);margin:0 0 14px}
 .phv-h2{font-size:clamp(27px,3.3vw,38px);margin:0}
 .phv-intro{margin-top:16px;font-size:17px;color:var(--fg2);max-width:32em}
@@ -130,14 +132,14 @@ a{text-decoration:none}
 .phv-more{display:inline-block;margin-top:26px;font-size:15px;color:var(--teal)}
 
 /* ---- about ---- */
-.phv-about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;
+.phv-about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:clamp(28px,3vw,56px);
   align-items:start}
 .phv-ph{background:var(--s1);border:1px dashed rgba(215,172,92,.34);border-radius:12px;
   padding:24px;font-size:15.5px;line-height:1.7;color:var(--fg2)}
 
 /* ---- subscribe band ---- */
 .phv-band{background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--line);
-  border-radius:18px;padding:54px 44px}
+  border-radius:18px;padding:54px 44px;margin-top:48px}
 .phv-band p{margin-top:14px;color:var(--fg2);max-width:28em}
 .phv-band .wp-block-jetpack-subscriptions{margin-top:28px;max-width:520px}
 .phv-band input[type="email"]{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);
@@ -155,7 +157,7 @@ a{text-decoration:none}
 .phv-foot a:hover{color:var(--fg)}
 
 /* ---- post / page reading ---- */
-.phv-article{padding:64px 0 88px;max-width:44em}
+.phv-article{padding:44px 0 72px;max-width:760px;margin-left:auto;margin-right:auto}
 .phv-article .wp-block-post-title{font-size:clamp(30px,4vw,46px);margin:0 0 18px}
 .phv-article .wp-block-post-date{font-family:var(--mono);font-size:12.5px;color:var(--gold)}
 .phv-article p{font-size:17.5px;line-height:1.75;color:#D7DEEA;margin:0 0 1.35em}
@@ -167,10 +169,9 @@ a{text-decoration:none}
 .phv-article ul,.phv-article ol{font-size:17px;line-height:1.75;color:#D7DEEA}
 
 @media (max-width:940px){
-  .phv-wrap{padding-left:22px;padding-right:22px}
   .phv-hero-grid,.phv-about,.phv-compare,.phv-three{grid-template-columns:1fr}
-  .phv-hero{padding:60px 0 56px}
-  .phv-sec{padding:62px 0}
+  .phv-hero{padding:40px 0 48px}
+  .phv-sec{padding:48px 0}
   .phv-band{padding:36px 24px}
   .phv-qq{font-size:22px}
   .phv-entry{flex-wrap:wrap;gap:10px;padding:16px 18px}
@@ -365,5 +366,17 @@ a{color:inherit}
 .signup button{font-family:var(--display);font-weight:500;font-size:15px;cursor:pointer;
   background:var(--gold);color:#14100A;border:0;border-radius:8px;padding:13px 26px}
 .signup button:hover{background:#e6bd6d}
+/* Homepage CTA shares its width between the message and the form.
+   The article subscription band retains its original stacked layout. */
+.phv-home-signup .phv-band{margin-top:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(28px,3vw,56px);row-gap:14px;align-items:center;padding:32px}
+.phv-home-signup .phv-band>*{min-width:0}
+.phv-home-signup .phv-band>h2{grid-column:1;grid-row:1}
+.phv-home-signup .phv-band>p:first-of-type{grid-column:1;grid-row:2;margin:0;max-width:none}
+.phv-home-signup .signup{grid-column:2;grid-row:1;margin:0}
+.phv-home-signup .phv-band>p:last-child{grid-column:2;grid-row:2;max-width:none}
+@media(max-width:940px){
+  .phv-home-signup .phv-band{grid-template-columns:1fr;padding:28px 24px;row-gap:16px}
+  .phv-home-signup .phv-band>h2,.phv-home-signup .phv-band>p:first-of-type,.phv-home-signup .phv-band>p:last-child,.phv-home-signup .signup{grid-column:1;grid-row:auto}
+}
 .pagehead{padding:72px 0 8px}
 @media(max-width:940px){.phv-nav{display:none}.entry .tag2{display:none}}

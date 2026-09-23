@@ -27,8 +27,8 @@ layout: default
       {% endif %}
     </section>
   </div>
-  <section class="project-details"><h2>Project description and engineering work</h2>{{ content }}</section>
-  {% if page.decisions.size > 0 %}<section class="project-details"><h2>Engineering decisions</h2>{% for decision in page.decisions %}<details class="engineering-decision"><summary>{{ decision.title | escape }}</summary><p>{{ decision.detail | escape }}</p></details>{% endfor %}</section>{% endif %}
+  <section class="project-details project-detail-row"><h2>Project description and engineering work</h2><div class="project-detail-body">{{ content }}</div></section>
+  {% if page.decisions.size > 0 %}<section class="project-details project-detail-row"><h2>Engineering decisions</h2><div class="project-detail-body">{% for decision in page.decisions %}<details class="engineering-decision"><summary>{{ decision.title | escape }}</summary><p>{{ decision.detail | escape }}</p></details>{% endfor %}</div></section>{% endif %}
   {% if page.related_writing.size > 0 %}<nav class="project-details" aria-label="Related writing">{% for article in page.related_writing %}<p><a href="{{ article.url | relative_url }}">Related writing: {{ article.title | escape }} →</a></p>{% endfor %}</nav>{% endif %}
   {% if page.demo_mode == 'synthetic' %}<aside class="demo-disclosure"><h2>About this demonstration</h2><p>All financial values and reporting periods are synthetic. This is deterministic local JavaScript, with no live SAP, LLM or production API connection. Demo results are not project outcomes. Platform counts describe team scope, not sole ownership.</p></aside>{% endif %}
 </div>

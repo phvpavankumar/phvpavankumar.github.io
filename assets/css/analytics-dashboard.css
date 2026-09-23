@@ -8,7 +8,7 @@ h1,h2,h3{font-family:var(--display)}.brand b{font-size:14px;line-height:1.2;disp
 
 }
 .analytics-demo .layout{min-height:0}
-.analytics-demo .workspace{margin:0 auto}
+.analytics-demo .workspace{margin:0 auto;max-width:none}
 .analytics-demo .panel-head p,.analytics-demo .hint,.analytics-demo .demo-banner,.analytics-demo .foot,.analytics-demo .source-line,.analytics-demo .source-line small,.analytics-demo .ask-label,.analytics-demo .change,.analytics-demo .dialog-note,.analytics-demo .trace-item p{font-size:12px}
 .analytics-demo button,.analytics-demo select{min-height:40px}
 .analytics-demo .rail nav{flex-wrap:wrap}
