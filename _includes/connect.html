@@ -9,6 +9,7 @@
   <form class="contact-form" action="https://formsubmit.co/phvpavankumar@gmail.com" method="post" accept-charset="UTF-8" aria-label="Send a message" aria-describedby="contact-privacy">
     <input type="hidden" name="_subject" value="Portfolio enquiry — Pavan Kumar PHV">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="{{ site.url }}{{ '/thank-you/' | relative_url }}">
     <input type="hidden" name="_url" value="{{ site.url }}{{ page.url | replace: '/index.html', '/' | relative_url }}">
     <div class="contact-honeypot" aria-hidden="true"><label for="contact-website">Leave this field empty</label><input id="contact-website" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
     <div class="contact-field">
