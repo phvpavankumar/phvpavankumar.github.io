@@ -1,56 +1,14 @@
 ---
 layout: default
 title: Projects
+description: Engineering projects with explicit personal contributions, platform context and verified active years.
 permalink: /projects/
 ---
-<div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px"><article class="phv-article"><h1 style="font-size:clamp(30px,4vw,44px);margin:48px 0 28px">Projects</h1>
-<p>Everything I've built, grouped by where I built it. Selected code and open tools will be published at <a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">github.com/phvpavankumar</a> soon.</p>
-
-<h2>Kearney · 2026 – present</h2>
-
-<h3>Agentic analytics platform for enterprise finance &amp; supply chain</h3>
-
-<p>An AI-powered analytics platform where executives ask business questions in plain language and receive governed KPI cards, charts, tables, narrative summaries and suggested follow-ups — alongside executive dashboards covering finance, commercial, operations, receivables and supply-chain performance. The platform spans 27 registered analytical tools and over 100 API endpoints across areas including product contribution and margin, cost-to-serve, quality cost, cash conversion cycle, AR/AP and payment behaviour, inventory and DIO, OEE, case fill and OTIF.</p>
-
-<p>My work: designing and enhancing analytical tools; LangGraph-based AI orchestration with intent classification and tool routing; SAP Datasphere/OData integration; establishing source-to-UI KPI lineage and reconciliation practice — tracing discrepancies through extraction, transformation, business mappings, AI routing and presentation; automated SAP reconciliation scripts, regression tests and fiscal-period controls; and production trace analysis with Langfuse. Stack: Python, FastAPI, LangGraph, React, PostgreSQL, Redis, Docker, Azure Kubernetes Service, Microsoft Entra.</p>
-
-<h3>Process intelligence from video</h3>
-
-<p>A three-service system that turns recorded business-process videos into structured outputs: step-by-step documentation, chapters, HTML guides, BPMN process diagrams, test cases, and a searchable knowledge repository. Uploads become asynchronous jobs claimed by AI workers through a database-driven control plane with statuses, claims and heartbeats — no separate queueing platform required.</p>
-
-<p>My work centred on two areas. First, test-case generation and delivery — backend/AI integration and the download APIs that expose generated artifacts. Second, the knowledge repository layer that turned the platform from "video in, document out" into "video in, reusable organisational knowledge out": auto-ingest of generated documentation, semantic chunking and embedding with pgvector, hybrid retrieval combining vector search with governed SQL, evidence merging and answer synthesis, task-scoped chat history, and production hardening — SQL parameterisation, ingest guardrails, failure metrics and runtime decoupling. Stack: Python, FastAPI, APScheduler, PostgreSQL + pgvector, Azure Blob, Nuxt 3/Vue 3.</p>
-
-<h2>Solum · 2024 – 2026</h2>
-
-<h3>Multi-camera retail shelf-vision system</h3>
-
-<p>Real-time product recognition and out-of-stock analytics across retail shelf environments, built on YOLOv7/YOLOv9 with TensorRT acceleration and LightGlue feature matching, with high-precision multi-camera calibration. Delivered sub-200&nbsp;ms response times and 15–20 FPS inference by refining sensor-driven session flows and GPU-optimised execution, with end-to-end CI/CD for model deployment.</p>
-
-<h3>RFID ML-serving platform</h3>
-
-<p>High-performance ML-serving APIs for real-time shelf mapping, built on Flask and Gunicorn and integrated with Azure Event Hubs and MongoDB. Engineered hot-reload capability so models update without downtime, plus monitoring, structured logging, automated scalability and fully containerised deployment.</p>
-
-<h3>LLM-powered log intelligence</h3>
-
-<p>A framework that transforms unstructured production logs into structured insight for root-cause analysis, combining fuzzy clustering, ReAct-based LangChain agents and locally hosted LLaMA models. Brought log investigation down from hours to seconds and streamlined over a thousand review cycles through SME automation.</p>
-
-<h2>Sony · 2023</h2>
-
-<h3>Edge AI on IMX500 smart cameras</h3>
-
-<p>Custom object-detection and segmentation models built and optimised for Sony's embedded devices, tuned for on-device speed and accuracy, with real-time detection deployed on IMX500 intelligent vision sensors. Transfer-learning workflows cut training time and integration effort substantially.</p>
-
-<h2>Ignitarium · 2021 – 2024</h2>
-
-<h3>Neural networks on microcontrollers</h3>
-
-<p>Led architectural refinement of the FastestDet object-detection network for ultra-lightweight deployment — a 35% accuracy improvement — and shipped real-time detection models on Renesas MCUs, where there is no cloud to fall back on. Built the surrounding model-development pipelines: optimisation, training, evaluation and deployment readiness.</p>
-
-<h3>RGB-D reconstruction and binocular vision</h3>
-
-<p>3D reconstruction and stereo-vision pipelines enabling precise alignment and robust defect detection for industrial inspection, spanning image registration, semantic segmentation and 3D object reconstruction.</p>
-
-<h3>Domain-specific LLM Q&amp;A and GenAI systems</h3>
-
-<p>Domain-specific question-answering systems and custom neural networks accelerating early defect detection across railway, telecom and solar industries. Alongside these, end-to-end GenAI builds including Stable Diffusion–based text-to-image models, LLM-powered analytics pipelines, and vector-database retrieval systems using LangChain with custom prompt-engineering frameworks — plus fine-tuning work across Falcon, LLaMA-2 and BERT-family models with PEFT.</p>
-</article></div>
+<div class="phv-wrap content-page">
+<p class="phv-kicker">Selected engineering work</p><h1>Projects</h1>
+<p>Everything I've built, with project dates shown where confirmed. Selected code and open tools will be published at <a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">github.com/phvpavankumar</a> soon.</p>
+{% include year-navigation.html %}{% include content-catalog.html %}
+{% if dated_projects.size > 0 %}<section><h2>Projects with verified years</h2><div class="content-grid">{% for item in dated_projects %}{% include content-card.html %}{% endfor %}</div></section>{% endif %}
+{% if undated_projects.size > 0 %}<section><h2>Undated / awaiting review</h2><p>Existing published descriptions are preserved. Project-specific dates are awaiting confirmation.</p><div class="content-grid">{% for item in undated_projects %}{% include content-card.html %}{% endfor %}</div></section>{% endif %}
+<p>{{ ordered_projects.size }} projects · Each project has one canonical record.</p>
+</div>

@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="phv-wrap content-page" data-content-filter>
+  <p class="phv-kicker">Year archive</p><h1>{{ page.archive_year }}</h1>
+  <p>Projects active in this year, and writing originally published in this year.</p>
+  {% include year-navigation.html %}
+  {% include kind-filter.html %}
+  {% include archive-items.html %}
+</div>

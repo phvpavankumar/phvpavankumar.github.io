@@ -1,0 +1,7 @@
+<article class="content-card" data-content-item data-kind="{{ item.kind | escape }}" data-years="{% if item.kind == 'project' %}{{ item.years_active | join: ',' }}{% else %}{{ item.date | date: '%Y' }}{% endif %}">
+  <p class="phv-kicker">{% if item.kind == 'contribution' %}External contribution{% else %}{{ item.kind | capitalize }}{% endif %}{% if item.organization %} · {{ item.organization | escape }}{% endif %}</p>
+  <h3><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a></h3>
+  {% include item-period.html %}
+  <p>{{ item.summary | escape }}</p>
+  {% if item.kind == 'contribution' %}<p class="credit">{{ item.contribution_role | escape }} · {{ item.publication | escape }}</p>{% elsif item.kind == 'project' %}<p class="credit">My role: {{ item.role | escape }}</p>{% else %}<p class="credit">By {{ item.authorship | escape }}</p>{% endif %}
+</article>

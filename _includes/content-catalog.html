@@ -1,0 +1,4 @@
+{% assign all_items = site.projects | concat: site.posts | concat: site.contributions | where: 'visibility', 'published' %}
+{% assign dated_projects = site.projects | where: 'date_status', 'verified' | sort: 'sort_year' | reverse %}
+{% assign undated_projects = site.projects | where: 'date_status', 'unconfirmed' | sort: 'title' %}
+{% assign ordered_projects = dated_projects | concat: undated_projects %}

@@ -1,0 +1,16 @@
+{% include content-catalog.html %}
+{% assign total = 0 %}
+<div class="content-grid" data-content-list>
+{% for item in all_items %}
+  {% assign show_item = false %}
+  {% if item.kind == 'project' %}
+    {% if item.years_active contains page.archive_year %}{% assign show_item = true %}{% endif %}
+  {% else %}
+    {% assign publication_year = item.date | date: '%Y' | plus: 0 %}
+    {% if publication_year == page.archive_year %}{% assign show_item = true %}{% endif %}
+  {% endif %}
+  {% if show_item %}{% assign total = total | plus: 1 %}{% include content-card.html %}{% endif %}
+{% endfor %}
+</div>
+<p class="filter-count" role="status" data-count>{{ total }} items</p>
+<p hidden data-empty>No items match this kind.</p>

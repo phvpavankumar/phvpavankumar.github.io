@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="phv-wrap content-page">
+  <nav class="content-nav" aria-label="Content"><a href="{{ '/projects/' | relative_url }}">All projects</a><a href="{{ '/archive/' | relative_url }}">Browse by year</a></nav>
+  {% if page.visibility != 'published' %}<p class="review-banner">Local review draft — not included in the publication build.</p>{% endif %}
+  <div class="project-split">
+    <section class="project-narrative" aria-labelledby="project-title">
+      <p class="phv-kicker">Selected engineering work{% if page.organization %} · {{ page.organization | escape }}{% endif %}</p>
+      <h1 id="project-title">{{ page.title | escape }}</h1>
+      {% assign item = page %}{% include item-period.html %}
+      <p class="project-lead">{{ page.summary | escape }}</p>
+      <h2>My contribution</h2>
+      <p class="role-label">{{ page.role | escape }}</p>
+      <p>{{ page.contribution | escape }}</p>
+      <h2>Team / platform context</h2>
+      <p>{{ page.platform_context | escape }}</p>
+      {% if page.constraints.size > 0 %}<details class="project-constraints"><summary>Constraints</summary><ul>{% for constraint in page.constraints %}<li>{{ constraint | escape }}</li>{% endfor %}</ul></details>{% endif %}
+      {% if page.tools.size > 0 %}<ul class="content-tags" aria-label="Tools">{% for tool in page.tools %}<li>{{ tool | escape }}</li>{% endfor %}</ul>{% endif %}
+      {% include project-links.html %}
+    </section>
+    <section aria-label="Project visualization">
+      {% if page.visualization == 'enterprise-analytics' %}
+        {% include enterprise-analytics-visual.html %}
+      {% else %}
+        <div class="visual-placeholder"><p class="phv-kicker">Engineering record</p><h2>From implementation to production</h2><p>The project description below records the supplied engineering work. A project-specific visualization has not been added.</p></div>
+      {% endif %}
+    </section>
+  </div>
+  <section class="project-details"><h2>Project description and engineering work</h2>{{ content }}</section>
+  {% if page.decisions.size > 0 %}<section class="project-details"><h2>Engineering decisions</h2>{% for decision in page.decisions %}<details class="engineering-decision"><summary>{{ decision.title | escape }}</summary><p>{{ decision.detail | escape }}</p></details>{% endfor %}</section>{% endif %}
+  {% if page.related_writing.size > 0 %}<nav class="project-details" aria-label="Related writing">{% for article in page.related_writing %}<p><a href="{{ article.url | relative_url }}">Related writing: {{ article.title | escape }} →</a></p>{% endfor %}</nav>{% endif %}
+  {% if page.demo_mode == 'synthetic' %}<aside class="demo-disclosure"><h2>About this demonstration</h2><p>All financial values and reporting periods are synthetic. This is deterministic local JavaScript, with no live SAP, LLM or production API connection. Demo results are not project outcomes. Platform counts describe team scope, not sole ownership.</p></aside>{% endif %}
+</div>

@@ -1,0 +1,8 @@
+<p class="item-period">
+{% if item.kind == 'project' %}
+  {% if item.years_active.size > 0 %}Verified active years: {{ item.years_active | join: ', ' }}{% else %}Undated / awaiting review{% endif %}
+  {% if item.start_date %} · {{ item.start_date | date: '%-d %B %Y' }}{% endif %}{% if item.end_date %} – {{ item.end_date | date: '%-d %B %Y' }}{% endif %}{% if item.ongoing == true %} · Ongoing{% endif %}
+{% else %}
+  <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%-d %B %Y' }}</time>
+{% endif %}
+</p>

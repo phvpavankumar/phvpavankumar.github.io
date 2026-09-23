@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="phv-wrap content-page project-details">
+  <p><a href="{{ '/contributions/' | relative_url }}">All external contributions</a></p>
+  <p class="phv-kicker">External contribution · {{ page.publication | escape }}</p>
+  <h1>{{ page.title | escape }}</h1>
+  {% assign item = page %}{% include item-period.html %}
+  <p>My credited role: <strong>{{ page.contribution_role | escape }}</strong></p>
+  {{ content }}
+  <p><a class="btn" href="{{ page.original_url | escape }}" rel="noopener">Read the original publication ↗</a></p>
+</article>

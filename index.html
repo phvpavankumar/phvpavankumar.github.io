@@ -64,34 +64,7 @@ layout: default
       <p class="phv-kicker">Selected work</p>
       <h2 class="phv-h2">Systems that run in production</h2>
     </div>
-    <div class="phv-three" style="grid-template-columns:repeat(2,minmax(0,1fr))">
-      <div class="phv-card">
-        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">ENTERPRISE · AGENTIC AI</p>
-        <h3>Agentic finance &amp; supply-chain analytics</h3>
-        <p>Executives ask questions in plain language; the platform answers with governed KPIs,
-          charts and narratives — 27 analytical tools, 129 API endpoints, LangGraph orchestration
-          over SAP data, with source-to-dashboard KPI lineage and reconciliation.</p>
-      </div>
-      <div class="phv-card">
-        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">KNOWLEDGE · RETRIEVAL</p>
-        <h3>Process intelligence from video</h3>
-        <p>Business-process recordings become documentation, BPMN diagrams, test cases and a
-          searchable knowledge base — semantic embedding with pgvector, hybrid vector + governed
-          SQL retrieval, async job orchestration.</p>
-      </div>
-      <div class="phv-card">
-        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">COMPUTER VISION · REAL TIME</p>
-        <h3>Retail shelf vision at &lt;200 ms</h3>
-        <p>Multi-camera product recognition on YOLOv7/v9 with TensorRT — sub-200 ms responses at
-          15–20 FPS, hot-reload model serving, end-to-end CI/CD.</p>
-      </div>
-      <div class="phv-card">
-        <p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">EDGE AI · OPTIMISATION</p>
-        <h3>Neural networks on microcontrollers</h3>
-        <p>FastestDet architecture refined for a 35% accuracy gain; real-time detection deployed
-          on Renesas MCUs and Sony IMX500 smart cameras — AI where there is no cloud to fall back on.</p>
-      </div>
-    </div>
+    {% include project-featured.html %}
     <p class="phv-more" style="margin-top:26px"><a href="{{ '/projects/' | relative_url }}" style="text-decoration:none">All projects →</a></p>
   </div>
 </div>

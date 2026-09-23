@@ -1,0 +1,14 @@
+---
+layout: default
+title: External Contributions
+description: External publications and contributions with verified dates, original links and credited roles.
+permalink: /contributions/
+---
+<div class="phv-wrap content-page"><p class="phv-kicker">Beyond this site</p><h1>External contributions</h1>
+<p>Original publications, with my credited contribution made explicit.</p>
+{% assign contributions = site.contributions | where: 'visibility', 'published' | sort: 'date' | reverse %}
+{% if contributions.size > 0 %}
+{% assign groups = contributions | group_by_exp: 'item', "item.date | date: '%Y'" %}
+{% for group in groups %}<section><h2>{{ group.name }}</h2><div class="content-grid">{% for item in group.items %}{% include content-card.html %}{% endfor %}</div></section>{% endfor %}
+{% else %}<div class="empty-state"><h2>No external contributions listed yet</h2><p>Entries will be added with a confirmed original URL, publication date and credited role.</p></div>{% endif %}
+<p><a href="{{ '/archive/' | relative_url }}">Browse the year archive →</a></p></div>

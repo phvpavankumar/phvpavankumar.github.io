@@ -1,4 +1,4 @@
-# pavankumarphv.com — GitHub Pages site
+# phvpavankumar.github.io — GitHub Pages site
 
 Jekyll site, hosted free on GitHub Pages.
 

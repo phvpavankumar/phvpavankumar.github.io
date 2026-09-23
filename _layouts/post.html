@@ -3,8 +3,9 @@ layout: default
 ---
 <div class="phv-wrap" style="max-width:1180px;margin:0 auto;padding:0 28px">
   <article class="phv-article">
-    <p class="wp-block-post-date" style="font-family:var(--mono);font-size:12.5px;color:var(--gold);margin:0 0 14px">{{ page.date | date: "%-d %B %Y" }} · WK {{ page.week }}</p>
+    <p class="wp-block-post-date" style="font-family:var(--mono);font-size:12.5px;color:var(--gold);margin:0 0 14px">{{ page.date | date: "%-d %B %Y" }}{% if page.week %} · WK {{ page.week }}{% endif %}</p>
     <h1 style="font-size:clamp(30px,4vw,46px);margin:0 0 12px">{{ page.title }}</h1>
+    {% if page.authorship %}<p class="credit">By {{ page.authorship | escape }}</p>{% endif %}
     <p class="phv-kicker" style="margin:0 0 34px">{{ page.category }}</p>
     {{ content }}
     <div class="phv-support">

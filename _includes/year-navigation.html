@@ -1,0 +1,4 @@
+<nav class="content-nav" aria-label="Year archives">
+<a href="{{ '/archive/' | relative_url }}"{% unless page.archive_year %} aria-current="page"{% endunless %}>All years</a>
+{% for year in site.data.archive_years %}<a href="{{ '/archive/' | append: year | append: '/' | relative_url }}"{% if year == page.archive_year %} aria-current="page"{% endif %}>{{ year }}</a>{% endfor %}
+</nav>

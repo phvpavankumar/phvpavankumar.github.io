@@ -1,0 +1,16 @@
+---
+layout: default
+title: Year Archive
+description: Projects, writing and external contributions grouped by verified year, each linking to one canonical record.
+permalink: /archive/
+---
+<div class="phv-wrap content-page"><p class="phv-kicker">A body of work</p><h1>Browse by year</h1>
+<p>Project years reflect confirmed activity. Writing uses its original publication date.</p>
+{% include year-navigation.html %}{% include content-catalog.html %}
+{% for year in site.data.archive_years %}
+{% assign year_count = 0 %}
+{% for item in all_items %}{% if item.kind == 'project' %}{% if item.years_active contains year %}{% assign year_count = year_count | plus: 1 %}{% endif %}{% else %}{% assign item_year = item.date | date: '%Y' | plus: 0 %}{% if item_year == year %}{% assign year_count = year_count | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+<a class="year-card" href="{{ '/archive/' | append: year | append: '/' | relative_url }}"><span>{{ year }}</span><span>{{ year_count }} items →</span></a>
+{% endfor %}
+{% if undated_projects.size > 0 %}<section><h2>Undated / awaiting review</h2><p>Existing project descriptions are retained. Their dates are unconfirmed, so they are not assigned to year archives.</p><div class="content-grid">{% for item in undated_projects %}{% include content-card.html %}{% endfor %}</div></section>{% endif %}
+</div>

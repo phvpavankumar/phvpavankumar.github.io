@@ -4,6 +4,29 @@ url: "https://phvpavankumar.github.io"
 permalink: /weekly/:title/
 plugins:
   - jekyll-feed
+collections:
+  projects:
+    output: true
+  contributions:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: contributions
+    values:
+      layout: contribution
 exclude:
   - README.md
   - post-template.md
+  - CLAUDE.md
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - CONTRIBUTING.md
+  - scripts
+  - content-templates
