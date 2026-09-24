@@ -1,4 +1,19 @@
-{% assign all_items = site.projects | concat: site.posts | concat: site.contributions | where: 'visibility', 'published' %}
-{% assign dated_projects = site.projects | where: 'date_status', 'verified' | sort: 'sort_year' | reverse %}
+{% assign verified_projects = site.projects | where: 'date_status', 'verified' | sort: 'title' %}
+{% assign dated_projects = verified_projects | slice: 0, 0 %}
+{% assign project_years = verified_projects | map: 'sort_year' | uniq | sort | reverse %}
+{% for project_year in project_years %}
+  {% assign year_projects = verified_projects | where: 'sort_year', project_year %}
+  {% for company in site.data.project_company_order %}
+    {% assign company_projects = year_projects | where: 'organization', company %}
+    {% assign dated_projects = dated_projects | concat: company_projects %}
+  {% endfor %}
+  {% for project in year_projects %}
+    {% unless site.data.project_company_order contains project.organization %}
+      {% assign other_project = year_projects | slice: forloop.index0, 1 %}
+      {% assign dated_projects = dated_projects | concat: other_project %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
 {% assign undated_projects = site.projects | where: 'date_status', 'unconfirmed' | sort: 'title' %}
 {% assign ordered_projects = dated_projects | concat: undated_projects %}
+{% assign all_items = ordered_projects | concat: site.posts | concat: site.contributions | where: 'visibility', 'published' %}

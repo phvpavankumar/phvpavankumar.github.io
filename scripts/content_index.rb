@@ -49,7 +49,7 @@ module ContentIndex
         dates.compact.each { |d| raise "#{id}: date is outside verified years" unless years.include?(d.year) }
         raise "#{id}: ongoing must be true, false or null" unless [true, false, nil].include?(item['ongoing'])
         raise "#{id}: ongoing project cannot have an end date" if item['ongoing'] && item['end_date']
-        raise "#{id}: unapproved visualization" unless [nil, 'none', 'enterprise-analytics'].include?(item['visualization'])
+        raise "#{id}: unapproved visualization" unless [nil, 'none', 'enterprise-analytics', 'process-intelligence'].include?(item['visualization'])
         if item['source_url']
           raise "#{id}: source link has not been verified" unless item['source_verified'] == true && item['source_url'].start_with?('https://github.com/')
         end

@@ -1,4 +1,4 @@
 <div class="project-links">
-{% if page.demo_url %}<a class="btn btn-gold" href="{{ page.demo_url | relative_url }}">Open interactive prototype ↗</a>{% endif %}
+{% if page.demo_url %}<a class="btn btn-gold" href="{{ page.demo_url | relative_url }}">{{ page.demo_label | default: 'Open interactive prototype' | escape }} ↗</a>{% endif %}
 {% if page.source_verified and page.source_url %}<a href="{{ page.source_url | escape }}" rel="noopener">Prototype source on GitHub ↗</a>{% elsif page.demo_url %}<span>Source pending publication</span>{% endif %}
 </div>

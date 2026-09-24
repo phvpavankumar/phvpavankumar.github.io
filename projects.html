@@ -4,11 +4,27 @@ title: Projects
 description: Engineering projects with explicit personal contributions, platform context and verified active years.
 permalink: /projects/
 ---
-<div class="phv-wrap content-page">
+<div class="phv-wrap content-page projects-page" data-content-filter>
 <p class="phv-kicker">Selected engineering work</p><h1>Projects</h1>
 <p>Everything I've built, with project dates shown where confirmed. Selected code and open tools will be published at <a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">github.com/phvpavankumar</a> soon.</p>
-{% include year-navigation.html %}{% include content-catalog.html %}
-{% if dated_projects.size > 0 %}<section><h2>Projects with verified years</h2><div class="content-grid">{% for item in dated_projects %}{% include content-card.html %}{% endfor %}</div></section>{% endif %}
-{% if undated_projects.size > 0 %}<section><h2>Undated / awaiting review</h2><p>Existing published descriptions are preserved. Project-specific dates are awaiting confirmation.</p><div class="content-grid">{% for item in undated_projects %}{% include content-card.html %}{% endfor %}</div></section>{% endif %}
-<p>{{ ordered_projects.size }} projects · Each project has one canonical record.</p>
+{% include content-catalog.html %}
+<div class="project-toolbar">
+  <div class="filter-controls" hidden data-filter-controls>
+    <label for="project-year">Year</label>
+    <select id="project-year" data-year-filter aria-controls="project-list">
+      <option value="all">All years ({{ ordered_projects.size }})</option>
+      {% for year in site.data.archive_years %}
+        {% assign year_count = 0 %}{% for item in dated_projects %}{% if item.years_active contains year %}{% assign year_count = year_count | plus: 1 %}{% endif %}{% endfor %}
+        {% if year_count > 0 %}<option value="{{ year }}">{{ year }} ({{ year_count }})</option>{% endif %}
+      {% endfor %}
+    </select>
+  </div>
+  <p class="filter-count" role="status" aria-atomic="true" data-count>{{ ordered_projects.size }} projects</p>
+</div>
+<noscript><p>All projects are shown below. <a href="{{ '/archive/' | relative_url }}">Browse the year archives →</a></p></noscript>
+<div class="content-grid" id="project-list" data-content-list>
+  {% for item in ordered_projects %}{% include content-card.html %}{% endfor %}
+</div>
+<p hidden data-empty>No projects match this year.</p>
+<p class="project-archive-link"><a href="{{ '/archive/' | relative_url }}">Browse projects and writing by year →</a></p>
 </div>

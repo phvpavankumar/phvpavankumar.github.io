@@ -7,15 +7,15 @@ summary: "High-performance ML-serving APIs for real-time shelf mapping, built on
 permalink: /projects/rfid-model-serving/
 visibility: published
 legacy_published: true
-date_status: unconfirmed
-sort_year: 0
+date_status: verified
+sort_year: 2025
 start_date: null
 end_date: null
 ongoing: null
-years_active: []
+years_active: [2025]
 organization: SOLUM
 role: AI / ML systems engineer
-contribution: "Engineering contributions are described below; project-specific dates remain under review."
+contribution: "Engineering contributions are described below."
 platform_context: "The description distinguishes system capabilities from personal contributions where the supplied evidence permits."
 tools: []
 tags: ["Applied AI"]

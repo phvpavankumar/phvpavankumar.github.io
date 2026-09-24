@@ -1,0 +1,144 @@
+---
+layout: default
+title: Aurevia — illustrative recording workspace
+permalink: /demos/aurevia/
+description: Explore fictional recording outputs, chapters, workflow downloads and local session Q&A. No live AI processing.
+aurevia_demo: true
+---
+<div class="phv-wrap content-page aurevia-demo">
+<nav class="content-nav" aria-label="Demo navigation"><a href="{{ '/projects/process-intelligence/' | relative_url }}">← Project and my contribution</a></nav>
+<noscript><p class="demo-info">JavaScript is disabled. The fictional guide below remains readable; local recordings, downloads and session conversations require JavaScript.</p></noscript>
+<div class="toolbar">
+<div>
+<h1>Aurevia — recording to knowledge</h1>
+<p class="intro">An illustrative workspace using fictional content. No live AI processing.</p>
+</div>
+<div class="sessions">
+<label for="sessions">SESSION</label>
+<select id="sessions" aria-label="Switch session" disabled>
+<option>Loading sessions…</option>
+</select>
+<button class="btn" id="newSession" disabled>New session</button>
+</div>
+</div>
+<div class="error" id="error" role="alert" hidden>
+</div>
+<div class="grid">
+<aside class="left">
+<section class="card">
+<div class="card-head">
+<h2>
+<span class="number">01</span>Your recording</h2>
+</div>
+<div class="card-body">
+<label class="dropzone" id="dropzone" style="display:block">
+<input type="file" id="file" accept=".mp4,.mov,.webm,.mp3,.wav" aria-label="Upload a recording" disabled>
+<span class="upload-icon">↥</span>
+<strong>Drop your recording here</strong>
+<p>or click to choose a file</p>
+<p class="types">MP4, MOV, WebM, MP3, WAV · up to 25 MB</p>
+</label>
+<div class="or">or explore first</div>
+<button class="btn sample-btn" id="sample" disabled>
+<span>Use fictional sample</span>
+<span>→</span>
+</button>
+<div id="recording">
+</div>
+<button class="btn primary generate" id="generate" disabled>Generate demo output</button>
+<div id="progress" class="progress" hidden>
+<span>
+</span>
+</div>
+<p id="saveStatus" class="hint" role="status">Loading your saved workspace…</p>
+<div class="demo-info">Illustrative demo only. Every generated output uses the same fictional invoice walkthrough, not your recording. Files and conversations stay in this browser; nothing is uploaded to a server. Use non-confidential sample files only.</div>
+</div>
+</section>
+<div class="note-card">
+<button class="btn" id="clearSessions" type="button">Clear saved sessions</button>
+<h3>Local session history</h3>
+<div class="benefit">
+<b>01</b>
+<span>A workflow you can download</span>
+</div>
+<div class="benefit">
+<b>02</b>
+<span>Tables in a real Excel file</span>
+</div>
+<div class="benefit">
+<b>03</b>
+<span>Topics organized into chapters</span>
+</div>
+<p>Return to earlier recordings, outputs, and conversations using the session selector. Use the same browser and website. Clearing browser data removes saved sessions.</p>
+</div>
+</aside>
+<div class="right">
+<section class="card">
+<div class="card-head">
+<h2>
+<span class="number">02</span>Organised outputs</h2>
+<span class="status empty" id="outputStatus">Waiting for a recording</span>
+</div>
+<div class="document-toolbar" id="documentToolbar" hidden>
+<span>Sample guide · 3 chapters</span>
+<button class="btn" id="guideDownload">↓ Download guide</button>
+</div>
+<div class="document" id="document" role="region" aria-label="Fictional process guide" tabindex="0">
+<div class="document-inner">
+<p class="doc-label">FICTIONAL SAMPLE · NO LIVE AI</p>
+<h2>Invoice approval</h2>
+<p>Review an invoice, match it to the purchase order, collect approval, and schedule payment.</p>
+<section class="chapter">
+<h3>1. Capture and validate</h3>
+<p>The accounts payable analyst records the supplier, invoice number, amount, currency, and due date. Check the supplier and invoice number against existing records. Place duplicates on hold so they cannot be paid twice.</p>
+</section>
+<section class="chapter">
+<h3>2. Match and approve</h3>
+<p>Match invoice lines to the purchase order and goods receipt. Return price or quantity mismatches to the requester. Once matched, invoices up to and including $5,000 go to the department manager. Amounts above $5,000 go to the finance controller.</p>
+</section>
+<section class="chapter">
+<h3>3. Schedule and record</h3>
+<p>The payments specialist schedules payment only after approval is recorded. Use the invoice due date, save approval and payment references, and mark the invoice as scheduled. Rejected invoices return to the analyst with a reason.</p>
+</section>
+</div>
+</div>
+</section>
+<section class="card">
+<div class="card-head">
+<div class="helper-head">
+<span class="spark">✧</span>
+<div>
+<h2>Ask your helper</h2>
+<p>Previous conversations stay with each session.</p>
+</div>
+</div>
+<label class="sr" for="scope">Search scope</label>
+<select id="scope" class="scope">
+<option value="current">This session</option>
+<option value="all">All saved sessions</option>
+</select>
+</div>
+<div class="chat-body">
+<div id="chatlog" class="chatlog" role="log" aria-label="Session conversation" aria-live="polite" tabindex="0">
+</div>
+<div class="suggestions">
+<button data-question="Who approves invoices over $5,000?">Who approves it?</button>
+<button data-question="What happens with a duplicate invoice?">What if it is a duplicate?</button>
+<button data-question="Summarize the process steps">Summarize the steps</button>
+</div>
+<form id="ask" class="ask">
+<label class="sr" for="question">Your question</label>
+<input id="question" placeholder="Ask about the fictional sample…" maxlength="1000" required disabled>
+<button id="send" aria-label="Send question" disabled>↑</button>
+</form>
+<div class="chat-foot">
+<span>Keyword-matched sample answers · no live AI</span>
+<span id="chatSaved">Chat stays with this session</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div id="toast" class="toast" role="status" hidden>
+</div>
+</div>

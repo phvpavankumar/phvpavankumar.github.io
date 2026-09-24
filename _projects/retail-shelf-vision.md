@@ -11,15 +11,15 @@ summary: "Multi-camera product recognition on YOLOv7/v9 with TensorRT — sub-20
 permalink: /projects/retail-shelf-vision/
 visibility: published
 legacy_published: true
-date_status: unconfirmed
-sort_year: 0
+date_status: verified
+sort_year: 2026
 start_date: null
 end_date: null
 ongoing: null
-years_active: []
+years_active: [2024, 2025, 2026]
 organization: SOLUM
 role: AI / ML systems engineer
-contribution: "Engineering contributions are described below; project-specific dates remain under review."
+contribution: "Engineering contributions are described below."
 platform_context: "The description distinguishes system capabilities from personal contributions where the supplied evidence permits."
 tools: []
 tags: ["Applied AI"]

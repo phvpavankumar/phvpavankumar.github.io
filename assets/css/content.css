@@ -42,6 +42,13 @@
 .filter-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:25px 0}
 .filter-controls select{background:var(--s2);color:var(--fg);border:1px solid var(--line2);border-radius:8px;padding:10px 14px;font:inherit}
 .filter-count{font-family:var(--mono);font-size:13px}
+.project-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:30px 0 20px;padding:18px 0;border-block:1px solid var(--line2)}
+.project-toolbar .filter-controls,.project-toolbar .filter-count{margin:0}
+.project-toolbar label{font-family:var(--mono);font-size:13px;color:var(--gold)}
+.project-toolbar select{min-width:190px;min-height:44px;cursor:pointer;color-scheme:dark}
+.project-toolbar select:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+.projects-page .content-grid{margin-top:0}
+.project-archive-link{font-size:14px;margin-top:28px}
 .review-banner{border:1px solid var(--gold);padding:12px;border-radius:8px}
 .project-constraints{color:var(--fg2);font-size:14px}
 .project-constraints summary,.engineering-decision summary{cursor:pointer;color:var(--gold);padding:12px 0}
