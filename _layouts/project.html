@@ -6,7 +6,7 @@ layout: default
   {% if page.visibility != 'published' %}<p class="review-banner">Local review draft — not included in the publication build.</p>{% endif %}
   <div class="project-split">
     <section class="project-narrative" aria-labelledby="project-title">
-      <p class="phv-kicker">Selected engineering work{% if page.organization %} · {{ page.organization | escape }}{% endif %}</p>
+      <p class="phv-kicker">Selected engineering work</p>
       <h1 id="project-title">{{ page.title | escape }}</h1>
       {% assign item = page %}{% include item-period.html %}
       <p class="project-lead">{{ page.summary | escape }}</p>

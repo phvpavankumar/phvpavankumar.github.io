@@ -56,6 +56,14 @@
 .phv-head .phv-wrap{min-width:0}
 .phv-head .phv-mark{flex-shrink:0}
 .phv-head .btn{flex-shrink:0}
+.phv-head .site-header-inner{gap:24px;min-height:64px}
+.header-actions{display:flex;align-items:center;gap:18px;margin-left:auto;flex-shrink:0}
+.resume-download{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:4px;font-size:14px;color:var(--teal);text-decoration:none;white-space:nowrap}
+.resume-download:hover{text-decoration:underline;text-underline-offset:5px}
+.resume-download:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px}
+.resume-download-short{display:none}
+@media(max-width:1100px){.phv-head .site-header-inner{gap:16px}.phv-nav{gap:16px}.header-actions{gap:12px}}
+@media(max-width:600px){.phv-head .site-header-inner{gap:10px}.header-actions{gap:10px}.resume-download-long{display:none}.resume-download-short{display:inline}.header-actions .resume-download{font-size:13px}}
 .phv-hero-grid>*{min-width:0}
 .phv-three.phv-work-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,max(26rem,calc((100% - 60px)/4))),1fr));gap:20px}
 .phv-step-top{flex-wrap:wrap}
@@ -63,6 +71,35 @@
 .profile-page{max-width:none}
 .profile-title{font-size:clamp(34px,4vw,52px);margin:0 0 22px}
 .profile-page>p{margin-bottom:36px}
+.experience-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.experience-heading h1{margin:12px 0 16px}
+.experience-heading .phv-kicker{margin:0;color:var(--teal)}
+.experience-intro{font-size:18px;line-height:1.75;margin:8px 0 38px}
+.career-timeline{list-style:none;padding:0 0 0 32px;margin:0 0 44px 8px;border-left:1px solid var(--line2)}
+.career-item{position:relative;display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,3fr);gap:clamp(24px,3vw,48px);padding:32px 0;border-bottom:1px solid var(--line2)}
+.career-item:first-child{padding-top:10px}
+.career-item:last-child{border-bottom:0}
+.career-item::before{content:"";position:absolute;left:-40px;top:38px;width:13px;height:13px;border:2px solid var(--teal);border-radius:50%;background:var(--bg)}
+.career-item:first-child::before{top:16px}
+.career-item>*{min-width:0}
+.career-heading h2{margin:8px 0;font-size:27px;color:var(--fg)}
+.career-heading p{margin:0 0 10px}
+.experience-page .career-date{font:13px/1.6 var(--mono);color:var(--teal);margin:0 0 8px}
+.career-role{font-size:16px;line-height:1.65}
+.career-location,.career-earlier{font-size:13px;line-height:1.65}
+.career-earlier{padding-top:12px;border-top:1px solid var(--line2)}
+.career-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px}
+.career-groups h3,.career-engagement h3{font-size:18px;line-height:1.5;color:var(--gold);margin:0 0 12px}
+.career-body ul{padding-left:20px;margin:0;color:var(--fg2);font-size:16px;line-height:1.8}
+.career-body li+li{margin-top:8px}
+.career-body>p{margin-top:0;line-height:1.8}
+.career-body .career-note{font-size:13px;line-height:1.7;margin:24px 0 0}
+.career-engagement{border-top:1px solid var(--line2);margin-top:28px;padding-top:24px}
+.experience-education,.experience-code{border-top:1px solid var(--line2);padding-top:24px;margin-top:24px}
+.experience-education h2,.experience-code h2{margin:0 0 24px}
+.experience-education p{line-height:1.75;margin:0}
+@media(max-width:1100px){.career-groups{grid-template-columns:1fr;gap:24px}}
+@media(max-width:700px){.career-item{grid-template-columns:1fr;gap:20px;padding:28px 0}.career-timeline{padding-left:24px;margin-left:7px}.career-item::before{left:-32px;top:34px}.experience-intro{font-size:16px}.career-heading h2{font-size:25px}}
 .profile-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:clamp(28px,3vw,56px);padding:34px 0;border-top:1px solid var(--line2)}
 .profile-row>*{min-width:0}
 .profile-row-heading h2{font-size:clamp(22px,1.7vw,28px);line-height:1.3;margin:0 0 16px}

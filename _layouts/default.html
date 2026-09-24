@@ -19,7 +19,7 @@
 </head>
 <body>
 <header class="phv-head">
-  <div class="phv-wrap" style="display:flex;align-items:center;gap:24px;min-height:64px">
+  <div class="phv-wrap site-header-inner">
     <a class="phv-mark" href="{{ '/' | relative_url }}" style="text-decoration:none">Pavan Kumar PHV</a>
     <nav class="phv-nav" style="margin-right:auto">
       <a href="{{ '/projects/' | relative_url }}">Work</a>
@@ -27,7 +27,10 @@
       <a href="{{ '/weekly/' | relative_url }}">Finance × AI Weekly</a>
       <a href="{{ '/about/' | relative_url }}">About</a>
     </nav>
-    <a class="btn" href="{{ '/#connect' | relative_url }}">Connect</a>
+    <div class="header-actions">
+      <a class="resume-download" href="{{ '/assets/downloads/pavan-kumar-phv-resume.pdf' | relative_url }}" download="Pavan-Kumar-PHV-Resume.pdf" aria-label="Download résumé (PDF)"><span class="resume-download-long">Download résumé</span><span class="resume-download-short" aria-hidden="true">Résumé</span><span aria-hidden="true"> ↓</span></a>
+      <a class="btn" href="{{ '/#connect' | relative_url }}">Connect</a>
+    </div>
   </div>
 </header>
 <main id="main-content">

@@ -3,80 +3,87 @@ layout: default
 title: Experience
 permalink: /experience/
 ---
-<div class="phv-wrap"><article class="phv-article profile-page"><h1 class="profile-title">Experience</h1>
-<p>Five years building AI systems that run in production — from neural networks on microcontrollers to agentic AI platforms for enterprise finance. Role by role, below.</p>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Kearney — Senior AI Consultant, Analytics &amp; Information Management</h2>
-    <p><em>Bangalore · 2026 – present</em></p>
+<div class="phv-wrap content-page experience-page">
+  <header class="experience-heading">
+    <div><p class="phv-kicker">Professional experience</p><h1>Experience</h1></div>
+    <a class="resume-download" href="{{ '/assets/downloads/pavan-kumar-phv-resume.pdf' | relative_url }}" download="Pavan-Kumar-PHV-Resume.pdf">Download résumé (PDF) ↓</a>
   </header>
-  <div class="profile-row-body">
-<p>Building AI-powered analytics for enterprise finance and supply chain. My contributions include AI orchestration, backend services, enterprise data integration, KPI reconciliation and observability, using technologies such as Python, FastAPI, LangGraph, SAP data services and Langfuse. Also engineered the knowledge layer of a process-intelligence platform that turns recorded business-process videos into structured documentation and searchable organisational knowledge: async job orchestration, semantic chunking and embedding, and hybrid retrieval combining vector search with governed SQL.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Solum — AI/CV &amp; ML Systems Engineer</h2>
-    <p><em>Bangalore · Aug 2024 – 2026</em></p>
-  </header>
-  <div class="profile-row-body">
-<p>Designed and operationalised multi-camera shelf-vision pipelines for retail (YOLOv7/v9, TensorRT, LightGlue) delivering sub-200&nbsp;ms responses at 15–20 FPS. Built hot-reload RFID ML-serving APIs integrated with Event Hubs and MongoDB, and an LLM-powered log-intelligence framework — fuzzy clustering, ReAct-based LangChain agents, locally hosted LLaMA — that brought log investigation down from hours to seconds.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Sony — AI Consultant</h2>
-    <p><em>Bangalore · Feb 2023 – Dec 2023</em></p>
-  </header>
-  <div class="profile-row-body">
-<p>Built and optimised custom object-detection and segmentation models for Sony's embedded devices, including deployment on IMX500 smart cameras, and accelerated delivery through transfer-learning workflows that cut training time and integration effort.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Ignitarium — AI Engineer</h2>
-    <p><em>Bangalore · Aug 2022 – Jul 2024</em></p>
-  </header>
-  <div class="profile-row-body">
-<p>Led architectural refinement of the FastestDet neural network — a 35% accuracy improvement — and deployed real-time detection models on Renesas microcontrollers. Designed RGB-D reconstruction and binocular vision pipelines for defect detection, and developed domain-specific LLM Q&amp;A systems supporting railway, telecom and solar industries. Joined as AI Intern (Jun 2021 – Jul 2022) before moving to the engineering role.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Earlier</h2>
-    <p><em>Coimbatore · Aug 2020 – Dec 2021</em></p>
-  </header>
-  <div class="profile-row-body">
-<p>Freelance teaching assistant alongside postgraduate study.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Education</h2>
-
-  </header>
-  <div class="profile-row-body">
-<ul class="wp-block-list"><li>M.Tech, Data Science — Amrita School of Engineering, Coimbatore (2022)</li>
-
-<li>B.Tech, Mechanical Engineering — Amrita School of Engineering, Coimbatore (2019)</li>
-</ul>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Code</h2>
-
-  </header>
-  <div class="profile-row-body">
-<p>Selected code and open tools will be published at <a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">github.com/phvpavankumar</a> soon.</p>
-  </div>
-</section>
-
-</article></div>
+  <p class="experience-intro">Five years building AI systems that run in production — from neural networks on microcontrollers to agentic AI platforms for enterprise finance. Role by role, below.</p>
+  <ol class="career-timeline" aria-label="Professional experience, most recent company first">
+    <li class="career-item">
+      <header class="career-heading">
+        <p class="career-date">2026 – present</p><h2>Kearney</h2>
+        <p class="career-role">Senior AI Consultant<br>Analytics &amp; Information Management</p>
+        <p class="career-location">Bangalore</p>
+      </header>
+      <div class="career-body">
+        <div class="career-groups">
+          <section><h3>AI orchestration &amp; backend engineering</h3><ul>
+            <li>Contributed to team-built enterprise analytics systems using Python, FastAPI and LangGraph.</li>
+            <li>Worked on enterprise data integration, KPI lineage and reconciliation, testing and observability.</li>
+          </ul></section>
+          <section><h3>Process knowledge &amp; retrieval</h3><ul>
+            <li>Engineered backend and knowledge-repository capabilities for process documentation and searchable knowledge.</li>
+            <li>Contributed asynchronous job orchestration, semantic chunking and embedding, and hybrid vector and governed SQL retrieval.</li>
+          </ul></section>
+        </div>
+        <p class="career-note">Responsibilities are described at a high level. Client work is confidential; portfolio demonstrations use fictional content.</p>
+      </div>
+    </li>
+    <li class="career-item">
+      <header class="career-heading">
+        <p class="career-date">Aug 2024 – 2026</p><h2>Solum</h2>
+        <p class="career-role">AI/CV &amp; ML Systems Engineer</p><p class="career-location">Bangalore</p>
+      </header>
+      <div class="career-body"><div class="career-groups">
+        <section><h3>Computer vision &amp; deployment</h3><ul>
+          <li>Designed and operationalised multi-camera retail shelf-vision pipelines with YOLOv7/v9, TensorRT and LightGlue.</li>
+          <li>Delivered sub-200 ms responses at 15–20 FPS, with CI/CD model deployment.</li>
+        </ul></section>
+        <section><h3>ML serving &amp; log intelligence</h3><ul>
+          <li>Built hot-reload RFID ML-serving APIs integrated with Azure Event Hubs and MongoDB.</li>
+          <li>Built LLM-powered log investigation using fuzzy clustering, ReAct-based LangChain agents and locally hosted LLaMA models.</li>
+        </ul></section>
+      </div></div>
+    </li>
+    <li class="career-item">
+      <header class="career-heading">
+        <p class="career-date">Aug 2022 – Jul 2024</p><h2>Ignitarium</h2>
+        <p class="career-role">AI Engineer</p><p class="career-location">Bangalore</p>
+        <p class="career-earlier">Previously AI Intern<br>Jun 2021 – Jul 2022</p>
+      </header>
+      <div class="career-body">
+        <div class="career-groups">
+          <section><h3>Edge AI &amp; model optimisation</h3><ul>
+            <li>Led architectural refinement of FastestDet, achieving a 35% accuracy improvement.</li>
+            <li>Deployed real-time detection models on Renesas microcontrollers.</li>
+          </ul></section>
+          <section><h3>Industrial vision &amp; language systems</h3><ul>
+            <li>Designed RGB-D reconstruction and binocular-vision pipelines for industrial defect detection.</li>
+            <li>Developed domain-specific LLM Q&amp;A systems for railway, telecom and solar applications.</li>
+          </ul></section>
+        </div>
+        <section class="career-engagement"><h3>Sony — selected client engagement</h3>
+          <p class="career-date">Feb 2023 – Dec 2023</p>
+          <ul><li>Built and optimised object-detection and segmentation models for embedded devices, including IMX500 smart cameras.</li>
+          <li>Used transfer-learning workflows to reduce training time and integration effort.</li></ul>
+        </section>
+      </div>
+    </li>
+    <li class="career-item">
+      <header class="career-heading">
+        <p class="career-date">Aug 2020 – Dec 2021</p><h2>Earlier work</h2>
+        <p class="career-role">Freelance teaching assistant</p><p class="career-location">Coimbatore</p>
+      </header>
+      <div class="career-body"><p>Freelance teaching assistant alongside postgraduate study.</p></div>
+    </li>
+  </ol>
+  <section class="experience-education" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2>
+    <div class="career-groups">
+      <div><h3>M.Tech, Data Science</h3><p>Amrita School of Engineering, Coimbatore · 2022</p></div>
+      <div><h3>B.Tech, Mechanical Engineering</h3><p>Amrita School of Engineering, Coimbatore · 2019</p></div>
+    </div>
+  </section>
+  <section class="experience-code"><h2>Code</h2><p>Selected code and open tools will be published at <a href="https://github.com/phvpavankumar" target="_blank" rel="noopener">github.com/phvpavankumar</a> soon.</p></section>
+</div>
