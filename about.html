@@ -2,72 +2,56 @@
 layout: default
 title: About
 permalink: /about/
+profile_design: true
+description: "Explore Pavan Kumar PHV's background and core skills in applied AI, backend engineering, enterprise analytics and computer vision."
 ---
-<div class="phv-wrap"><article class="phv-article profile-page"><h1 class="profile-title">About</h1>
-<p>Senior AI consultant, designing AI-powered finance and supply-chain analytics for large enterprises — from source data to the dashboard a CFO actually trusts. This page is the longer version.</p>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>What I do now</h2>
-
+<div class="profile-about-page profile-wrap">
+  <header class="profile-about-heading">
+    <p class="profile-eyebrow">Background &amp; capabilities</p>
+    <h1>About me<span class="profile-accent">.</span></h1>
+    <p class="profile-intro">Senior AI consultant, designing AI-powered finance and supply-chain analytics for large enterprises — from source data to the dashboard a CFO actually trusts. This page is the longer version.</p>
   </header>
-  <div class="profile-row-body">
-<p>I work in enterprise AI consulting. My day-to-day is building analytics and agentic AI systems for finance and supply-chain teams: tracing KPIs from source systems to the screen, reconciling numbers that don't match, defining what an AI system may decide alone and where a human must sign off. Client work is confidential, so on this site I write about the patterns, never the projects.</p>
+  {% include profile-credentials.html %}
+  <div class="profile-about-grid">
+    <div class="profile-narrative">
+      <section aria-labelledby="current-work-title">
+        <h2 id="current-work-title">What I do now</h2>
+        <p>I work in enterprise AI consulting. My day-to-day is building analytics and agentic AI systems for finance and supply-chain teams: tracing KPIs from source systems to the screen, reconciling numbers that don't match, defining what an AI system may decide alone and where a human must sign off. Client work is confidential, so on this site I write about the patterns, never the projects.</p>
+      </section>
+      <section aria-labelledby="prior-work-title">
+        <h2 id="prior-work-title">Before consulting</h2>
+        <p>I spent four years as an AI engineer shipping production systems: real-time computer vision for retail shelf intelligence, neural networks optimised to run on microcontrollers and embedded cameras, RAG pipelines and LLM-powered log analytics. That period taught me the difference between a model that works in a notebook and a system a business can rely on — which is, in the end, what this whole series is about.</p>
+      </section>
+      <a class="profile-more" href="{{ '/experience/' | relative_url }}">Explore my experience →</a>
+    </div>
+    {% include profile-skills.html %}
   </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Before consulting</h2>
-
-  </header>
-  <div class="profile-row-body">
-<p>I spent four years as an AI engineer shipping production systems: real-time computer vision for retail shelf intelligence, neural networks optimised to run on microcontrollers and embedded cameras, RAG pipelines and LLM-powered log analytics. That period taught me the difference between a model that works in a notebook and a system a business can rely on — which is, in the end, what this whole series is about.</p>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Skills</h2>
-
-  </header>
-  <div class="profile-row-body">
-<ul class="wp-block-list"><li><strong>AI and GenAI</strong> — agentic systems, LLM integration and evaluation, RAG and vector retrieval, prompt engineering, fine-tuning (PEFT)</li>
-
-<li><strong>Engineering</strong> — Python, FastAPI, LangChain / LangGraph, CI/CD, Docker, Kubernetes</li>
-
-<li><strong>Data and analytics</strong> — enterprise data integration, KPI lineage and reconciliation, PostgreSQL, vector databases</li>
-
-<li><strong>Computer vision and edge AI</strong> — object detection, TensorRT and ONNX optimisation, deployment on embedded devices</li>
-
-<li><strong>Cloud</strong> — Azure, AWS, GCP</li>
-</ul>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Education</h2>
-
-  </header>
-  <div class="profile-row-body">
-<ul class="wp-block-list"><li>Master of Technology, Data Science — Amrita School of Engineering, Coimbatore (2022)</li>
-
-<li>Bachelor of Technology, Mechanical Engineering — Amrita School of Engineering, Coimbatore (2019)</li>
-</ul>
-  </div>
-</section>
-
-<section class="profile-row">
-  <header class="profile-row-heading">
-    <h2>Why this series</h2>
-
-  </header>
-  <div class="profile-row-body">
-<p>Most AI projects in finance fail before a model is ever chosen — in the unglamorous period where decisions, definitions and controls should have been agreed and weren't. I've watched it happen from inside the systems. Finance × AI Weekly is one practical idea a week about getting that part right.</p>
-
-<p><a href="https://www.linkedin.com/in/pavan-kumar-phv/">Find me on LinkedIn</a> or use the <a href="{{ '/#connect' | relative_url }}">contact form</a>.</p>
-  </div>
-</section>
-
-</article></div>
+  <section class="profile-education" aria-labelledby="education-title">
+    <h2 id="education-title">Education</h2>
+    <div class="profile-education-grid">
+      <div>
+        <p class="profile-eyebrow">2022</p>
+        <h3>Master of Technology · Data Science</h3>
+        <p>Amrita School of Engineering, Coimbatore</p>
+      </div>
+      <div>
+        <p class="profile-eyebrow">2019</p>
+        <h3>Bachelor of Technology · Mechanical Engineering</h3>
+        <p>Amrita School of Engineering, Coimbatore</p>
+      </div>
+    </div>
+  </section>
+  <section class="profile-series-context" aria-labelledby="series-context-title">
+    <h2 id="series-context-title">Why this series</h2>
+    <p>Most AI projects in finance fail before a model is ever chosen — in the unglamorous period where decisions, definitions and controls should have been agreed and weren't. I've watched it happen from inside the systems. Finance × AI Weekly is one practical idea a week about getting that part right.</p>
+    <a class="profile-more" href="{{ '/weekly/' | relative_url }}">Read Finance × AI Weekly →</a>
+  </section>
+  <section class="profile-contact-band" aria-labelledby="about-connect-title">
+    <div>
+      <h2 id="about-connect-title">Connect with me</h2>
+      <p>For senior roles, speaking, writing or collaboration, send me a message.</p>
+      <p><a href="https://www.linkedin.com/in/pavan-kumar-phv/">Find me on LinkedIn</a> or use the <a href="{{ '/#connect' | relative_url }}">contact form</a>.</p>
+    </div>
+    <a class="profile-button profile-button-primary" href="{{ '/#connect' | relative_url }}">Send a message <span aria-hidden="true">↗</span></a>
+  </section>
+</div>

@@ -1,5 +1,6 @@
 /* Scoped demo and preview styles; all interface colours use portfolio tokens. */
-.aurevia-demo{font-family:var(--body);color:var(--fg)}
+/* The standalone workspace intentionally stays wider than portfolio pages. */
+.aurevia-demo{font-family:var(--body);color:var(--fg);max-width:none}
 .aurevia-demo *{box-sizing:border-box}
 .aurevia-demo [hidden]{display:none!important}
 .aurevia-demo h1{font-size:clamp(28px,3vw,44px);margin:0 0 10px;line-height:1.2}

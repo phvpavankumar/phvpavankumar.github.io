@@ -47,6 +47,41 @@ The year links work without JavaScript. The optional content-type filter uses `?
 
 ## Local verification
 
+### Shared page boundaries
+
+`assets/css/style.css` owns the outer width for `.phv-wrap` and `.profile-wrap`:
+`--page-max-width: 1680px`, with responsive `--page-gutter` spacing. Keep headers,
+footers and page content on this shared rule rather than adding page-specific caps.
+The standalone Aurevia workspace explicitly opts out in `assets/css/aurevia.css`;
+the analytics demo keeps its independent full-width layout. Article reading columns
+remain capped at 760px. Check all five main navigation pages on desktop, mobile
+and wide/zoomed-out viewports when changing this rule.
+
+### Home and About components
+
+The portrait-led design is enabled only by `profile_design: true` on `index.html`
+and `about.html`. `_layouts/default.html` conditionally loads `assets/css/profile.css`
+and `assets/js/profile.js`; other pages keep their existing presentation.
+
+- `_data/profile.yml` owns the paired certification links and core-skill descriptions.
+- `_includes/profile-credentials.html` renders credentials on both profile pages.
+- `_includes/profile-skills.html` renders all skill content before JavaScript enhances
+  it into selectable panels. Do not hide the default content in source markup.
+- `_includes/project-featured.html` reads titles, summaries and order from `_projects/`.
+  The Home filter groups existing featured `Enterprise AI` records as AI/retrieval
+  and the current remaining featured records as vision. Revisit this mapping if a
+  different discipline is featured; do not duplicate project facts in JavaScript.
+- `assets/images/pavan-kumar-phv.jpg` is the owner's supplied, unmodified portrait.
+  The profile caption is India; historical employment locations and the resume
+  are managed separately.
+
+Keep profile-specific styles and behavior in these focused assets, not inline
+styles or new global overrides. No dependencies are required. Test keyboard input,
+no-JavaScript content, reduced motion, narrow screens and wide/zoomed-out views.
+The public pages do not include the A/B mockup controls or review artifacts.
+
+### Build and content checks
+
 Use the external `FinalPortfolio/tools/` harness documented in the owner's handover where native Jekyll is unavailable. `portfolio_build.rb` adds collections and Markdown support using Liquid 4.0.4 and Kramdown. It is a preview simulation, not proof of the GitHub Pages runtime. Use a new output directory for each build. Check both source and generated files, internal links, archive counts, responsive layouts, keyboard controls, reduced motion and synthetic calculations before publication.
 
 Never put private briefs, career documents, confidential scan terms or review evidence into served directories. Keep GitHub Pages on the canonical github.io URL. Publication remains the owner's action after review.

@@ -1,0 +1,19 @@
+<section class="profile-skills" data-profile-skills aria-labelledby="skills-title">
+  <p class="profile-eyebrow">Capabilities / explore</p>
+  <h2 id="skills-title">Core skills</h2>
+  <p class="profile-skill-help" data-skill-help hidden>Select an area to see the tools and related work.</p>
+  <div class="profile-controls" data-skill-controls role="group" aria-label="Skill areas" hidden>
+    {% for skill in site.data.profile.skills %}
+    <button type="button" data-skill="{{ skill.id }}" aria-controls="skill-{{ skill.id }}" aria-pressed="false">{{ skill.title | escape }}</button>
+    {% endfor %}
+  </div>
+  <div class="profile-skill-content" aria-live="polite" aria-atomic="true">
+    {% for skill in site.data.profile.skills %}
+    <section class="profile-skill-detail" id="skill-{{ skill.id }}" data-skill-panel="{{ skill.id }}" aria-labelledby="skill-title-{{ skill.id }}">
+      <h3 id="skill-title-{{ skill.id }}">{{ skill.title | escape }}</h3>
+      <p>{{ skill.description | escape }}</p>
+      <a href="{{ skill.related_url | relative_url }}">Related work: {{ skill.related_title | escape }} <span aria-hidden="true">↗</span></a>
+    </section>
+    {% endfor %}
+  </div>
+</section>

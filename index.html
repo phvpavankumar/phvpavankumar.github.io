@@ -1,128 +1,103 @@
 ---
 layout: default
+profile_design: true
+description: "Pavan Kumar PHV — applied AI and backend engineering, from enterprise analytics and retrieval to production computer vision."
 ---
-<!-- ============ 1. HERO: person first ============ -->
-<div class="phv-hero">
-  <div class="phv-wrap phv-hero-grid">
-    <div>
-      <p class="phv-pill">Senior Applied AI Engineer · Forward-Deployed · Enterprise Analytics &amp; AI</p>
-      <h1 class="phv-h1">I ship enterprise AI<br><em>that survives production.</em></h1>
-      <p class="phv-sub">Forward-deployed with enterprise teams for five years — from neural
-        networks on microcontrollers to agentic analytics platforms a CFO acts on.
-        Demos are easy. Lineage, definitions, and the line where a human signs off
-        are the job.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
-        <a class="btn" href="{{ '/projects/' | relative_url }}">View my work</a>
-        <a class="btn" style="background:transparent;color:var(--fg);border:1px solid var(--line2)"
-           href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-      <p class="phv-note" style="margin-top:20px">
-        <a href="https://www.credly.com/badges/d7854e7b-bcef-44ca-be4d-5b05e3d603bb/public_url"
-           target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">GCP Professional Cloud Architect ↗</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.credly.com/badges/3153e2ee-f4e1-410b-97c1-f1bfad33b7c9/public_url"
-           target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">Anthropic Claude Certified Architect – Professional ↗</a>
-      </p>
-    </div>
-
-    <!-- proof panel: verified experience and skills -->
-    <div class="phv-step">
-      <div class="phv-step-top"><span>profile.verified</span><span>2026</span></div>
-      <div style="padding:10px 0">
-        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05)">
-          <div style="padding:18px 22px;border-right:1px solid rgba(255,255,255,.05)">
-            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--gold)">5 yrs</div>
-            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">PRODUCTION AI</div>
-          </div>
-          <div style="padding:18px 22px">
-            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--teal)">2</div>
-            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">ARCHITECT CERTS · GOOGLE + ANTHROPIC</div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr">
-          <div style="padding:18px 22px;border-right:1px solid rgba(255,255,255,.05)">
-            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--fg)">AI + backend</div>
-            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">ORCHESTRATION · DATA INTEGRATION</div>
-          </div>
-          <div style="padding:18px 22px">
-            <div style="font-family:var(--display);font-weight:500;font-size:30px;color:var(--fg)">&lt;200<span style="font-size:16px;color:var(--fg3)"> ms</span></div>
-            <div style="font-family:var(--mono);font-size:10.5px;color:var(--fg3);margin-top:4px">REAL-TIME VISION · 15–20 FPS ON EDGE</div>
-          </div>
+<div class="profile-home">
+  <div class="profile-wrap">
+    <section class="profile-hero" aria-labelledby="profile-name">
+      <div class="profile-hero-copy">
+        <p class="profile-eyebrow">Senior Applied AI Engineer · Forward-Deployed</p>
+        <h1 id="profile-name">Pavan Kumar PHV<span class="profile-accent">.</span></h1>
+        <p class="profile-role">Enterprise Analytics &amp; AI</p>
+        <p class="profile-thesis">I ship enterprise AI that survives production.</p>
+        <p class="profile-intro">Forward-deployed with enterprise teams for five years — from neural
+          networks on microcontrollers to agentic analytics platforms a CFO acts on.</p>
+        <div class="profile-actions">
+          <a class="profile-button profile-button-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="profile-button" href="{{ '/assets/downloads/pavan-kumar-phv-resume.pdf' | relative_url }}" download="Pavan-Kumar-PHV-Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
+          <a class="profile-text-link" href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="phv-step-top" style="border-top:1px solid var(--line);border-bottom:0">
-        <span>STACK</span><span style="color:var(--fg2)">Python · LangGraph · FastAPI · SAP · TensorRT · Azure/GCP</span>
+      <figure class="profile-portrait">
+        <img src="{{ '/assets/images/pavan-kumar-phv.jpg' | relative_url }}" alt="Pavan Kumar PHV" width="1024" height="1024" fetchpriority="high">
+        <figcaption><span>India</span><span>Applied AI · Backend · Vision</span></figcaption>
+      </figure>
+    </section>
+    {% include profile-credentials.html %}
+    <section class="profile-section" id="work" data-profile-work aria-labelledby="work-title">
+      <div class="profile-section-heading">
+        <div>
+          <p class="profile-eyebrow">Selected engineering work</p>
+          <h2 id="work-title">From models to working systems.</h2>
+        </div>
+        <div class="profile-controls" data-work-controls role="group" aria-label="Filter selected projects" hidden>
+          <button type="button" data-work-filter="all" aria-controls="selected-projects" aria-pressed="true">All work</button>
+          <button type="button" data-work-filter="ai" aria-controls="selected-projects" aria-pressed="false">AI &amp; retrieval</button>
+          <button type="button" data-work-filter="vision" aria-controls="selected-projects" aria-pressed="false">Computer vision</button>
+        </div>
       </div>
-    </div>
+      {% include project-featured.html %}
+      <p class="profile-sr-only" data-work-status role="status"></p>
+      <a class="profile-more" href="{{ '/projects/' | relative_url }}">All projects →</a>
+    </section>
   </div>
-</div>
-
-<!-- ============ 2. SELECTED WORK ============ -->
-<div class="phv-sec">
-  <div class="phv-wrap">
-    <div class="phv-head-block">
-      <p class="phv-kicker">Selected work</p>
-      <h2 class="phv-h2">Systems that run in production</h2>
-    </div>
-    {% include project-featured.html %}
-    <p class="phv-more" style="margin-top:26px"><a href="{{ '/projects/' | relative_url }}" style="text-decoration:none">All projects →</a></p>
-  </div>
-</div>
-
-<!-- ============ 3. FINANCE × AI WEEKLY (the series, as a section) ============ -->
-<div class="phv-sec" style="background:var(--s1)">
-  <div class="phv-wrap phv-hero-grid" style="align-items:start">
-    <div>
-      <p class="phv-kicker">Finance × AI Weekly</p>
-      <h2 class="phv-h2">One practical idea, every week</h2>
-      <p class="phv-intro" style="margin-top:16px">Most AI projects in finance fail before a model
-        is chosen — in the period where decisions, definitions and controls should have been agreed
-        and weren't. Each week: one pattern from the field, anonymised, in plain language, with
-        something you can do on Monday.</p>
-      <div class="phv-series" style="margin-top:28px;background:var(--bg)">
-        {% for post in site.posts limit:3 %}
-        <a class="entry" href="{{ post.url | relative_url }}">
-          <span class="d">{{ post.week }}</span>
-          <span class="t">{{ post.title }}</span>
-          <span class="tag2">{{ post.category }}</span>
-        </a>
-        {% endfor %}
+  <!-- Retained publication content and interactive framework. -->
+  <div class="profile-section profile-weekly">
+    <div class="profile-wrap profile-weekly-grid">
+      <div>
+        <p class="phv-kicker">Finance × AI Weekly</p>
+        <h2 class="phv-h2">One practical idea, every week</h2>
+        <p class="profile-intro">Most AI projects in finance fail before a model
+          is chosen — in the period where decisions, definitions and controls should have been agreed
+          and weren't. Each week: one pattern from the field, anonymised, in plain language, with
+          something you can do on Monday.</p>
+        <div class="phv-series profile-series">
+          {% for post in site.posts limit:3 %}
+          <a class="entry" href="{{ post.url | relative_url }}">
+            <span class="d">{{ post.week }}</span>
+            <span class="t">{{ post.title }}</span>
+            <span class="tag2">{{ post.category }}</span>
+          </a>
+          {% endfor %}
+        </div>
+        <p class="profile-more"><a href="{{ '/weekly/' | relative_url }}">All entries →</a></p>
       </div>
-      <p class="phv-more" style="margin-top:22px"><a href="{{ '/weekly/' | relative_url }}" style="text-decoration:none">All entries →</a></p>
-    </div>
-    <div class="phv-step" data-phv-stepper>
-      <div class="phv-step-top"><span>The framework · ask these 7 first</span><span data-counter>1 / 7</span></div>
-      <div class="phv-step-body">
-        <p class="phv-qn" data-qn>Question 1</p>
-        <p class="phv-qq" data-qq>What decision are we trying to improve?</p>
-        <p class="phv-qw" data-qw>Not "where can we use AI" — which actual choice someone makes, and how you would know it got better.</p>
-        <div class="phv-step-nav">
-          <button type="button" class="phv-arrow" data-prev aria-label="Previous question">&#8592;</button>
-          <button type="button" class="phv-arrow" data-next aria-label="Next question">&#8594;</button>
-          <div class="phv-dots" data-dots></div>
+      <div class="phv-step" data-phv-stepper>
+        <div class="phv-step-top"><span>The framework · ask these 7 first</span><span data-counter>1 / 7</span></div>
+        <div class="phv-step-body">
+          <p class="phv-qn" data-qn>Question 1</p>
+          <p class="phv-qq" data-qq>What decision are we trying to improve?</p>
+          <p class="phv-qw" data-qw>Not "where can we use AI" — which actual choice someone makes, and how you would know it got better.</p>
+          <div class="phv-step-nav">
+            <button type="button" class="phv-arrow" data-prev aria-label="Previous question">&#8592;</button>
+            <button type="button" class="phv-arrow" data-next aria-label="Next question">&#8594;</button>
+            <div class="phv-dots" data-dots></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- ============ 4. ABOUT + CONNECT ============ -->
-<div class="phv-sec">
-  <div class="phv-wrap phv-about">
-    <div><p class="phv-kicker">About</p><h2 class="phv-h2">Who I am</h2></div>
-    <div>
-      <p style="font-size:16px;line-height:1.75;color:var(--fg2)">Senior AI consultant designing
-        AI-powered finance and supply-chain analytics for large enterprises — from source data to
-        the dashboard a CFO actually trusts. Master's in Data Science; four years shipping
-        production AI systems before consulting. Based in Bangalore, working globally.</p>
-      <p class="phv-more" style="margin-top:18px"><a href="{{ '/about/' | relative_url }}" style="text-decoration:none">Full background →</a>
-        &nbsp;&nbsp;<a href="{{ '/experience/' | relative_url }}" style="text-decoration:none;color:var(--teal)">Experience →</a></p>
+  
+  <!-- Background and the existing contact form. -->
+  <div class="profile-section profile-section-bordered">
+    <div class="profile-wrap profile-about-teaser">
+      <div><p class="phv-kicker">About</p><h2 class="phv-h2">Who I am</h2></div>
+      <div>
+        <p>Senior AI consultant designing
+          AI-powered finance and supply-chain analytics for large enterprises — from source data to
+          the dashboard a CFO actually trusts. Master's in Data Science; four years shipping
+          production AI systems before consulting. Based in India, working globally.</p>
+        <p class="profile-principle">Demos are easy. Lineage, definitions, and the line where a human signs off are the job.</p>
+        <p class="profile-actions"><a href="{{ '/about/' | relative_url }}">Full background →</a>
+          <a href="{{ '/experience/' | relative_url }}">Experience →</a></p>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="phv-sec">
-  <div class="phv-wrap">
-    {% include connect.html %}
+  
+  <div class="profile-section profile-section-bordered">
+    <div class="profile-wrap">
+      {% include connect.html %}
+    </div>
   </div>
 </div>

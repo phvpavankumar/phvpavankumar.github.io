@@ -1,0 +1,32 @@
+# Presentation data for Home and About. Project facts stay in _projects/.
+credentials:
+  - label: Google Cloud · Professional Cloud Architect
+    url: https://www.credly.com/badges/d7854e7b-bcef-44ca-be4d-5b05e3d603bb/public_url
+  - label: Anthropic · Claude Certified Architect – Professional
+    url: https://www.credly.com/badges/3153e2ee-f4e1-410b-97c1-f1bfad33b7c9/public_url
+skills:
+  - id: ai
+    title: AI & GenAI
+    description: Agentic systems, LLM integration and evaluation, RAG and vector retrieval, prompt engineering, fine-tuning (PEFT).
+    related_title: Process intelligence from video
+    related_url: /projects/process-intelligence/
+  - id: backend
+    title: Backend engineering
+    description: Python, FastAPI, LangChain / LangGraph, CI/CD, Docker, Kubernetes.
+    related_title: Enterprise Agentic Analytics
+    related_url: /projects/enterprise-analytics/
+  - id: data
+    title: Data & analytics
+    description: Enterprise data integration, KPI lineage and reconciliation, PostgreSQL, vector databases.
+    related_title: Enterprise Agentic Analytics
+    related_url: /projects/enterprise-analytics/
+  - id: vision
+    title: Computer vision & edge AI
+    description: Object detection, TensorRT and ONNX optimisation, deployment on embedded devices.
+    related_title: Multi-camera retail shelf-vision system
+    related_url: /projects/retail-shelf-vision/
+  - id: cloud
+    title: Cloud & deployment
+    description: Azure, AWS and GCP, with Docker, Kubernetes and CI/CD.
+    related_title: Professional experience
+    related_url: /experience/

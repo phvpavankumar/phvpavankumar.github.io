@@ -1,10 +1,11 @@
-<div class="phv-three phv-work-grid">
+<div class="profile-work-grid" id="selected-projects">
 {% assign featured_projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
 {% for project in featured_projects %}
-<div class="phv-card">
-<p class="phv-big" style="font-size:15px;font-family:var(--mono);color:var(--gold)">{{ project.feature_label | escape }}</p>
+<article class="profile-work-card" data-work-category="{% if project.tags contains 'Enterprise AI' %}ai{% else %}vision{% endif %}">
+<p class="profile-eyebrow">{{ project.feature_label | escape }}</p>
 <h3><a href="{{ project.url | relative_url }}">{{ project.feature_title | escape }}</a></h3>
 <p>{{ project.summary | escape }}</p>
-</div>
+<a class="profile-work-link" href="{{ project.url | relative_url }}">Explore project <span aria-hidden="true">↗</span></a>
+</article>
 {% endfor %}
 </div>
