@@ -21,5 +21,13 @@ permalink: /weekly/
       </a>
       {% endfor %}
     </div>
+    {% assign external_writing = site.contributions | where: 'visibility', 'published' | sort: 'date' | reverse %}
+    {% if external_writing.size > 0 %}
+    <section class="external-writing" aria-labelledby="external-writing-title">
+      <p class="phv-kicker">Published elsewhere</p>
+      <h2 id="external-writing-title">Blogs &amp; articles</h2>
+      <div class="content-grid">{% for item in external_writing %}{% include content-card.html %}{% endfor %}</div>
+    </section>
+    {% endif %}
   </div>
 </div>

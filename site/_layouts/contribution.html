@@ -2,11 +2,12 @@
 layout: default
 ---
 <article class="phv-wrap content-page project-details">
-  <p><a href="{{ '/contributions/' | relative_url }}">All external contributions</a></p>
+  <nav class="content-nav" aria-label="Writing"><a href="{{ '/weekly/' | relative_url }}">Notes &amp; Ideas</a><a href="{{ '/contributions/' | relative_url }}">All external contributions</a></nav>
   <p class="phv-kicker">External contribution · {{ page.publication | escape }}</p>
   <h1>{{ page.title | escape }}</h1>
   {% assign item = page %}{% include item-period.html %}
   <p>My credited role: <strong>{{ page.contribution_role | escape }}</strong></p>
   {{ content }}
+  {% if page.related_project %}<p><a href="{{ page.related_project | relative_url }}">Explore the related project →</a></p>{% endif %}
   <p><a class="btn" href="{{ page.original_url | escape }}" rel="noopener">Read the original publication ↗</a></p>
 </article>

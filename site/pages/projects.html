@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects
-description: Engineering projects with explicit personal contributions, platform context and verified active years.
+description: Engineering projects with personal contributions, public demonstrations, source links and clearly labelled dates.
 permalink: /projects/
 ---
 <div class="phv-wrap content-page projects-page" data-content-filter>
@@ -13,7 +13,7 @@ permalink: /projects/
     <select id="project-year" data-year-filter aria-controls="project-list">
       <option value="all">All years ({{ ordered_projects.size }})</option>
       {% for year in site.data.archive_years %}
-        {% assign year_count = 0 %}{% for item in dated_projects %}{% if item.years_active contains year %}{% assign year_count = year_count | plus: 1 %}{% endif %}{% endfor %}
+        {% assign year_count = 0 %}{% for item in dated_projects %}{% if item.years_active contains year %}{% assign year_count = year_count | plus: 1 %}{% elsif item.date_status == 'publication_verified' and item.sort_year == year %}{% assign year_count = year_count | plus: 1 %}{% endif %}{% endfor %}
         {% if year_count > 0 %}<option value="{{ year }}">{{ year }} ({{ year_count }})</option>{% endif %}
       {% endfor %}
     </select>

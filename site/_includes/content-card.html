@@ -1,4 +1,4 @@
-<article class="content-card" data-content-item data-kind="{{ item.kind | escape }}" data-years="{% if item.kind == 'project' %}{{ item.years_active | join: ',' }}{% else %}{{ item.date | date: '%Y' }}{% endif %}">
+<article class="content-card" data-content-item data-kind="{{ item.kind | escape }}" data-years="{% if item.kind == 'project' %}{% if item.date_status == 'publication_verified' %}{{ item.sort_year }}{% else %}{{ item.years_active | join: ',' }}{% endif %}{% else %}{{ item.date | date: '%Y' }}{% endif %}">
   <p class="phv-kicker">{% if item.kind == 'contribution' %}External contribution{% else %}{{ item.kind | capitalize }}{% endif %}{% if item.kind != 'project' and item.organization %} · {{ item.organization | escape }}{% endif %}</p>
   <h3><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a></h3>
   {% include item-period.html %}

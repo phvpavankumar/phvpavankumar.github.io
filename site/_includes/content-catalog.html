@@ -1,4 +1,6 @@
-{% assign verified_projects = site.projects | where: 'date_status', 'verified' | sort: 'title' %}
+{% assign active_projects = site.projects | where: 'date_status', 'verified' %}
+{% assign published_projects = site.projects | where: 'date_status', 'publication_verified' %}
+{% assign verified_projects = active_projects | concat: published_projects | sort: 'title' %}
 {% assign dated_projects = verified_projects | slice: 0, 0 %}
 {% assign project_years = verified_projects | map: 'sort_year' | uniq | sort | reverse %}
 {% for project_year in project_years %}

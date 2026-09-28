@@ -13,14 +13,16 @@ layout: default
       <h2>My contribution</h2>
       <p class="role-label">{{ page.role | escape }}</p>
       <p>{{ page.contribution | escape }}</p>
-      <h2>Team / platform context</h2>
+      <h2>{{ page.context_heading | default: 'Team / platform context' | escape }}</h2>
       <p>{{ page.platform_context | escape }}</p>
       {% if page.constraints.size > 0 %}<details class="project-constraints"><summary>Constraints</summary><ul>{% for constraint in page.constraints %}<li>{{ constraint | escape }}</li>{% endfor %}</ul></details>{% endif %}
       {% if page.tools.size > 0 %}<ul class="content-tags" aria-label="Tools">{% for tool in page.tools %}<li>{{ tool | escape }}</li>{% endfor %}</ul>{% endif %}
       {% include project-links.html %}
     </section>
     <section aria-label="Project visualization">
-      {% if page.visualization == 'enterprise-analytics' %}
+      {% if page.visualization == 'published-work' %}
+        {% include published-work.html %}
+      {% elsif page.visualization == 'enterprise-analytics' %}
         {% include enterprise-analytics-visual.html %}
       {% elsif page.visualization == 'process-intelligence' %}
         {% include process-intelligence-visual.html %}

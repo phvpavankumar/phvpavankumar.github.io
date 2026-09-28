@@ -1,0 +1,14 @@
+<div class="published-work">
+  <p class="phv-kicker">{{ page.tags.first | escape }} · Workflow</p>
+  <h2>How it works</h2>
+  <ol class="project-workflow">
+    {% for step in page.workflow %}
+    <li><h3>{{ step.title | escape }}</h3><p>{{ step.detail | escape }}</p></li>
+    {% endfor %}
+  </ol>
+  <div class="project-evidence">
+    <h2>Explore the work</h2>
+    <ul>{% for evidence in page.public_evidence %}<li><a href="{{ evidence.url | escape }}" rel="noopener">{{ evidence.label | escape }} ↗</a></li>{% endfor %}</ul>
+    {% if page.portfolio_published_date %}<p class="evidence-note">The portfolio date records the public listing. It does not establish the project's development dates.</p>{% endif %}
+  </div>
+</div>

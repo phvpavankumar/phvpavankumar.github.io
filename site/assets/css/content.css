@@ -27,6 +27,20 @@
 .project-details p{color:var(--fg2)}
 .demo-disclosure,.empty-state,.visual-placeholder{padding:26px;border:1px solid var(--line2);background:var(--s1);border-radius:14px;margin-top:28px}
 .demo-disclosure h2,.visual-placeholder h2{margin-top:0}
+.published-work{border:1px solid var(--line2);border-radius:14px;background:var(--s1);padding:clamp(22px,3vw,38px);margin-top:20px}
+.published-work>h2{margin:12px 0 26px}
+.project-workflow{list-style:none;counter-reset:workflow;padding:0;margin:0}
+.project-workflow li{counter-increment:workflow;position:relative;padding:0 0 26px 52px;min-height:60px}
+.project-workflow li::before{content:counter(workflow,decimal-leading-zero);position:absolute;left:0;top:2px;font:13px/30px var(--mono);color:var(--gold);width:34px;text-align:center;border:1px solid var(--line2);border-radius:8px;background:var(--s2)}
+.project-workflow h3{font-size:18px;line-height:1.4;margin:0 0 8px}
+.project-workflow p{font-size:15px;line-height:1.7;margin:0}
+.project-evidence{border-top:1px solid var(--line2);padding-top:20px}
+.project-evidence h2{font-size:18px;margin:0 0 12px}
+.project-evidence ul{list-style:none;padding:0;margin:0}
+.project-evidence a{display:inline-block;padding:10px 0;overflow-wrap:anywhere}
+.project-evidence a:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:3px}
+.project-evidence .evidence-note{font-size:12px;line-height:1.7;margin:16px 0 0}
+.external-writing{margin-top:48px;padding-top:24px;border-top:1px solid var(--line2)}
 /* Keep empty slots: a lone record has the same width as its neighbours.
    Four tracks maximum, including on very wide or zoomed-out viewports. */
 .content-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,max(26rem,calc((100% - 60px)/4))),1fr));gap:20px;margin:22px 0}

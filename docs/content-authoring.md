@@ -23,7 +23,7 @@ Use `/projects/<slug>/` as its stable permalink. Supply `role`, `contribution`, 
 
 `years_active` is an explicit sorted list of verified integers. For example, a project confirmed active in two years gets both years in this one record and appears in both archives at the same URL. Exact `start_date`, `end_date` and `ongoing` remain null when unknown. Set `date_status: verified` and `sort_year` to the latest active year. The main Projects page sorts dated items by this year descending, then displays undated items alphabetically, without repeating records.
 
-The existing migrated descriptions have `legacy_published: true`. This flag preserves already-published material while its dates await confirmation; it is **not** permission to publish new unverified projects. Undated legacy records appear under “Undated / awaiting review” and never enter a dated archive.
+The existing migrated descriptions have `legacy_published: true`. This flag preserves already-published material while its dates await confirmation; it is **not** permission to publish new unverified projects. Public listing dates follow the separate verified-publication rules below. Undated legacy records appear under “Undated / awaiting review” and never enter a dated archive.
 
 Project narratives may use plain Markdown or preserved HTML. The layout provides contribution/context on the left and an allowlisted visualization on the right. `visualization: enterprise-analytics` enables the shared synthetic analytics preview; `none` supplies a readable neutral panel. Add any new visualization explicitly to the layout allowlist and validator. Never inject arbitrary include paths or executable markup through metadata.
 
@@ -101,3 +101,26 @@ The public pages do not include the A/B mockup controls or review artifacts.
 Use the native Jekyll build and verification commands in [development](development.md). The old external preview harness expects the previous source layout and is historical, not part of this build. Check responsive layouts, keyboard controls, reduced motion and synthetic calculations before publication.
 
 Never put private briefs, career documents, confidential scan terms or review evidence into served directories. Keep GitHub Pages on the canonical github.io URL. Publication remains the owner's action after review.
+
+### Public portfolio projects and linked writing
+
+When an existing public project has an evidenced listing date but no confirmed
+active years, use `portfolio_published_date`, `publication_evidence` (an HTTPS
+source), `publication_verified: true`, `date_status: publication_verified` and
+`sort_year` equal to that publication year. Keep `years_active: []` and unknown
+start/end dates null. These records appear in year filters and archives with the
+label “Published in portfolio”; the listing date never becomes an active year.
+Unverified new records still belong outside this repository.
+
+`visualization: published-work` renders a shared HTML workflow and public links.
+Supply `workflow` entries with `title` and `detail`, and `public_evidence` entries
+with `label` and an HTTPS `url`. Use only supported steps and correctly credited
+source links. Video links open the original recording without loading a player
+or starting playback on the portfolio. Do not upload account screenshots or
+promotional artwork as project evidence assets.
+
+External articles live in `_contributions/` with original summaries, author
+credits and links to the publisher. They also appear in Notes & Ideas and Writing.
+For a republication, label the date of the linked edition explicitly with
+`publication_date_label`; describe the earlier publication separately when known.
+Do not infer an exact original date from a later portfolio listing.

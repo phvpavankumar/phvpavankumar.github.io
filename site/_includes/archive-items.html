@@ -4,7 +4,7 @@
 {% for item in all_items %}
   {% assign show_item = false %}
   {% if item.kind == 'project' %}
-    {% if item.years_active contains page.archive_year %}{% assign show_item = true %}{% endif %}
+    {% if item.years_active contains page.archive_year %}{% assign show_item = true %}{% elsif item.date_status == 'publication_verified' and item.sort_year == page.archive_year %}{% assign show_item = true %}{% endif %}
   {% else %}
     {% assign publication_year = item.date | date: '%Y' | plus: 0 %}
     {% if publication_year == page.archive_year %}{% assign show_item = true %}{% endif %}
