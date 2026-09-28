@@ -22,6 +22,7 @@ module ContentIndex
   end
 
   def self.validate!(records)
+    raise 'No canonical content found; check the site source path' if records.empty?
     ids, urls = [], []
     records.each do |item|
       id = item['slug']
@@ -84,10 +85,10 @@ module ContentIndex
 end
 
 if $PROGRAM_NAME == __FILE__
-  root = File.expand_path('..', __dir__)
+  root = File.expand_path('../site', __dir__)
   items = ContentIndex.records(root)
   ContentIndex.validate!(items)
-  generated = ContentIndex.generated(items)
+  generated = ContentIndex.generated(items).transform_keys { |path| path.start_with?('archive/') ? "pages/#{path}" : path }
   generated.each do |relative, body|
     path = File.join(root, relative)
     if ARGV.include?('--check')
@@ -97,7 +98,7 @@ if $PROGRAM_NAME == __FILE__
       File.write(path, body) unless File.file?(path) && File.read(path) == body
     end
   end
-  unexpected = Dir.glob(File.join(root, 'archive/*/index.html')).map { |p| p.sub(root + '/', '') } - generated.keys
+  unexpected = Dir.glob(File.join(root, 'pages/archive/*/index.html')).map { |p| p.sub(root + '/', '') } - generated.keys
   raise "Obsolete year routes need explicit review: #{unexpected.join(', ')}" unless unexpected.empty?
   puts "Validated #{items.size} canonical records; years: #{ContentIndex.years(items).join(', ')}."
 end

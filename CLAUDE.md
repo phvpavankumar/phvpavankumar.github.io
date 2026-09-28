@@ -1,5 +1,11 @@
 # phvpavankumar.github.io — Master Brief for Claude (Local Agent)
 
+Repository layout update: publishable source is now under `site/`, main pages
+under `site/pages/`, and both demo sources under `site/demos/`. Legacy paths in
+this brief refer to that source tree. The weekly skeleton is now
+`content-templates/weekly-post.md`. Use README and `docs/` for current native build
+and manual deployment instructions. The integrity rules below still apply.
+
 You are maintaining the personal site and public profile of **Pavan Kumar P H V**.
 Read this entire file before touching anything. Every rule here exists because
 violating it damages a real person's career.
