@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: Real-time shelf intelligence — Pavan Kumar PHV</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080D1A;--s1:#0E1526;--s2:#141D33;--line:rgba(255,255,255,.07);
+--line2:rgba(255,255,255,.15);--fg:#EEF2F9;--fg2:#9BA8C1;--fg3:#66748F;
+--gold:#D7AC5C;--teal:#3ECFA8;--red:#E8836B;
+--display:'Instrument Sans',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.65}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.028em;line-height:1.1;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:inherit}
+
+header{position:sticky;top:0;z-index:50;background:rgba(8,13,26,.85);
+backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.mark{font-family:var(--display);font-weight:600;font-size:15.5px;text-decoration:none}
+.nav{display:flex;gap:24px;margin-right:auto;font-size:14.5px}
+.nav a{color:var(--fg2);text-decoration:none}
+.nav a:hover{color:var(--fg)}
+.btn{display:inline-block;font-family:var(--display);font-weight:500;font-size:14.5px;
+padding:11px 19px;border-radius:8px;background:var(--fg);color:#0A0F1C;text-decoration:none;white-space:nowrap}
+@media(max-width:700px){header .wrap{flex-wrap:wrap;gap:12px;padding-top:12px;padding-bottom:12px}
+header .btn{margin-left:auto}.nav{order:3;flex-basis:100%;flex-wrap:wrap;gap:10px 18px}}
+
+.hero{padding:72px 0 40px}
+.kicker{font-family:var(--mono);font-size:11.5px;color:var(--teal);margin:0 0 14px}
+.hero h1{font-size:clamp(30px,4.4vw,50px)}
+.sub{margin-top:18px;font-size:17px;color:var(--fg2);max-width:38em}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--fg2);
+border:1px solid var(--line2);border-radius:999px;padding:6px 13px}
+.chip b{color:var(--gold);font-weight:500}
+.notice{margin-top:26px;font-family:var(--mono);font-size:11px;color:var(--fg3);
+border:1px dashed rgba(215,172,92,.35);border-radius:10px;padding:12px 16px;max-width:56em;line-height:1.7}
+
+/* ---- simulator ---- */
+.sim{background:var(--s1);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:44px 0}
+.sim-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+padding:14px 18px;border-bottom:1px solid var(--line);background:var(--s2);
+font-family:var(--mono);font-size:11px;color:var(--fg3)}
+.sim-top .live{color:var(--teal)}
+.sim-top .live::before{content:"● ";animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.sim-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+@media(max-width:900px){.sim-grid{grid-template-columns:1fr}}
+
+.shelfwrap{position:relative;padding:26px;border-right:1px solid var(--line)}
+@media(max-width:900px){.shelfwrap{border-right:0;border-bottom:1px solid var(--line)}}
+.shelf{position:relative;display:grid;gap:7px;user-select:none}
+.row{display:grid;grid-template-columns:repeat(12,1fr);gap:7px;
+padding-bottom:8px;border-bottom:2px solid #1E2A47}
+.slot{position:relative;height:52px;border-radius:5px;background:#0A1122;
+border:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-end;gap:2px;
+padding:3px;cursor:pointer;transition:box-shadow .2s}
+.slot:hover{box-shadow:0 0 0 1px var(--teal)}
+.slot i{flex:1;background:#39507e;border-radius:2px;transition:height .3s}
+.slot.low i{background:var(--gold)}
+.slot.oos{background:rgba(232,131,107,.08)}
+.slot.mis i{background:#8f7cd8}
+.slot .tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+font-family:var(--mono);font-size:8px;letter-spacing:.05em;padding:1px 6px;border-radius:3px;
+color:#0A0F1C;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:3}
+.slot.low .tag{background:var(--gold);opacity:1}
+.slot.oos .tag{background:var(--red);opacity:1;color:#fff}
+.slot.mis .tag{background:#8f7cd8;opacity:1;color:#fff}
+.beam{position:absolute;top:18px;bottom:18px;width:46px;left:-60px;pointer-events:none;
+background:linear-gradient(90deg,transparent,rgba(62,207,168,.16),transparent);
+border-left:1px solid rgba(62,207,168,.35);z-index:2}
+
+.panel{display:flex;flex-direction:column;min-height:100%}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr)}
+.kpi{padding:18px 20px;border-bottom:1px solid var(--line)}
+.kpi:nth-child(odd){border-right:1px solid var(--line)}
+.kpi b{font-family:var(--display);font-weight:500;font-size:27px;letter-spacing:-.02em;display:block}
+.kpi span{font-family:var(--mono);font-size:9.5px;color:var(--fg3);letter-spacing:.06em}
+.k-avail b{color:var(--teal)} .k-lat b{color:var(--gold)}
+.k-alert b{color:var(--red)}
+.feed{flex:1;min-height:190px;max-height:250px;overflow-y:auto;padding:14px 18px;
+font-family:var(--mono);font-size:11px;line-height:2;color:var(--fg2)}
+.feed div{white-space:nowrap}
+.feed .t{color:var(--fg3)} .feed .oosc{color:var(--red)} .feed .lowc{color:var(--gold)}
+.feed .misc{color:#a596e8} .feed .okc{color:var(--teal)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--line)}
+.controls button{font-family:var(--display);font-weight:500;font-size:13px;cursor:pointer;
+color:var(--fg);background:var(--s2);border:1px solid var(--line2);border-radius:8px;padding:10px 16px}
+.controls button:hover{border-color:var(--teal)}
+.controls .primary{background:var(--gold);color:#14100A;border:0}
+.controls .primary:hover{background:#e6bd6d}
+
+.sec{padding:64px 0;border-top:1px solid var(--line)}
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+@media(max-width:900px){.pipe{grid-template-columns:1fr 1fr}}
+.stage{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:22px;
+transition:transform .18s,border-color .18s}
+.stage:hover{transform:translateY(-2px);border-color:var(--line2)}
+.stage .n{font-family:var(--mono);font-size:10.5px;color:var(--gold);margin-bottom:12px}
+.stage h3{font-size:17px}
+.stage p{margin:9px 0 0;font-size:13.5px;line-height:1.6;color:var(--fg2)}
+
+.facts{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:26px;margin-top:30px}
+.facts li{margin:0 0 12px;font-size:15px;line-height:1.65;color:var(--fg2)}
+.facts b{color:var(--fg);font-weight:500}
+.cta{background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--line);
+border-radius:16px;padding:40px;margin:60px 0;display:flex;justify-content:space-between;
+align-items:center;gap:20px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:32px 0 46px;color:var(--fg3);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--fg2);text-decoration:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.beam{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="/">Pavan Kumar PHV</a>
+    <nav class="nav">
+      <a href="/projects/">Work</a><a href="/experience/">Experience</a>
+      <a href="/weekly/">Finance × AI Weekly</a><a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#subscribe">Subscribe</a>
+  </div>
+</header>
+
+<div class="hero wrap">
+  <p class="kicker">CASE STUDY · COMPUTER VISION · EDGE AI</p>
+  <h1>Real-time shelf intelligence,<br>at retail scale</h1>
+  <p class="sub">Empty and misplaced shelf stock quietly costs retail billions in lost sales.
+    Earlier in my career I engineered production computer-vision systems that watch shelves
+    continuously, detect out-of-stock, low-stock and misplaced items in real time, and alert
+    staff before a customer meets an empty slot.</p>
+  <div class="chips">
+    <span class="chip">LATENCY <b>&lt;200 ms</b></span>
+    <span class="chip">THROUGHPUT <b>15–20 FPS</b></span>
+    <span class="chip">MODELS <b>YOLOv7/v9 · TensorRT</b></span>
+    <span class="chip">MATCHING <b>LightGlue · multi-camera</b></span>
+    <span class="chip">SERVING <b>hot-reload · CI/CD</b></span>
+  </div>
+  <p class="notice">This page is an original, interactive illustration built by me, running on
+    synthetic data generated in your browser. It contains no employer or client software, data,
+    imagery, branding, or product names. Quantified specs above are from my public resume.</p>
+</div>
+
+<div class="wrap">
+  <div class="sim">
+    <div class="sim-top">
+      <span class="live">LIVE SIMULATION · SYNTHETIC DATA</span>
+      <span>AISLE 03 · 60 SLOTS · 2 VIRTUAL CAMERAS</span>
+    </div>
+    <div class="sim-grid">
+      <div class="shelfwrap">
+        <div class="beam" id="beam"></div>
+        <div class="shelf" id="shelf"></div>
+      </div>
+      <div class="panel">
+        <div class="kpis">
+          <div class="kpi k-avail"><b id="kAvail">100%</b><span>ON-SHELF AVAILABILITY</span></div>
+          <div class="kpi k-lat"><b id="kLat">— ms</b><span>MEAN DETECTION LATENCY</span></div>
+          <div class="kpi k-alert"><b id="kAlert">0</b><span>OPEN ALERTS</span></div>
+          <div class="kpi"><b id="kDet">0</b><span>DETECTIONS THIS SESSION</span></div>
+        </div>
+        <div class="feed" id="feed"><div><span class="t">--:--:--</span> system ready. press RUN.</div></div>
+        <div class="controls">
+          <button class="primary" id="run">▸ Run</button>
+          <button id="restock">Restock flagged</button>
+          <button id="chaos">Busy Saturday</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="wrap">
+    <p class="kicker">UNDER THE HOOD</p>
+    <h2>How a system like this works</h2>
+    <div class="pipe">
+      <div class="stage"><div class="n">01 · CAPTURE</div><h3>Shelf-mounted cameras</h3>
+        <p>Fixed cameras face the opposite shelf, each covering many slots. Sessions are
+        sensor-driven, so compute is spent only when something changes.</p></div>
+      <div class="stage"><div class="n">02 · DETECT</div><h3>Optimised detection</h3>
+        <p>YOLO-family detectors compiled with TensorRT run at 15–20 FPS, classifying every
+        slot: stocked, low, empty, or wrong product.</p></div>
+      <div class="stage"><div class="n">03 · RESOLVE</div><h3>Multi-camera matching</h3>
+        <p>LightGlue feature matching and calibrated geometry reconcile overlapping views,
+        so one physical slot never becomes two conflicting answers.</p></div>
+      <div class="stage"><div class="n">04 · ACT</div><h3>Serve &amp; alert</h3>
+        <p>Hot-reload model serving pushes events to staff devices in under 200 ms, and
+        replenishment time is tracked from alert to restock.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="wrap">
+    <p class="kicker">WHAT I ACTUALLY BUILT</p>
+    <h2>The engineering behind the demo</h2>
+    <div class="facts"><ul style="margin:0;padding-left:18px">
+      <li><b>Multi-camera shelf-vision pipelines</b> on YOLOv7/v9 with TensorRT acceleration and
+        LightGlue feature matching — sub-200&nbsp;ms responses at 15–20 FPS in production retail
+        environments, with high-precision camera calibration.</li>
+      <li><b>Zero-downtime ML serving</b> — hot-reload model APIs (Flask/Gunicorn) integrated with
+        event streaming and document storage, fully containerised with observability built in.</li>
+      <li><b>End-to-end CI/CD for models</b>, so detection improvements shipped like software, not
+        like science projects.</li>
+      <li><b>The same discipline, upstream and down:</b> the harder problem is rarely detection —
+        it's calibration, definitions ("what counts as low?"), and making alerts trustworthy
+        enough that staff act on them. That thread runs through everything I build, including
+        my current enterprise AI work.</li>
+    </ul></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta">
+    <div>
+      <h2 style="font-size:24px">Deploying AI where it has to work?</h2>
+      <p style="margin:10px 0 0;color:var(--fg2);max-width:32em">I'm a forward-deployed applied AI
+        engineer — GCP Professional Cloud Architect and Anthropic Claude Certified Architect.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="https://www.linkedin.com/in/pavan-kumar-phv/" target="_blank" rel="noopener">Contact on LinkedIn</a>
+      <a class="btn" style="background:transparent;color:var(--fg);border:1px solid var(--line2)" href="/projects/">More work</a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <span>© 2026 Pavan Kumar PHV</span>
+  <span>Original interactive illustration · synthetic data · no client material</span>
+</div></footer>
+
+<script>
+(function(){
+var ROWS=5,COLS=12,slots=[],running=false,det=0,lats=[],chaos=1;
+var shelf=document.getElementById('shelf'),feed=document.getElementById('feed');
+var beam=document.getElementById('beam');
+var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+for(var r=0;r<ROWS;r++){
+  var row=document.createElement('div');row.className='row';
+  for(var c=0;c<COLS;c++){
+    var s=document.createElement('div');s.className='slot';
+    var units=3+Math.floor(Math.random()*3);
+    for(var u=0;u<5;u++){var i=document.createElement('i');s.appendChild(i);}
+    var tag=document.createElement('span');tag.className='tag';s.appendChild(tag);
+    var slot={el:s,tag:tag,units:units,state:'ok',flagged:false,r:r,c:c};
+    s.onclick=(function(sl){return function(){ // manual "customer takes items"
+      if(sl.units>0){sl.units=Math.max(0,sl.units-2);paint(sl);}
+    }})(slot);
+    slots.push(slot);row.appendChild(s);
+  }
+  shelf.appendChild(row);
+}
+function paint(sl){
+  var bars=sl.el.querySelectorAll('i');
+  for(var u=0;u<5;u++){bars[u].style.height=(u<sl.units? (14+u*8)+'px':'3px');
+    bars[u].style.opacity=u<sl.units?1:.12}
+}
+slots.forEach(paint);
+
+function ts(){var d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)+':'+('0'+d.getSeconds()).slice(-2)}
+function log(html){var d=document.createElement('div');d.innerHTML='<span class="t">'+ts()+'</span> '+html;
+  feed.appendChild(d);feed.scrollTop=feed.scrollHeight;
+  while(feed.children.length>60)feed.removeChild(feed.firstChild);}
+
+function classify(sl){
+  if(sl.state==='mis')return 'mis';
+  if(sl.units===0)return 'oos';
+  if(sl.units<=2)return 'low';
+  return 'ok';
+}
+function updateKpis(){
+  var open=0,empty=0;
+  slots.forEach(function(sl){if(sl.flagged)open++;if(sl.units===0||sl.state==='mis')empty++});
+  document.getElementById('kAlert').textContent=open;
+  document.getElementById('kDet').textContent=det;
+  document.getElementById('kAvail').textContent=Math.round(100*(1-empty/slots.length))+'%';
+  if(lats.length){var m=Math.round(lats.reduce(function(a,b){return a+b})/lats.length);
+    document.getElementById('kLat').textContent=m+' ms';}
+}
+
+/* world tick: customers shop, occasionally misplace */
+setInterval(function(){
+  if(!running)return;
+  for(var k=0;k<chaos;k++){
+    var sl=slots[Math.floor(Math.random()*slots.length)];
+    var roll=Math.random();
+    if(roll<0.75&&sl.units>0){sl.units--;paint(sl);}
+    else if(roll<0.80&&sl.state==='ok'){sl.state='mis';}
+  }
+},900);
+
+/* camera sweep: detection happens only when the beam passes */
+var x=-60;
+setInterval(function(){
+  if(!running)return;
+  x+=14;
+  var w=shelf.parentElement.clientWidth;
+  if(x>w){x=-60;}
+  beam.style.left=x+'px';
+  var col=Math.floor((x/w)*COLS);
+  slots.forEach(function(sl){
+    if(!reduced&&sl.c!==col)return;
+    var st=classify(sl);
+    if(st!==sl.el.dataset.st){
+      sl.el.dataset.st=st;
+      sl.el.className='slot '+(st==='ok'?'':st);
+      sl.tag.textContent=st==='oos'?'OUT OF STOCK':st==='low'?'LOW STOCK':st==='mis'?'MISPLACED':'';
+      if(st!=='ok'&&!sl.flagged){
+        sl.flagged=true;det++;
+        var lat=125+Math.floor(Math.random()*65);lats.push(lat);if(lats.length>40)lats.shift();
+        var cls=st==='oos'?'oosc':st==='low'?'lowc':'misc';
+        var name=st==='oos'?'OUT-OF-STOCK':st==='low'?'LOW-STOCK':'MISPLACED';
+        log('<span class="'+cls+'">'+name+'</span> · bay '+(sl.r+1)+' / slot '+(sl.c+1)+
+            ' · conf 0.'+(90+Math.floor(Math.random()*9))+' · <span class="lowc">'+lat+' ms</span>');
+      }
+      if(st==='ok'&&sl.flagged){sl.flagged=false;
+        log('<span class="okc">RESOLVED</span> · bay '+(sl.r+1)+' / slot '+(sl.c+1)+' · restocked');}
+    }
+  });
+  updateKpis();
+},70);
+
+document.getElementById('run').onclick=function(){
+  running=!running;this.textContent=running?'❚❚ Pause':'▸ Run';
+  if(running)log('detection <span class="okc">started</span> · 2 virtual cameras online');
+  else log('detection paused');
+};
+document.getElementById('restock').onclick=function(){
+  var n=0;
+  slots.forEach(function(sl){if(sl.flagged){sl.units=4+Math.floor(Math.random()*2);sl.state='ok';paint(sl);n++}});
+  if(n)log('replenishment run · <span class="okc">'+n+' slots restocked</span>');
+};
+document.getElementById('chaos').onclick=function(){
+  chaos=chaos===1?4:1;
+  this.textContent=chaos===4?'Calm weekday':'Busy Saturday';
+  log('footfall set to <span class="lowc">'+(chaos===4?'peak':'normal')+'</span>');
+};
+})();
+</script>
+</body>
+</html>
