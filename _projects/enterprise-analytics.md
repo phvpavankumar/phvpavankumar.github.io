@@ -25,8 +25,7 @@ tools: ["Python","FastAPI","LangGraph","SAP Datasphere / OData","Langfuse"]
 tags: ["Enterprise AI"]
 public_evidence: []
 demo_mode: synthetic
-demo_url: /prototypes/enterprise-analytics/
-demo_label: Open illustrative skills demo
+demo_url: null
 demo_disclosure: "Illustrative portfolio demonstration using fictional data and simplified workflows. This is not an employer or client product. It demonstrates engineering concepts, with no live enterprise connections or AI processing. Demo outputs are not production results and do not imply employer or client endorsement."
 source_note: "Employer and client source code is not offered for publication."
 source_url: null

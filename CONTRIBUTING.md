@@ -47,6 +47,17 @@ The year links work without JavaScript. The optional content-type filter uses `?
 
 ## Local verification
 
+### Unlisted analytics demo
+
+The standalone `/prototypes/enterprise-analytics/` demo is retained for direct-link
+access only. Its `unlisted: true` flag emits a robots `noindex, nofollow` directive;
+`sitemap: false` excludes it if sitemap generation is enabled later. Keep it out
+of navigation, project buttons and preview footer links. The public project record
+and embedded illustrative preview remain available, with their main disclosures.
+Do not add a robots.txt crawl block: crawlers need to read the noindex directive.
+This is discoverability control, not authentication or legal clearance. The URL,
+source repository and assets can still be accessed or shared publicly.
+
 ### Shared page boundaries
 
 `assets/css/style.css` owns the outer width for `.phv-wrap` and `.profile-wrap`:
