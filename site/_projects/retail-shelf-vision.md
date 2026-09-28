@@ -24,10 +24,13 @@ platform_context: "The description distinguishes system capabilities from person
 tools: []
 tags: ["Applied AI"]
 public_evidence: []
-demo_mode: none
-demo_url: null
+demo_mode: synthetic
+demo_url: /work/shelf-vision/
+demo_label: Try the interactive demo
+source_note: "Browser-only illustration · synthetic data"
+demo_disclosure: "This illustration and the linked demo use synthetic shelf states to explain general engineering concepts. They contain no employer or client software, data or imagery. The preview is a static illustration, not live inference; its shelf states are not production results."
 source_url: null
 source_verified: false
-visualization: none
+visualization: shelf-vision
 ---
 <p>Real-time product recognition and out-of-stock analytics across retail shelf environments, built on YOLOv7/YOLOv9 with TensorRT acceleration and LightGlue feature matching, with high-precision multi-camera calibration. Delivered sub-200&nbsp;ms response times and 15–20 FPS inference by refining sensor-driven session flows and GPU-optimised execution, with end-to-end CI/CD for model deployment.</p>

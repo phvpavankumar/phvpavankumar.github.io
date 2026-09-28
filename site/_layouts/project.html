@@ -20,7 +20,9 @@ layout: default
       {% include project-links.html %}
     </section>
     <section aria-label="Project visualization">
-      {% if page.visualization == 'published-work' %}
+      {% if page.visualization == 'shelf-vision' %}
+        {% include shelf-vision-visual.html %}
+      {% elsif page.visualization == 'published-work' %}
         {% include published-work.html %}
       {% elsif page.visualization == 'enterprise-analytics' %}
         {% include enterprise-analytics-visual.html %}

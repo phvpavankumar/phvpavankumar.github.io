@@ -55,7 +55,7 @@ module ContentIndex
         dates.compact.each { |d| raise "#{id}: date is outside verified years" unless years.include?(d.year) }
         raise "#{id}: ongoing must be true, false or null" unless [true, false, nil].include?(item['ongoing'])
         raise "#{id}: ongoing project cannot have an end date" if item['ongoing'] && item['end_date']
-        raise "#{id}: unapproved visualization" unless [nil, 'none', 'enterprise-analytics', 'process-intelligence', 'published-work'].include?(item['visualization'])
+        raise "#{id}: unapproved visualization" unless [nil, 'none', 'enterprise-analytics', 'process-intelligence', 'published-work', 'shelf-vision'].include?(item['visualization'])
         if item['visualization'] == 'published-work'
           raise "#{id}: missing workflow" unless item['workflow'].is_a?(Array) && !item['workflow'].empty? && item['workflow'].all? { |step| step.is_a?(Hash) && %w[title detail].all? { |key| !step[key].to_s.strip.empty? } }
           raise "#{id}: missing public evidence" unless item['public_evidence'].is_a?(Array) && !item['public_evidence'].empty?

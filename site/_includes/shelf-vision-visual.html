@@ -1,0 +1,32 @@
+<div class="shelf-preview">
+  <div class="shelf-preview-heading">
+    <p class="phv-kicker">Computer vision · illustrated</p>
+    <span class="shelf-preview-badge">Synthetic scene</span>
+  </div>
+  <h2>From shelf to signal</h2>
+  <p class="shelf-preview-intro">Two views. One shelf. A stock state people can act on.</p>
+  <figure class="shelf-scene" aria-labelledby="shelf-scene-caption">
+    <div class="shelf-cameras" aria-hidden="true">
+      <span><i></i> Camera A</span><span>Overlapping views</span><span><i></i> Camera B</span>
+    </div>
+    <div class="shelf-bays" aria-hidden="true">
+      <div class="shelf-bay shelf-bay-stocked"><span>Stocked</span><div><i></i><i></i><i></i><i></i></div></div>
+      <div class="shelf-bay shelf-bay-low"><span>Low stock</span><div><i></i></div></div>
+      <div class="shelf-bay shelf-bay-empty"><span>Empty</span><div><b>−</b></div></div>
+      <div class="shelf-bay shelf-bay-stocked"><span>Stocked</span><div><i></i><i></i><i></i><i></i></div></div>
+      <div class="shelf-bay shelf-bay-misplaced"><span>Misplaced</span><div><i></i><i></i><i></i></div></div>
+      <div class="shelf-bay shelf-bay-stocked"><span>Stocked</span><div><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <figcaption id="shelf-scene-caption">Illustrative shelf: stocked, low-stock, empty and misplaced items across two camera views.</figcaption>
+  </figure>
+  <ol class="shelf-pipeline" aria-label="Shelf-vision workflow">
+    <li><span>01</span><div><h3>Capture</h3><p>Calibrated cameras and sensor-driven sessions.</p></div></li>
+    <li><span>02</span><div><h3>Detect</h3><p>YOLOv7/v9 with TensorRT for product recognition.</p></div></li>
+    <li><span>03</span><div><h3>Match views</h3><p>LightGlue and calibration connect overlapping observations.</p></div></li>
+    <li><span>04</span><div><h3>Surface the signal</h3><p>Stock-state information supports replenishment decisions.</p></div></li>
+  </ol>
+  <div class="shelf-preview-footer">
+    <a href="{{ page.demo_url | relative_url }}">Explore the interactive shelf →</a>
+    <p>Run a synthetic scenario, increase activity, or restock flagged slots.</p>
+  </div>
+</div>
