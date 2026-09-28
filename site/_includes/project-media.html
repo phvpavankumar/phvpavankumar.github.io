@@ -1,0 +1,46 @@
+{% for evidence in page.public_evidence %}
+  {% if evidence.url contains 'https://www.youtube.com/watch?v=' %}
+  {% assign video_id = evidence.url | split: 'v=' | last | split: '&' | first %}
+  <section class="project-media" aria-label="Project video" data-project-media data-video-id="{{ video_id | escape }}">
+    <p class="phv-kicker">Watch the project</p>
+    <h2>{{ page.title | escape }}</h2>
+    <div class="project-media-stage" data-media-stage>
+      <div class="project-media-poster" data-media-poster>
+        <span class="project-media-symbol" aria-hidden="true">▷</span>
+        <p>Project recording · YouTube</p>
+        <button type="button" class="btn" data-media-load hidden>Play video here</button>
+      </div>
+    </div>
+    <div class="project-media-actions"><a href="{{ evidence.url | escape }}" target="_blank" rel="noopener">Watch on YouTube ↗</a><button type="button" data-media-close hidden>Close video</button></div>
+    <p class="project-media-note">Load the YouTube player here, then press play. If playback is unavailable, use the YouTube link.</p>
+  </section>
+  {% endif %}
+{% endfor %}
+{% if page.demo_url == '/work/shelf-vision/' or page.demo_url == '/demos/aurevia/' %}
+<section class="project-media" aria-label="Interactive demo preview" data-project-media data-demo-url="{{ page.demo_url | relative_url }}">
+  <p class="phv-kicker">Try it on this page</p>
+  <h2>Interactive demo</h2>
+  <p class="project-media-note">{{ page.demo_disclosure | escape }}</p>
+  <div class="project-media-stage project-media-demo" data-media-stage>
+    <div class="project-media-poster" data-media-poster>
+      <span class="project-media-symbol" aria-hidden="true">↗</span>
+      <p>{% if page.demo_url == '/work/shelf-vision/' %}Explore a synthetic shelf scenario{% else %}Explore the fictional Aurevia workspace{% endif %}</p>
+      <button type="button" class="btn" data-media-load hidden>Load interactive demo</button>
+    </div>
+  </div>
+  <div class="project-media-actions"><a href="{{ page.demo_url | relative_url }}" target="_blank" rel="noopener">Open demo in a full page ↗</a><button type="button" data-media-close hidden>Close demo</button></div>
+</section>
+{% endif %}
+{% assign writing_records = site.posts | concat: site.contributions %}
+{% for related in page.related_writing %}
+  {% assign article = writing_records | where: 'permalink', related.url | first %}
+  {% if article %}
+  <aside class="project-media project-article-preview" aria-label="Related article preview">
+    <p class="phv-kicker">Related reading{% if article.publication %} · {{ article.publication | escape }}{% endif %}</p>
+    <h2><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h2>
+    <p class="item-period">{{ article.date | date: '%-d %B %Y' }}{% if article.contribution_role %} · {{ article.contribution_role | escape }}{% endif %}</p>
+    <p>{{ article.summary | escape }}</p>
+    <div class="project-media-actions"><a href="{{ article.url | relative_url }}">Read the article preview →</a>{% if article.original_url %}<a href="{{ article.original_url | escape }}" target="_blank" rel="noopener">Read on {{ article.publication | escape }} ↗</a>{% endif %}</div>
+  </aside>
+  {% endif %}
+{% endfor %}

@@ -124,3 +124,17 @@ credits and links to the publisher. They also appear in Notes & Ideas and Writin
 For a republication, label the date of the linked edition explicitly with
 `publication_date_label`; describe the earlier publication separately when known.
 Do not infer an exact original date from a later portfolio listing.
+
+### Project media previews
+
+The project layout renders media above the right-hand visualization. Verified
+YouTube watch links in `public_evidence` get a player that loads only on request;
+closing it removes the iframe and restores keyboard focus. Direct links remain
+available without JavaScript and when YouTube playback is restricted. No video
+autoplays. Use canonical `https://www.youtube.com/watch?v=VIDEO_ID` URLs.
+
+The two public local demos (`/work/shelf-vision/` and `/demos/aurevia/`) can also
+be loaded in the panel, with their disclosures and a full-page alternative.
+The unlisted analytics demo is deliberately excluded. `related_writing` URLs
+resolve to canonical posts/contributions and render article preview cards using
+the existing title, date and summary; external publisher pages are not embedded.
