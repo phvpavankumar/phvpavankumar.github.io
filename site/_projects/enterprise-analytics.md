@@ -44,16 +44,19 @@ decisions:
 related_writing:
   - title: The number that meant two things
     url: /weekly/the-number-that-meant-two-things/
+challenge: "Finance questions depend on agreed definitions, reporting periods and source data. The engineering challenge was to turn those requirements into analytical tools that agents could use, while keeping results traceable and reconcilable."
+case_study_heading: "From business definitions to analytical tools"
+outcomes: ["Delivered SAP-connected Python analytical tools and integrated them into agent workflows.", "Contributed backend services, KPI lineage and reconciliation, testing and trace analysis within the wider platform."]
+evidence_note: "These outcomes describe my documented engineering responsibilities. The public illustration demonstrates the calculation pattern using fictional data; it is not evidence of client adoption, financial savings or production performance."
+takeaway: "A reliable analytical answer starts with a defined calculation. Source context, reconciliation and trace analysis make that calculation easier to inspect when the result is questioned."
 ---
-<p>I contributed AI and backend engineering to a team-built enterprise analytics platform. My work covered orchestration, data integration, KPI lineage and reconciliation, testing, and observability.</p>
+<p>My role connected conversations with client technology and finance stakeholders to the backend implementation. I worked with chief technology officers, directors, technical leads, senior developers and accountants to understand what financial metrics meant and how they were calculated.</p>
 
-<h3>From finance conversations to working AI tools</h3>
-<p>I worked directly with client-side chief technology officers (CTOs), directors, technical leads, senior developers and accountants to understand financial metrics, business definitions and how calculations were performed. I translated that knowledge into Python analytical tools connected to SAP data and integrated those tools into agent workflows.</p>
+<h3>Translate the requirement</h3>
+<p>I used those definitions to build Python analytical tools connected to SAP data, then integrated the tools into agent workflows. This gave the agent a calculation to call and a result to explain.</p>
 
-<ol>
-  <li><strong>Understand the business:</strong> gather the meaning of each financial metric and its calculation method from the people who use and maintain it.</li>
-  <li><strong>Implement the calculation:</strong> connect the relevant SAP data to Python tools that apply those business definitions.</li>
-  <li><strong>Connect tools to agents:</strong> integrate the analytical tools into agent workflows so responses use calculated results, rather than asking a language model to invent the financial logic.</li>
-</ol>
+<h3>Make the result inspectable</h3>
+<p>My work also covered source-to-UI KPI lineage, reconciliation, testing and Langfuse trace analysis. These responsibilities connect the data source, the analytical calculation and the response shown to the user.</p>
 
-<p>Technologies I worked with include Python, FastAPI, LangGraph, SAP Datasphere/OData and Langfuse. The interactive example is a separate, simplified portfolio demonstration of general analytics concepts. Its interface, fictional figures and sample workflows should not be read as a description of any employer's or client's implementation.</p>
+<h3>Work within a wider team</h3>
+<p>The platform was team-built. My contribution was client-facing AI and backend engineering, including the translation of requirements into implementation. The page does not attribute the entire platform or its interface to me.</p>

@@ -10,6 +10,7 @@ layout: default
       <h1 id="project-title">{{ page.title | escape }}</h1>
       {% assign item = page %}{% include item-period.html %}
       <p class="project-lead">{{ page.summary | escape }}</p>
+      {% if page.challenge %}<h2>The problem</h2><p>{{ page.challenge | escape }}</p>{% endif %}
       <h2>My contribution</h2>
       <p class="role-label">{{ page.role | escape }}</p>
       <p>{{ page.contribution | escape }}</p>
@@ -29,13 +30,23 @@ layout: default
         {% include enterprise-analytics-visual.html %}
       {% elsif page.visualization == 'process-intelligence' %}
         {% include process-intelligence-visual.html %}
+      {% elsif page.evidence_highlights.size > 0 %}
+        <aside class="published-work" aria-label="Project evidence">
+          <p class="phv-kicker">Evidence at a glance</p>
+          <h2>Model work through deployment</h2>
+          <dl class="case-evidence">{% for highlight in page.evidence_highlights %}<dt>{{ highlight.label | escape }}</dt><dd>{{ highlight.detail | escape }}</dd>{% endfor %}</dl>
+          <p class="item-period">{{ page.evidence_note | escape }}</p>
+          <a href="{{ '/assets/downloads/pavan-kumar-phv-resume.pdf' | relative_url }}">View the public resume ↗</a>
+        </aside>
       {% else %}
         <div class="visual-placeholder"><p class="phv-kicker">Engineering record</p><h2>From implementation to production</h2><p>The project description below records the supplied engineering work. A project-specific visualization has not been added.</p></div>
       {% endif %}
     </section>
   </div>
-  <section class="project-details project-detail-row"><h2>Project description and engineering work</h2><div class="project-detail-body">{{ content }}</div></section>
+  <section class="project-details project-detail-row"><h2>{{ page.case_study_heading | default: 'Project description and engineering work' | escape }}</h2><div class="project-detail-body">{{ content }}</div></section>
   {% if page.decisions.size > 0 %}<section class="project-details project-detail-row"><h2>Engineering decisions</h2><div class="project-detail-body">{% for decision in page.decisions %}<details class="engineering-decision"><summary>{{ decision.title | escape }}</summary><p>{{ decision.detail | escape }}</p></details>{% endfor %}</div></section>{% endif %}
+  {% if page.outcomes.size > 0 %}<section class="project-details project-detail-row"><h2>Outcomes &amp; evidence</h2><div class="project-detail-body"><ul>{% for outcome in page.outcomes %}<li>{{ outcome | escape }}</li>{% endfor %}</ul>{% if page.evidence_note %}<p>{{ page.evidence_note | escape }}</p>{% endif %}</div></section>{% endif %}
+  {% if page.takeaway %}<section class="project-details project-detail-row"><h2>Engineering takeaway</h2><div class="project-detail-body"><p>{{ page.takeaway | escape }}</p></div></section>{% endif %}
   {% if page.related_writing.size > 0 %}<nav class="project-details" aria-label="Related writing">{% for article in page.related_writing %}<p><a href="{{ article.url | relative_url }}">Related writing: {{ article.title | escape }} →</a></p>{% endfor %}</nav>{% endif %}
   {% if page.demo_mode == 'synthetic' %}<aside class="demo-disclosure"><h2>About this demonstration</h2><p>{% if page.demo_disclosure %}{{ page.demo_disclosure | escape }}{% else %}All financial values and reporting periods are synthetic. This is deterministic local JavaScript, with no live SAP, LLM or production API connection. Demo results are not project outcomes. Platform counts describe team scope, not sole ownership.{% endif %}</p></aside>{% endif %}
 </div>

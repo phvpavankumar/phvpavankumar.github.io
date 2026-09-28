@@ -67,6 +67,9 @@
 .project-constraints{color:var(--fg2);font-size:14px}
 .project-constraints summary,.engineering-decision summary{cursor:pointer;color:var(--gold);padding:12px 0}
 .engineering-decision{border-bottom:1px solid var(--line2)}
+.case-evidence{margin:24px 0}
+.case-evidence dt{color:var(--gold);font-family:var(--display);font-size:26px;line-height:1.3;margin-top:22px}
+.case-evidence dd{color:var(--fg2);font-size:15px;line-height:1.7;margin:8px 0 0;padding-bottom:20px;border-bottom:1px solid var(--line2)}
 .phv-head .phv-wrap{min-width:0}
 .phv-head .phv-mark{flex-shrink:0}
 .phv-head .btn{flex-shrink:0}

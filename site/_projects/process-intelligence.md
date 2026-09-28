@@ -31,7 +31,20 @@ demo_disclosure: "Aurevia is an illustrative browser-only demo using fictional i
 source_url: null
 source_verified: false
 visualization: process-intelligence
+challenge: "Business-process recordings need to become useful outputs and searchable knowledge. The backend had to support long-running processing, deliver generated artifacts, and make the resulting information available for follow-up questions."
+case_study_heading: "From a recording to reusable knowledge"
+outcomes: ["Contributed backend and AI integration for test-case generation and delivery, including download APIs.", "Built knowledge-repository capabilities covering auto-ingest, semantic chunking, embeddings, hybrid retrieval and task-scoped conversation history.", "Contributed production hardening through SQL parameterisation, ingest guardrails, failure metrics and runtime decoupling."]
+evidence_note: "The evidence here is the documented implementation scope. No measured time saving or retrieval-quality benchmark is published. Aurevia is a separate fictional illustration with no live AI processing."
+takeaway: "Generating an artifact is only part of the workflow. Job visibility, delivery APIs and a searchable repository make the output usable beyond the original recording."
+decisions: [{"title": "Represent processing as tracked jobs", "detail": "The platform uses asynchronous jobs with statuses, claims and heartbeats in a database-driven control plane. This separates upload handling from longer-running processing and makes worker progress visible without a separate queueing platform."}, {"title": "Combine semantic retrieval with governed SQL", "detail": "My repository work combined semantic chunking and pgvector embeddings with governed SQL retrieval. The approach supports both text-based knowledge retrieval and structured queries, with evidence merging and answer synthesis."}, {"title": "Keep conversation context scoped to the task", "detail": "Task-scoped history and repository APIs organise follow-up questions around the relevant work. SQL parameterisation, ingest guardrails and failure metrics support that boundary in the implementation."}]
 ---
-<p>A three-service system that turns recorded business-process videos into structured outputs: step-by-step documentation, chapters, HTML guides, BPMN process diagrams, test cases, and a searchable knowledge repository. Uploads become asynchronous jobs claimed by AI workers through a database-driven control plane with statuses, claims and heartbeats — no separate queueing platform required.</p>
+<p>The team-built platform turns business-process recordings into documentation, chapters, HTML guides, BPMN diagrams, test cases and searchable knowledge. My work focused on the backend, orchestration and repository layer.</p>
 
-<p>My work centred on two areas. First, test-case generation and delivery — backend/AI integration and the download APIs that expose generated artifacts. Second, the knowledge repository layer that turned the platform from "video in, document out" into "video in, reusable organisational knowledge out": auto-ingest of generated documentation, semantic chunking and embedding with pgvector, hybrid retrieval combining vector search with governed SQL, evidence merging and answer synthesis, task-scoped chat history, and production hardening — SQL parameterisation, ingest guardrails, failure metrics and runtime decoupling. Stack: Python, FastAPI, APScheduler, PostgreSQL + pgvector, Azure Blob, Nuxt 3/Vue 3.</p>
+<h3>Deliver generated outputs</h3>
+<p>I contributed backend and AI integration for test-case generation and the APIs used to download generated artifacts. Uploads became asynchronous jobs claimed by workers, with statuses and heartbeats providing visibility into processing.</p>
+
+<h3>Make outputs retrievable</h3>
+<p>My knowledge-repository work covered auto-ingest of generated documentation, semantic chunking and embeddings with pgvector. Hybrid retrieval combined semantic search with governed SQL, followed by evidence merging and answer synthesis.</p>
+
+<h3>Define the contribution boundary</h3>
+<p>I contributed repository APIs, task-scoped conversation history and production hardening. The broader video-to-artifacts platform was a team effort; my role was not sole ownership of the frontend or every generated output.</p>
