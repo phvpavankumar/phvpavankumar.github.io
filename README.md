@@ -1,40 +1,56 @@
-# Pavan Kumar PHV — portfolio
+# Pavan Kumar PHV
 
-All publishable Jekyll source lives in `site/`. Supporting files stay outside the
-published source.
+**Senior Applied AI Engineer · Forward-Deployed · Enterprise Analytics & AI**
 
-## Repository map
+Based in India. I build AI and backend systems—from enterprise analytics and
+knowledge retrieval to production computer vision and edge AI.
 
-| Path | Purpose |
-| --- | --- |
-| `site/pages/` | Main pages and generated year archives |
-| `site/_projects/`, `site/_posts/`, `site/_contributions/` | Canonical content |
-| `site/_layouts/`, `site/_includes/`, `site/_data/` | Shared Jekyll templates and data |
-| `site/demos/` | Aurevia and unlisted enterprise analytics |
-| `site/assets/` | Styles, scripts, portrait and public resume |
-| `scripts/` | Content generation and build verification |
-| `docs/` | Authoring and publishing instructions |
-| `content-templates/` | Unpublished authoring starters |
-| `.github/workflows/` | Manual build and deployment |
+[Explore my portfolio](https://phvpavankumar.github.io/) ·
+[Download Resume](https://phvpavankumar.github.io/assets/downloads/pavan-kumar-phv-resume.pdf) ·
+[LinkedIn](https://www.linkedin.com/in/pavan-kumar-phv/) ·
+[Connect with me](https://phvpavankumar.github.io/#connect)
 
-Underscore-prefixed source folders are Jekyll conventions, now contained together.
-Explicit permalinks preserve existing URLs. Shared demo assets remain under
-`/assets/` to avoid duplication and broken links.
+## What I do
 
-## Local development
+I work with technology leaders, developers and finance teams to understand business
+definitions and calculation methods, then translate that knowledge into working
+Python tools, backend services and agent workflows. My engineering work includes
+data integration, KPI reconciliation, asynchronous orchestration and observability.
 
-Use Ruby 4.0 and Bundler. From the repository root:
+Previously, I worked on real-time retail computer vision, ML-serving systems,
+embedded neural networks and LLM-powered log investigation.
 
-```sh
-bundle install
-bundle exec ruby scripts/content_index.rb --check
-bundle exec jekyll build --config _config.yml
-bundle exec ruby scripts/verify_site.rb _site
-bundle exec jekyll serve --config _config.yml
-```
+## Selected work
 
-`_site/` is disposable build output. Keep private documents, backups and review
-screenshots outside `site/`. Keep `Gemfile.lock` in version control.
+- **[Enterprise Agentic Analytics](https://phvpavankumar.github.io/projects/enterprise-analytics/)** — Client-facing AI and backend engineering: translating finance requirements into SAP-connected Python analytical tools and agent workflows.
+- **[Process intelligence from video](https://phvpavankumar.github.io/projects/process-intelligence/)** — Backend integration, asynchronous jobs and a knowledge repository using semantic chunking, embeddings and hybrid retrieval.
+- **[Multi-camera retail shelf vision](https://phvpavankumar.github.io/projects/retail-shelf-vision/)** — Computer-vision pipelines, TensorRT optimisation, model serving and deployment.
 
-See [authoring](docs/content-authoring.md) and [publishing](docs/publishing.md).
-A push alone does not trigger the new deployment workflow.
+[All projects](https://phvpavankumar.github.io/projects/) ·
+[Professional experience](https://phvpavankumar.github.io/experience/)
+
+## Core skills
+
+- **AI & retrieval:** agentic systems, LangGraph, LangChain, RAG, LLM integration and evaluation.
+- **Backend & data:** Python, FastAPI, PostgreSQL, pgvector, enterprise data integration and KPI lineage.
+- **Computer vision:** object detection, TensorRT, ONNX and embedded deployment.
+- **Cloud & delivery:** Azure, AWS, GCP, Docker, Kubernetes and CI/CD.
+
+## Writing
+
+[Finance × AI Weekly](https://phvpavankumar.github.io/weekly/) explores practical
+questions about definitions, decisions and controls when applying AI to finance.
+
+## Get in touch
+
+For roles, speaking, writing or collaboration:
+[LinkedIn](https://www.linkedin.com/in/pavan-kumar-phv/) or
+[phvpavankumar@gmail.com](mailto:phvpavankumar@gmail.com).
+
+Client work is confidential. Portfolio demonstrations use fictional content and
+illustrate general engineering concepts, not employer or client products.
+
+---
+
+Maintaining this website? See [development](docs/development.md),
+[content authoring](docs/content-authoring.md) and [automatic publishing](docs/publishing.md).

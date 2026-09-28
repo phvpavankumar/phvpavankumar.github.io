@@ -3,7 +3,7 @@
 All website paths below are relative to `site/` unless stated otherwise. Run
 commands from the repository root. Main HTML pages live in `site/pages/`; shared
 includes, layouts, data and content collections retain Jekyll's required names.
-See [publishing](publishing.md) for the manual GitHub Actions workflow.
+See [publishing](publishing.md) for the automatic GitHub Actions workflow.
 
 The site uses Jekyll on GitHub Pages, native Liquid views and the existing feed plugin. No new deployment service or custom plugin is required. Shared colours and fonts live in `assets/css/style.css`.
 
@@ -98,6 +98,6 @@ The public pages do not include the A/B mockup controls or review artifacts.
 
 ### Build and content checks
 
-Use the native Jekyll build and verification commands in the root README. The old external preview harness expects the previous source layout and is historical, not part of this build. Check responsive layouts, keyboard controls, reduced motion and synthetic calculations before publication.
+Use the native Jekyll build and verification commands in [development](development.md). The old external preview harness expects the previous source layout and is historical, not part of this build. Check responsive layouts, keyboard controls, reduced motion and synthetic calculations before publication.
 
 Never put private briefs, career documents, confidential scan terms or review evidence into served directories. Keep GitHub Pages on the canonical github.io URL. Publication remains the owner's action after review.
