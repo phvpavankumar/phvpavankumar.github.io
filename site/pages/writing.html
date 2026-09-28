@@ -6,7 +6,7 @@ permalink: /writing/
 ---
 <div class="phv-wrap content-page" data-content-filter>
 <p class="phv-kicker">Writing</p><h1>Ideas, published over time</h1>
-<nav class="content-nav" aria-label="Writing navigation"><a href="{{ '/weekly/' | relative_url }}">Finance × AI Weekly</a><a href="{{ '/archive/' | relative_url }}">All content by year</a></nav>
+<nav class="content-nav" aria-label="Writing navigation"><a href="{{ '/weekly/' | relative_url }}">Notes &amp; Ideas</a><a href="{{ '/archive/' | relative_url }}">All content by year</a></nav>
 {% include kind-filter.html %}
 {% assign groups = site.posts | where: 'visibility', 'published' | group_by_exp: 'post', "post.date | date: '%Y'" %}
 {% for group in groups %}<section data-content-group><h2>{{ group.name }}</h2><div class="content-grid">{% for item in group.items %}{% include content-card.html %}{% endfor %}</div></section>{% endfor %}

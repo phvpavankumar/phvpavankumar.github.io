@@ -38,8 +38,10 @@ embedded neural networks and LLM-powered log investigation.
 
 ## Writing
 
-[Finance × AI Weekly](https://phvpavankumar.github.io/weekly/) explores practical
-questions about definitions, decisions and controls when applying AI to finance.
+[Notes & Ideas](https://phvpavankumar.github.io/weekly/) shares practical lessons
+on AI, engineering and the decisions behind reliable systems, without a fixed
+publishing schedule. Start with
+[The number that meant two things](https://phvpavankumar.github.io/weekly/the-number-that-meant-two-things/).
 
 ## Get in touch
 
