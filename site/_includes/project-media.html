@@ -1,7 +1,7 @@
 {% for evidence in page.public_evidence %}
   {% if evidence.url contains 'https://www.youtube.com/watch?v=' %}
   {% assign video_id = evidence.url | split: 'v=' | last | split: '&' | first %}
-  <section class="project-media" aria-label="Project video" data-project-media data-video-id="{{ video_id | escape }}">
+  <section class="project-media" aria-label="Project video" data-project-media data-video-id="{{ video_id | escape }}" data-playlist-id="{{ site.data.project_media.youtube_playlist | escape }}">
     <p class="phv-kicker">Watch the project</p>
     <h2>{{ page.title | escape }}</h2>
     <div class="project-media-stage" data-media-stage>
@@ -11,7 +11,7 @@
         <button type="button" class="btn" data-media-load hidden>Play video here</button>
       </div>
     </div>
-    <div class="project-media-actions"><a href="{{ evidence.url | escape }}" target="_blank" rel="noopener">Watch on YouTube ↗</a><button type="button" data-media-close hidden>Close video</button></div>
+    <div class="project-media-actions"><a href="{{ evidence.url | escape }}&amp;list={{ site.data.project_media.youtube_playlist | escape }}" target="_blank" rel="noopener">Watch on YouTube ↗</a><a href="https://www.youtube.com/playlist?list={{ site.data.project_media.youtube_playlist | escape }}" target="_blank" rel="noopener">More project videos ↗</a><button type="button" data-media-close hidden>Close video</button></div>
     <p class="project-media-note">Load the YouTube player here, then press play. If playback is unavailable, use the YouTube link.</p>
   </section>
   {% endif %}

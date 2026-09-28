@@ -7,6 +7,7 @@
     const close = root.querySelector('[data-media-close]');
     const video = root.dataset.videoId;
     const demo = root.dataset.demoUrl;
+    const playlist = root.dataset.playlistId;
     const isVideo = /^[A-Za-z0-9_-]{11}$/.test(video || '');
     const isDemo = ['/work/shelf-vision/', '/demos/aurevia/'].includes(demo);
     if (!isVideo && !isDemo) return;
@@ -15,7 +16,9 @@
       if (stage.querySelector('iframe')) return;
       const frame = document.createElement('iframe');
       frame.title = isVideo ? root.querySelector('h2').textContent + ' — YouTube video' : 'Interactive portfolio demo — fictional content';
-      frame.src = isVideo ? 'https://www.youtube-nocookie.com/embed/' + video + '?autoplay=0&rel=0' : demo;
+      const playlistQuery = /^PL[A-Za-z0-9_-]+$/.test(playlist || '')
+        ? '&listType=playlist&list=' + encodeURIComponent(playlist) : '';
+      frame.src = isVideo ? 'https://www.youtube-nocookie.com/embed/' + video + '?autoplay=0&rel=0' + playlistQuery : demo;
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
       frame.allowFullscreen = true;
       frame.allow = isVideo ? 'encrypted-media; picture-in-picture; fullscreen' : 'fullscreen';
