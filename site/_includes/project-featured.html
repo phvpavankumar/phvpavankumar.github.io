@@ -6,6 +6,7 @@
 <h3><a href="{{ project.url | relative_url }}">{{ project.feature_title | escape }}</a></h3>
 <p>{{ project.feature_summary | default: project.summary | escape }}</p>
 <a class="profile-work-link" href="{{ project.url | relative_url }}">Explore project <span aria-hidden="true">↗</span></a>
+{% if project.slug == 'process-intelligence' %}<a class="profile-work-link" href="{{ project.demo_url | relative_url }}">Interactive demo → <span>(fictional demo)</span></a>{% endif %}
 {% if project.slug == 'industrial-3d-vision' %}<a class="profile-work-link" href="{{ project.demo_url | relative_url }}">Explore interactive demo → <span>(fictional reconstruction)</span></a>{% endif %}
 {% if project.slug == 'retail-shelf-vision' %}<a class="profile-work-link" href="{{ '/work/shelf-vision/' | relative_url }}">Interactive demo →</a>{% endif %}
 </article>
