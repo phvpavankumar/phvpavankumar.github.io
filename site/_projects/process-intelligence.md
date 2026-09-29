@@ -6,6 +6,7 @@ featured: true
 featured_order: 2
 feature_label: "KNOWLEDGE · RETRIEVAL"
 feature_title: "Process intelligence from video"
+feature_summary: "Teams need process recordings to become usable documentation and searchable knowledge. I contributed backend and AI integration, processing workflows and retrieval capabilities within a team-built platform."
 kind: project
 summary: "Business-process recordings become documentation, BPMN diagrams, test cases and a searchable knowledge base — semantic embedding with pgvector, hybrid vector + governed SQL retrieval, async job orchestration."
 permalink: /projects/process-intelligence/

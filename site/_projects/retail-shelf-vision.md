@@ -3,9 +3,10 @@ layout: project
 title: "Multi-camera retail shelf-vision system"
 slug: retail-shelf-vision
 featured: true
-featured_order: 3
+featured_order: 4
 feature_label: "COMPUTER VISION · REAL TIME"
 feature_title: "Retail shelf vision at <200 ms"
+feature_summary: "Retail teams need timely product recognition and out-of-stock analytics. I refined multi-camera processing and model deployment in a system delivering sub-200 ms responses at 15–20 FPS."
 kind: project
 summary: "Multi-camera product recognition on YOLOv7/v9 with TensorRT — sub-200 ms responses at 15–20 FPS, hot-reload model serving, end-to-end CI/CD."
 permalink: /projects/retail-shelf-vision/

@@ -6,6 +6,7 @@ featured: true
 featured_order: 1
 feature_label: "ENTERPRISE · AGENTIC AI"
 feature_title: "Enterprise Agentic Analytics"
+feature_summary: "Finance teams need consistent business definitions behind AI answers. I worked with technology leaders and finance stakeholders to clarify metric calculations and translate them into Python tools connected to enterprise data."
 kind: project
 summary: "Worked with client technology leaders and finance teams to understand financial metrics and calculation methods, then translated that knowledge into SAP-connected Python tools for AI agents. A separate fictional demo illustrates these concepts."
 permalink: /projects/enterprise-analytics/

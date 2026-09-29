@@ -3,6 +3,11 @@ layout: project
 title: "Enterprise Vision Inspection Suite"
 description: "Hands-on delivery of a reusable vision-inspection suite, from client discovery to deployment. Explore Veyra Vision, an independent fictional demo."
 slug: industrial-3d-vision
+featured: true
+featured_order: 3
+feature_label: "COMPUTER VISION · PRODUCT DELIVERY"
+feature_title: "Enterprise Vision Inspection Suite"
+feature_summary: "Helped build a reusable application for inspecting railway assets, infrastructure and manufactured products. Worked with cross-functional teams and clients in the United States and Japan, from requirements and implementation through testing and deployment."
 kind: project
 summary: "Helped develop a reusable enterprise vision-inspection suite from scratch through deployment, turning client ideas into inspection workflows and reviewable results with cross-functional teams."
 permalink: /projects/industrial-3d-vision/

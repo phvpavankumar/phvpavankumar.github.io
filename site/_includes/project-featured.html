@@ -4,8 +4,9 @@
 <article class="profile-work-card" data-work-category="{% if project.tags contains 'Enterprise AI' %}ai{% else %}vision{% endif %}">
 <p class="profile-eyebrow">{{ project.feature_label | escape }}</p>
 <h3><a href="{{ project.url | relative_url }}">{{ project.feature_title | escape }}</a></h3>
-<p>{{ project.summary | escape }}</p>
+<p>{{ project.feature_summary | default: project.summary | escape }}</p>
 <a class="profile-work-link" href="{{ project.url | relative_url }}">Explore project <span aria-hidden="true">↗</span></a>
+{% if project.slug == 'industrial-3d-vision' %}<a class="profile-work-link" href="{{ project.demo_url | relative_url }}">Explore interactive demo → <span>(fictional reconstruction)</span></a>{% endif %}
 {% if project.slug == 'retail-shelf-vision' %}<a class="profile-work-link" href="{{ '/work/shelf-vision/' | relative_url }}">Interactive demo →</a>{% endif %}
 </article>
 {% endfor %}

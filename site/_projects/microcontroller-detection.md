@@ -2,7 +2,7 @@
 layout: project
 title: "Neural networks on microcontrollers"
 slug: microcontroller-detection
-featured: true
+featured: false
 featured_order: 4
 feature_label: "EDGE AI · OPTIMISATION"
 feature_title: "Neural networks on microcontrollers"
