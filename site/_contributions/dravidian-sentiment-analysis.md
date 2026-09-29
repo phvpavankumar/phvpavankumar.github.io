@@ -22,9 +22,9 @@ Code-mixed text combines languages within the same comment. Our team studied sen
 
 ## Approach and attribution
 
-The paper compares dense neural networks, bidirectional LSTMs and a CNN–LSTM model, and discusses preprocessing and class imbalance. It reports shared-task experiments; it is research evidence, not a production deployment claim.
+The paper compares dense neural networks, bidirectional LSTMs and a CNN–LSTM model, and discusses preprocessing and class imbalance.
 
-I am credited as the first author, alongside Premjith B, Sanjanasri J.P and Soman K.P. The methods and results are the team's work; author order alone does not establish individual implementation responsibilities.
+I am credited as the first author, alongside Premjith B, Sanjanasri J.P and Soman K.P. We submitted this work as team Amrita_CEN_NLP.
 
 ## Paper and code
 
