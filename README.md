@@ -43,6 +43,12 @@ on AI, engineering and the decisions behind reliable systems, without a fixed
 publishing schedule. Start with
 [The number that meant two things](https://phvpavankumar.github.io/weekly/the-number-that-meant-two-things/).
 
+## Research
+
+First author of [Deep Learning Based Sentiment Analysis for Malayalam, Tamil and Kannada Languages](https://phvpavankumar.github.io/contributions/dravidian-sentiment-analysis/),
+a team paper for the FIRE 2021 shared task, published in the 2022 proceedings.
+The portfolio entry links to the publisher's paper and the public research code.
+
 ## Get in touch
 
 For roles, speaking, writing or collaboration:

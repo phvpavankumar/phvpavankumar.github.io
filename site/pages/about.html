@@ -20,7 +20,7 @@ description: "Explore Pavan Kumar PHV's background and core skills in applied AI
       </section>
       <section aria-labelledby="prior-work-title">
         <h2 id="prior-work-title">Before consulting</h2>
-        <p>I spent four years as an AI engineer shipping production systems: real-time computer vision for retail shelf intelligence, neural networks optimised to run on microcontrollers and embedded cameras, RAG pipelines and LLM-powered log analytics. That period taught me the difference between a model that works in a notebook and a system a business can rely on — which is, in the end, what this whole series is about.</p>
+        <p>My AI/ML career began with an internship in 2021, followed by engineering roles covering real-time retail computer vision, neural networks on microcontrollers and embedded cameras, retrieval pipelines and LLM-powered log analytics. This work connects model development with the backend services, deployment and monitoring needed to use it in production.</p>
       </section>
       <a class="profile-more" href="{{ '/experience/' | relative_url }}">Explore my experience →</a>
     </div>
@@ -41,6 +41,18 @@ description: "Explore Pavan Kumar PHV's background and core skills in applied AI
       </div>
     </div>
   </section>
+  {% assign research = site.contributions | where: 'publication_type', 'research' | where: 'visibility', 'published' | sort: 'date' | reverse %}
+  {% if research.size > 0 %}
+  <section class="profile-series-context" aria-labelledby="research-title">
+    <h2 id="research-title">Research &amp; publications</h2>
+    {% for item in research %}
+    <p class="profile-eyebrow">{{ item.contribution_role | escape }} · {{ item.publication | escape }}</p>
+    <h3><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a></h3>
+    <p>{{ item.summary | escape }}</p>
+    <a class="profile-more" href="{{ item.url | relative_url }}">Read the paper and explore the code →</a>
+    {% endfor %}
+  </section>
+  {% endif %}
   <section class="profile-series-context" aria-labelledby="series-context-title">
     <h2 id="series-context-title">Why I write</h2>
     <p>Notes &amp; Ideas is where I share practical lessons on AI, engineering and the decisions behind reliable systems. I publish when there’s something useful to say, without a fixed schedule.</p>
