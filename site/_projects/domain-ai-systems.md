@@ -7,12 +7,12 @@ summary: "Domain-specific question-answering systems and custom neural networks 
 permalink: /projects/domain-ai-systems/
 visibility: published
 legacy_published: true
-date_status: verified
-sort_year: 2025
+date_status: unconfirmed
+sort_year: 0
 start_date: null
 end_date: null
 ongoing: null
-years_active: [2025]
+years_active: []
 organization: Ignitarium
 role: AI / ML systems engineer
 contribution: "Engineering contributions are described below."

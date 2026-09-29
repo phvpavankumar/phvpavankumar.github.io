@@ -17,6 +17,11 @@ definitions and calculation methods, then translate that knowledge into working
 Python tools, backend services and agent workflows. My engineering work includes
 data integration, KPI reconciliation, asynchronous orchestration and observability.
 
+My official role is **Senior Integration Consultant – Analytics & Information Management**
+at **Cervello India Pvt Ltd (a Kearney company)**, starting 2 February 2026.
+My functional responsibilities are client-facing Applied AI and forward-deployed
+engineering.
+
 Previously, I worked on real-time retail computer vision, ML-serving systems,
 embedded neural networks and LLM-powered log investigation.
 
@@ -45,7 +50,7 @@ publishing schedule. Start with
 
 ## Research
 
-First author of [Deep Learning Based Sentiment Analysis for Malayalam, Tamil and Kannada Languages](https://phvpavankumar.github.io/contributions/dravidian-sentiment-analysis/),
+First-listed author of [Deep Learning Based Sentiment Analysis for Malayalam, Tamil and Kannada Languages](https://phvpavankumar.github.io/contributions/dravidian-sentiment-analysis/),
 a team paper for the FIRE 2021 shared task, published in the 2022 proceedings.
 The portfolio entry links to the publisher's paper and the public research code.
 

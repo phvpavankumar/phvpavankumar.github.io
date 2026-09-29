@@ -17,7 +17,7 @@ start_date: null
 end_date: null
 ongoing: null
 years_active: [2026]
-organization: Kearney
+organization: Cervello India Pvt Ltd (a Kearney company)
 role: Client-facing AI & backend engineer
 contribution: "Connected client requirements with implementation: understood financial definitions and calculation methods, built SAP-connected Python analytical tools, and integrated them into agent workflows. Also contributed backend services, KPI lineage and reconciliation, and trace analysis."
 platform_context: "Contributed as part of an enterprise analytics team. This page describes my engineering responsibilities, not sole ownership of the platform. The separate fictional demo illustrates general concepts, not the employer's or a client's product."

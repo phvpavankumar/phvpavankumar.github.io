@@ -1,7 +1,7 @@
 ---
 layout: contribution
 title: "Deep Learning Based Sentiment Analysis for Malayalam, Tamil and Kannada Languages"
-description: "First-author NLP paper from FIRE 2021, with publisher and public code links for multilingual code-mixed sentiment classification."
+description: "First-listed author of an NLP paper from FIRE 2021, with publisher and public code links for multilingual code-mixed sentiment classification."
 slug: dravidian-sentiment-analysis
 kind: contribution
 publication_type: research
@@ -10,7 +10,7 @@ date: "2022-07-01"
 publication_date_label: "Proceedings publication"
 visibility: published
 publication: "FIRE 2021 Working Notes · CEUR-WS"
-contribution_role: "First author"
+contribution_role: "First-listed author"
 original_url: "https://ceur-ws.org/Vol-3159/T6-17.pdf"
 links_verified: true
 tags: ["NLP", "Sentiment analysis", "Research"]
@@ -24,7 +24,7 @@ Code-mixed text combines languages within the same comment. Our team studied sen
 
 The paper compares dense neural networks, bidirectional LSTMs and a CNN–LSTM model, and discusses preprocessing and class imbalance.
 
-I am credited as the first author, alongside Premjith B, Sanjanasri J.P and Soman K.P. We submitted this work as team Amrita_CEN_NLP.
+I am credited as the first-listed author, Pavan Kumar P.H.V., alongside Premjith B, Sanjanasri J.P and Soman K.P. We submitted this work as team Amrita_CEN_NLP.
 
 ## Paper and code
 

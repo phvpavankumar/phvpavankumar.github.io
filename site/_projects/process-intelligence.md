@@ -17,7 +17,7 @@ start_date: null
 end_date: null
 ongoing: null
 years_active: [2026]
-organization: Kearney
+organization: Cervello India Pvt Ltd (a Kearney company)
 role: Core AI and backend engineer
 contribution: "Backend and AI integration for test-case delivery; asynchronous job orchestration, repository APIs, auto-ingest, semantic chunking and embedding, hybrid retrieval, task-scoped conversation history and production hardening."
 platform_context: "The video-to-artifacts platform was team-built. My work focused on backend, orchestration and the knowledge repository, not sole ownership of the frontend or the full platform. Aurevia is a separate illustrative portfolio demo."
