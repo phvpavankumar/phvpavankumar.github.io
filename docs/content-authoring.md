@@ -138,3 +138,25 @@ be loaded in the panel, with their disclosures and a full-page alternative.
 The unlisted analytics demo is deliberately excluded. `related_writing` URLs
 resolve to canonical posts/contributions and render article preview cards using
 the existing title, date and summary; external publisher pages are not embedded.
+
+### Independent vision-suite reconstruction
+
+The existing `/projects/industrial-3d-vision/` record is now Enterprise Vision
+Inspection Suite. Keep this route; do not add a duplicate suite project. Its
+existing documented activity year is retained, not expanded into a full timeline.
+
+`visualization: veyra-vision` enables a compact native preview. The dedicated
+`site/demos/veyra-vision/index.html` is self-contained static HTML with embedded
+images and embedded snapshots of the shared `style.css` and `content.css`.
+Refresh those snapshots when the portfolio theme changes. The demo uses the same
+header/footer, design tokens and font families as the portfolio; its Google Fonts
+stylesheet is optional, with system fallbacks when offline. Its same file is the
+HTML download; no duplicate asset is needed. Keep its storage key and exports
+compatible. Relative back
+navigation supports deployment beneath a base path; downloaded files link to
+the canonical case study when opened using file://.
+
+Original employment, client and product names must not appear in this case study,
+preview, demo or downloadable output. The reconstruction disclosure and the
+distinction between original hands-on work and this new demonstration must remain.
+Keep prepared results separate from real local pixel operations and manual labels.

@@ -8,7 +8,7 @@ output = File.expand_path(ARGV.fetch(0, '_site'), repo)
 raise 'Build output missing' unless File.file?(File.join(output, 'index.html'))
 records = ContentIndex.records(File.join(repo, 'site'))
 ContentIndex.validate!(records)
-routes = %w[/ /about/ /experience/ /projects/ /weekly/ /writing/ /contributions/ /archive/ /thank-you/ /demos/aurevia/ /prototypes/enterprise-analytics/]
+routes = %w[/ /about/ /experience/ /projects/ /weekly/ /writing/ /contributions/ /archive/ /thank-you/ /demos/aurevia/ /demos/veyra-vision/ /prototypes/enterprise-analytics/]
 routes += records.map { |r| r.fetch('permalink') }
 routes += ContentIndex.years(records).map { |year| "/archive/#{year}/" }
 routes.each do |route|

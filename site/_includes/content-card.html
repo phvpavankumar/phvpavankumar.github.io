@@ -5,4 +5,5 @@
   <p>{{ item.summary | escape }}</p>
   {% if item.kind == 'contribution' %}<p class="credit">{{ item.contribution_role | escape }} · {{ item.publication | escape }}</p>{% elsif item.kind == 'project' %}<p class="credit">My role: {{ item.role | escape }}</p>{% else %}<p class="credit">By {{ item.authorship | escape }}</p>{% endif %}
   {% if page.permalink == '/projects/' and item.slug == 'retail-shelf-vision' %}<p><a href="{{ '/work/shelf-vision/' | relative_url }}">Try the interactive demo →</a></p>{% endif %}
+{% if item.visualization == 'veyra-vision' %}<p><a href="{{ item.demo_url | relative_url }}">Explore interactive demo →</a></p>{% endif %}
 </article>

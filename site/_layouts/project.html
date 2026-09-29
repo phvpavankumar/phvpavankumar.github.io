@@ -11,6 +11,7 @@ layout: default
       {% assign item = page %}{% include item-period.html %}
       <p class="project-lead">{{ page.summary | escape }}</p>
       {% if page.challenge %}<h2>The problem</h2><p>{{ page.challenge | escape }}</p>{% endif %}
+      {% if page.engineering_statement %}<blockquote class="vision-engineering-statement"><p>{{ page.engineering_statement | escape }}</p></blockquote><p class="item-period">This describes the original work. The portfolio demonstration is a newly created, independent reconstruction.</p>{% endif %}
       <h2>My contribution</h2>
       <p class="role-label">{{ page.role | escape }}</p>
       <p>{{ page.contribution | escape }}</p>
@@ -22,7 +23,9 @@ layout: default
     </section>
     <section aria-label="Project visualization">
       {% include project-media.html %}
-      {% if page.visualization == 'shelf-vision' %}
+      {% if page.visualization == 'veyra-vision' %}
+        {% include veyra-vision-preview.html %}
+      {% elsif page.visualization == 'shelf-vision' %}
         {% include shelf-vision-visual.html %}
       {% elsif page.visualization == 'published-work' %}
         {% include published-work.html %}
