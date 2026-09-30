@@ -3,8 +3,8 @@
 Repository layout update: publishable source is now under `site/`, main pages
 under `site/pages/`, and both demo sources under `site/demos/`. Legacy paths in
 this brief refer to that source tree. The weekly skeleton is now
-`content-templates/weekly-post.md`. Use README and `docs/` for current native build
-and manual deployment instructions. The integrity rules below still apply.
+`content-templates/weekly-post.md`. Use `docs/development.md` and `docs/publishing.md`
+for native build and automatic deployment instructions. The integrity rules below still apply.
 
 You are maintaining the personal site and public profile of **Pavan Kumar P H V**.
 Read this entire file before touching anything. Every rule here exists because
@@ -49,7 +49,7 @@ superlatives, anything that smells invented.
 2. **Never name consulting clients or internal project/product names.**
    Kearney engagement work is described only as anonymised patterns
    ("a global manufacturer", "the analytics platform"). Employer names
-   (Kearney, Solum, Sony, Ignitarium) are allowed — they are on the public resume.
+   (Cervello India Pvt Ltd, Kearney, Solum, Sony, Ignitarium) are allowed — Cervello and its relationship to Kearney were confirmed by the owner; the other names are on the public resume.
 3. **No testimonials of any kind.** None exist. Any found in old content is
    fabricated residue — delete on sight.
 4. **No stock photography, no AI-generated images, no robots/brains/circuits.**
@@ -65,7 +65,9 @@ superlatives, anything that smells invented.
 ## 3. Identity block (canonical — use verbatim)
 
 - **Name:** Pavan Kumar P H V (display: "Pavan Kumar PHV")
-- **Title:** Senior AI Consultant — Enterprise Analytics & AI
+- **Official title:** Senior Integration Consultant – Analytics & Information Management
+- **Employer:** Cervello India Pvt Ltd (a Kearney company), since 2 February 2026
+- **Functional responsibilities:** Client-facing Applied AI and forward-deployed engineering. Keep these separate from the official title.
 - **Location:** Bangalore, India
 - **Email:** phvpavankumar@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/pavan-kumar-phv/
@@ -83,7 +85,7 @@ superlatives, anything that smells invented.
 ## 4. Verified fact inventory (the ONLY quantified claims permitted)
 
 Career spine:
-- Kearney, Bangalore — Senior AI Consultant, Analytics & Information Management, 2026–present
+- Cervello India Pvt Ltd (a Kearney company), Bangalore — Senior Integration Consultant – Analytics & Information Management, 2 February 2026–present
 - Solum, Bangalore — AI/CV & ML Systems Engineer, Aug 2024–2026
 - Sony, Bangalore — AI Consultant, Feb 2023–Dec 2023
 - Ignitarium, Bangalore — AI Engineer Aug 2022–Jul 2024 (Intern Jun 2021–Jul 2022)
@@ -101,7 +103,8 @@ Quantified proof points (source: owner's resume + project records):
 - LLM log intelligence: fuzzy clustering + ReAct LangChain agents + local LLaMA;
   hours → seconds; 1,000+ review cycles streamlined
 - Edge AI: FastestDet +35% accuracy; Renesas MCU deployment; Sony IMX500 models
-- GenAI: Stable Diffusion T2I, PEFT fine-tuning (Falcon, LLaMA-2, BERT family)
+- GenAI: Stable Diffusion T2I, PEFT fine-tuning (Falcon, LLaMA-2, BERT family). The domain-specific LLM/GenAI project is undated: its former 2025 attribution is unsupported. Do not infer active years from employment dates.
+- Research: Pavan Kumar P.H.V. is the first-listed author of Deep Learning Based Sentiment Analysis for Malayalam, Tamil and Kannada Languages (FIRE 2021; proceedings published 1 July 2022). Individual implementation responsibilities remain unconfirmed; attribute methods and results to the team.
 
 Do not extend this list without the owner's explicit input.
 
@@ -111,7 +114,7 @@ Do not extend this list without the owner's explicit input.
 
 One line: **"I make AI trustworthy enough for a CFO to act on."**
 
-Supporting arc: five years of production AI (edge CV → GenAI → agentic enterprise
+Supporting arc: AI/ML experience since the June 2021 internship (edge CV → GenAI → agentic enterprise
 platforms), now applied to enterprise finance, where the differentiator is not
 models but **governance engineering** — KPI lineage, reconciliation, definition
 contracts, human-approval boundaries. Two independent bodies (Google, Anthropic)
